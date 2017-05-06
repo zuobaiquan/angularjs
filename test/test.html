@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>angularjs select 三级联动</title>
-    
+
     <script type="text/javascript" src="../lib/angular.js"></script>
-    
+
     <style type="text/css">
     label {
         padding: 5px 10px;
         border: 1px solid #fff;
     }
-    .error {        
+    .error {
         border-color: #f00;
     }
     </style>
-    
+
 </head>
 <body>
 
@@ -56,8 +56,8 @@ app.controller('cityCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('./list.json').success(function (data) {
         $scope.list = data;
     });
-    
-    
+
+
     $scope.c = function () {
         $scope.error.province = false;
         $scope.error.city = false;
@@ -65,24 +65,24 @@ app.controller('cityCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.selected2 = "";
         $scope.selected3 = "";
     };
-    
-    $scope.c2 = function () {       
+
+    $scope.c2 = function () {
         $scope.error.city = false;
         $scope.error.area = false;
         $scope.selected3 = "";
     };
-    
+
     $scope.c3 = function () {
         $scope.error.area = false;
     };
-    
+
     $scope.submit = function () {
         $scope.error.province = $scope.selected ? false : true;
         $scope.error.city = $scope.selected2 ? false : true;
         $scope.error.area = $scope.selected3 ? false : true;
     };
-    
-    
+
+
 }]);
 
 
@@ -94,6 +94,6 @@ angular.bootstrap(document, ['app']);
 </script>
 
 
-    
+
 </body>
 </html>
