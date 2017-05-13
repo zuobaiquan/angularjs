@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angular工具方法</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="lib/angular.js"></script>
+<script type="text/javascript">
+	//angular.bind(self, fn, args)
+	var obj = {
+	    name: 'xxx',
+	    print: function (country) {
+	        console.log(this.name + ' is from ' + country);
+	    }
+	};
+
+	var self = {
+	    name: 'yyy'
+	};
+
+	var bindFn = angular.bind(self, obj.print, 'China');
+	//var bindFn = angular.bind(self, obj.print, ['China']);
+
+	obj.print('American'); //xxx is from American
+	bindFn();//yyy is from China
+
+	//angular.copy(source, [destination])
+	var obj = {
+	    name: 'zuobaiquan',
+	    age: 20
+	};
+	var copyObj = angular.copy(obj);
+	console.log(copyObj); //Object {name: "zuobaiquan", age: 20}
+
+	//angular.equals(o1, o2)
+	angular.equals(3, 3); //true
+	angular.equals(NaN,NaN); //true
+	angular.equals({name:'xxx'},{name:'xxx'}); //true
+	angular.equals({name:'xxx'},{name:'yyy'}); //false
+
+	//angular.extend(dst, src)
+	var dst = {name: 'xxx', country: 'China'};
+	var src = {name: 'yyy', age: 10};
+
+	angular.extend(dst, src);
+
+	console.log(src); //Object {name: "yyy", age: 10}
+	console.log(dst); //Object {name: "yyy", country: "China", age: 10}
+
+
+	//angular.forEach(obj, iterator, [context])
+	var obj = {name: 'xxx', country: 'China'};
+	angular.forEach(obj, function (value, key) {
+	    console.log(key + ':' + value);
+	});
+	//name:xxx
+	//country:China
+
+	var array = ['xxx', 'yyy'];
+	angular.forEach(array, function (item, index) {
+	    console.log(index + ':' + item + ' form ' + this.country);
+	}, obj);
+	//0:xxx form China
+	//1:yyy form China
+
+	var json = angular.fromJson('{"name":"xxx","age":34}');
+	console.log(json); //Object {name: "xxx", age: 34}
+
+	angular.toJson({name:'xxx'});
+	// "{"name":"xxx"}"
+
+	angular.toJson({name:'xxx'},true);
+	// "{
+	//    "name": "xxx"
+	// }"
+
+	angular.toJson({name:'xxx'},10);
+	// "{
+	//            "name": "xxx"
+	// }"
+
+	console.log(angular.identity('xxx','yyy')); // xxx
+</script>
+</html>
