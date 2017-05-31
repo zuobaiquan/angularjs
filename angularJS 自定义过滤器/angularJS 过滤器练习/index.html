@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angularJS 过滤器练习</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css" >
+</head>
+<body ng-app="product">
+<div class="container" ng-controller="productController">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" ng-model="search" class="form-control" placeholder="产品名称">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <table class="table">
+        <thead>
+        <tr>
+            <th ng-click="sortProduct('id')"  ng-class="{ dropup : orderSign=='' }">
+                产品编号
+                <span ng-class="{ redColor : orderColumn=='id' }" class="caret"></span>
+            </th>
+            <th ng-click="sortProduct('name')" ng-class="{ dropup : orderSign=='' }">
+                产品名称
+                <span ng-class="{ redColor : orderColumn=='name' }" class="caret"></span>
+            </th>
+            <th ng-click="sortProduct('price')" ng-class="{ dropup : orderSign=='' }">
+                产品价格
+                <span ng-class="{ redColor : orderColumn=='price' }" class="caret"></span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in productList | filter:{'name':search} | orderBy:(orderSign + orderColumn) ">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency:'(RMB)'}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="../../lib/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

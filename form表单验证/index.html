@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angularjs-form表单验证</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" >
+</head>
+<!--
+字段是否未更改
+formName.inputFieldName.$pristine
+
+字段是否更改
+formName.inputFieldName.$dirty
+
+字段有效
+formName.inputFieldName.$valid
+
+字段无效
+formName.inputFieldName.$invalid
+
+字段错误信息
+formName.inputFieldName.$error
+-->
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+    <form name="myForm" action="1.php" class="container form-horizontal">
+        <!--用户名-->
+        <div class="form-group" ng-class="{'has-error':myForm.username.$dirty && myForm.username.$invalid}">
+            <label class="control-label col-sm-2">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" autocomplete="off" ng-model="data.username" ng-required="true" ng-pattern="/^[a-zA-Z]{1}/" ng-minlength="5" ng-maxlength="10" placeholder="用户名(英文字母开头 长度>=5位 <=10位)">
+
+                <div ng-show="myForm.username.$dirty && myForm.username.$error.pattern" class="alert alert-danger help-block">
+                    用户名必须以英文字母开始
+                </div>
+                <div ng-show="myForm.username.$dirty && myForm.username.$error.minlength" class="alert alert-danger help-block">
+                    用户名长度不能小于5位
+                </div>
+                <div ng-show="myForm.username.$dirty && myForm.username.$error.maxlength" class="alert alert-danger help-block">
+                    用户名长度不能超过10位
+                </div>
+            </div>
+        </div>
+
+        <!--密码-->
+        <div class="form-group" ng-class="{'has-error':myForm.password.$dirty && myForm.password.$invalid}">
+            <label class="control-label col-sm-2">密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" autocomplete="off"  ng-required="true"  ng-minlength="5" ng-maxlength="10"  ng-model="data.password"  placeholder="密码(长度>=5位 <=10位)">
+
+                <div ng-show="myForm.password.$error.maxlength" class="alert alert-danger help-block">
+                    密码长度不能超过10位
+                </div>
+                <div ng-show="myForm.password.$error.minlength" class="alert alert-danger help-block">
+                    密码长度不能小于5位
+                </div>
+            </div>
+        </div>
+
+        <!--确认密码-->
+        <div class="form-group" ng-class="{'has-error':myForm.passwordConfirm.$dirty && myForm.passwordConfirm.$invalid}">
+            <label class="col-sm-2 control-label">确认密码</label>
+            <div class="col-sm-10">
+                <input name="passwordConfirm" type="password" autocomplete="off"  ng-required="true"  ng-model="data.passwordConfirm"  class="form-control" placeholder="确认密码(等于密码)">
+
+                <div ng-show="myForm.password.$dirty && myForm.passwordConfirm.$dirty && data.password != data.passwordConfirm" class="alert alert-danger help-block">
+                    密码和确认密码不一致
+                </div>
+            </div>
+        </div>
+
+        <!--手机号 严格验证手机号：/^1(3|4|5|7|8)\d{9}$/   仅验证首位是1和总长度 /^1\d{10}$/ -->
+        <div class="form-group" ng-class="{'has-error':myForm.mobile.$dirty && myForm.mobile.$invalid}">
+            <label class="col-sm-2 control-label">手机号</label>
+            <div class="col-sm-10">
+                <input name="mobile" type="text" autocomplete="off" ng-required="true"  ng-model="data.mobile" ng-pattern="/^1\d{10}$/" class="form-control" placeholder="手机号(1开头的11数字)">
+
+                <div ng-show="myForm.mobile.$error.pattern" class="alert alert-danger help-block">
+                    手机号格式不正确
+                </div>
+            </div>
+        </div>
+
+        <!-- 邮箱  type="email" -->
+        <div class="form-group" ng-class="{'has-error':myForm.email.$dirty && myForm.email.$invalid}">
+            <label class="col-sm-2 control-label">邮箱</label>
+            <div class="col-sm-10">
+                <input name="email" type="email" autocomplete="off"  ng-required="true"  ng-model="data.email" ng-maxlength="30" class="form-control" placeholder="邮箱(格式正确 不超30位)">
+
+                <div ng-show="myForm.email.$error.maxlength" class="alert alert-danger help-block">
+                    邮箱长度不能超过30位
+                </div>
+                <div ng-show="myForm.email.$error.email" class="alert alert-danger help-block">
+                    邮箱格式不正确
+                </div>
+            </div>
+        </div>
+
+        <!-- 网址： type="url" -->
+        <div class="form-group" ng-class="{'has-error':myForm.blog.$dirty && myForm.blog.$invalid}">
+            <label class="col-sm-2 control-label">博客网址</label>
+            <div class="col-sm-10">
+                <input name="blog" type="url" autocomplete="off"  ng-required="true"  ng-model="data.blog" class="form-control" placeholder="博客网址(http(s)://开头 格式正确)">
+
+                <div ng-show="myForm.blog.$error.url" class="alert alert-danger help-block">
+                    博客网址格式不正确
+                </div>
+            </div>
+        </div>
+
+        <!-- 年龄-->
+        <div class="form-group" ng-class="{'has-error':myForm.age.$dirty && myForm.age.$invalid}">
+            <label class="col-sm-2 control-label">年龄</label>
+            <div class="col-sm-10">
+                <input name="age" type="number" min="3" autocomplete="off" ng-maxlength="2"  ng-required="true"  ng-model="data.age"  class="form-control" placeholder="年龄(>=3的两位数字)">
+
+                <div ng-show="myForm.age.$error.maxlength" class="alert alert-danger help-block">
+                    年龄不能超过2位数
+                </div>
+                <div ng-show="myForm.age.$error.min" class="alert alert-danger help-block">
+                    年龄不能小于3
+                </div>
+            </div>
+        </div>
+
+        <!-- 单选 -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">性别</label>
+            <div class="col-sm-10">
+                <label class="radio-inline">
+                    <input type="radio" name="sex" ng-required="true" ng-model="data.sex" value="1"> 男
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="sex" ng-model="data.sex" value="0"> 女
+                </label>
+            </div>
+        </div>
+
+        <!-- 复选 -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">爱好</label>
+            <div class="col-sm-10">
+                <label class="checkbox-inline" ng-repeat="hobby in hobbies">
+                    <input type="checkbox" name="hobby[]" ng-checked="data.hobbies === undefined ? false : (data.hobbies.indexOf(hobby.id)!=-1)" ng-click="toggleHobbySelection(hobby.id)" value="{{hobby.id}}"> {{hobby.name}}
+                </label>
+            </div>
+        </div>
+
+        <!-- 下拉框 -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">出生地</label>
+            <div class="col-sm-3">
+                <select class="form-control" ng-model="data.province" ng-options="x.id as x.name for x in cities | cityFilter : 0 " ></select>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" ng-show="data.province" ng-model="data.city" ng-options="x.id as x.name for x in cities | cityFilter : data.province " ></select>
+            </div>
+            <div class="col-sm-3">
+                <select name="area" class="form-control" ng-show="data.province && data.city" ng-model="data.area" ng-required="true" ng-options="x.id as x.name for x in cities | cityFilter : data.city " ></select>
+            </div>
+        </div>
+
+        <!-- 自定义表单错误验证 -->
+        <div class="form-group" ng-class="{'has-error':myForm.even1.$dirty && myForm.even1.$invalid}">
+            <label class="col-sm-2 control-label">请输入偶数</label>
+            <div class="col-sm-10">
+                <input type="number" name="even1" class="form-control" placeholder="偶数" ng-model="data.myeven" even>
+                <div ng-show="myForm.even1.$error.even" class="alert alert-danger help-block">
+                    数字必须是偶数
+                </div>
+            </div>
+        </div>
+
+        <!-- 自定义控件 -->
+        <div class="form-group">
+            <label class="control-label col-sm-2">个人介绍</label>
+            <div class="col-sm-10">
+                <custom-text-area ng-model="data.introduce"></custom-text-area>
+            </div>
+        </div>
+
+        <!-- 提交和重置 -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-disabled="myForm.$invalid || data.hobbies === undefined || data.hobbies.length==0">注册</button>
+                <buttom type="reset" class="btn btn-default" ng-click="reset()">重置</buttom>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="../lib/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

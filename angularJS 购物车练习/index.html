@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angularjs-购物车练习</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" >
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+    <table class="table" ng-show="cartList.length > 0">
+        <thead>
+        <tr>
+            <th>产品编号</th>
+            <th>产品名称</th>
+            <th>购买数量</th>
+            <th>产品单价</th>
+            <th>产品总价</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cartList">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+                <button ng-click="reduceOne(item.id)" class="btn btn-primary">-</button>
+                <input type="text" ng-model="item.quantity">
+                <button ng-click="addOne(item.id)" class="btn btn-primary">+</button>
+            </td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity * item.price}}</td>
+            <td><button ng-click="remove(item.id)" class="btn btn-danger">移除</button></td>
+        </tr>
+        <tr>
+            <td>总购买价</td>
+            <td>{{totalCost()}}</td>
+            <td>总购买数量</td>
+            <td>{{totalCount()}}</td>
+            <td colspan="3"><button ng-click="cartList=[]" class="btn btn-danger">清空购物车</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <h4 ng-show="cartList.length < 1">您的购物车暂无商品</h4>
+</div>
+</body>
+<script type="text/javascript" src="../lib/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>
