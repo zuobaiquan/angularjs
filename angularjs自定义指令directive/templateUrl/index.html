@@ -5,10 +5,14 @@
 	<title>angularjs自定义指令</title>
 </head>
 <body ng-app="myApp">
-	<div ng-controller="firstController">
-		
-	</div>
+<script type="text/ng-template" id="comstomTags2">
+    <div>hello {{name}}</div>
+</script>
+<div ng-controller="firstController">
+    <comstom-tags></comstom-tags>
+    <comstom-tags2></comstom-tags2>
+</div>
 </body>
-<script type="text/javascript" src="../lib/angular.js"></script>
+<script type="text/javascript" src="../../lib/angular.js"></script>
 <script type="text/javascript" src="index.js"></script>
 </html>
