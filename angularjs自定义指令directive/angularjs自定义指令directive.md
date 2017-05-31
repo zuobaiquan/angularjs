@@ -334,11 +334,11 @@ $scope.users=[
 
 require可以将其他指令传递给自己
 
-|       选项       |  用法  |
-| :------------: | :--: |
-| directiveName  |      |
-| ^directiveName |      |
-| ?directiveName |      |
+|       选项       |                  用法                   |
+| :------------: | :-----------------------------------: |
+| directiveName  | 通过驼峰法的命名指定了控制器应该带有哪一条指令，默认会从同一个元素上的指令 |
+| ^directiveName |                在父级查找指令                |
+| ?directiveName |        表示指令是可选的，如果找不到，不需要抛出移除         |
 
 ```html
 <body ng-app="myApp">
