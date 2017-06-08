@@ -2,15 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title>angularjs-购物车练习</title>
+	<title>angularjs中的$watch方法</title>
 </head>
-<body ng-app="myApp" >
-<div ng-controller="firstController">
-    {{ date }}
-    <br><br>
-    {{ count }}
-</div>
-</body>
+<body ng-app="myApp">  
+    <div ng-controller="firstController">
+        <input type="text" value="" ng-model="name"/>
+        改变次数:{{count}}-{{name}}
+        <br />
+        <input type="text" value="" ng-model="data.username"/>
+        <br />
+        <input type="text" value="" ng-model="height"/>
+    </div>
+</body>  
 <script type="text/javascript" src="../lib/angular.js"></script>
 <script type="text/javascript" src="index.js"></script>
 </html>

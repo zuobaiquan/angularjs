@@ -1,0 +1,1 @@
+![](./$provide里provider方法.png)
