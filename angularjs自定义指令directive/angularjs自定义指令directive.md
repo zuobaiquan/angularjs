@@ -320,69 +320,13 @@ $scope.users=[
 
 ### controller-controllerAs属性
 
+```
 1.controller它会暴露一个API，利用这个api可以在多个指令之间通过依赖注入进行通信；
 
-2.controller( $scope,   $element,  $attrs ,$transclude)
+2.controller($scope,$element,$attrs ,$transclude)
 
 3.controllerAs是给controller起的别名，方便使用
 
 4.require可以将其他指令传递给自己
 
-
-
-### require属性
-
-require可以将其他指令传递给自己
-
-|       选项       |                  用法                   |
-| :------------: | :-----------------------------------: |
-| directiveName  | 通过驼峰法的命名指定了控制器应该带有哪一条指令，默认会从同一个元素上的指令 |
-| ^directiveName |                在父级查找指令                |
-| ?directiveName |        表示指令是可选的，如果找不到，不需要抛出移除         |
-
-```html
-<body ng-app="myApp">
-    <div ng-controller="firstController">
-        <div book-list></div>
-    </div>
-</body>
-```
-
-```javascript
-angular.module('myApp',[])
-//定义第一个指令 bookList
-.directive('bookList',function(){
-    return {
-        restrict:'ECAM',
-        controller:function($scope){
-            $scope.books=[
-                {name:'php'},{name:'javascript'},{name:'java'}
-            ];
-            this.addBook=function(){
-                $scope.$apply(function(){
-                    $scope.books.push({name:'Angularjs'});
-                });
-            }
-        },
-        controllerAs:'bookListController',
-        //这个template中使用了第二个指令bookAdd
-        template:'<div><ul><li ng-repeat="book in books">{{ book.name }}</li></ul> <book-add></book-add> </div>',
-        replace:true
-    }
-})
-//定义第二个指令 bookAdd
-.directive('bookAdd',function(){
-    return{
-        restrict:'ECAM',
-        require:'^bookList',
-        template:'<button type="button">添加</button>',
-        replace:true,
-        link:function(scope,iElement,iAttrs,bookListController){  //这里引用了bookList指令
-            iElement.on('click',bookListController.addBook);
-        }
-    }
-})
-.controller('firstController',['$scope',function($scope){
-  
-}])
 ```
