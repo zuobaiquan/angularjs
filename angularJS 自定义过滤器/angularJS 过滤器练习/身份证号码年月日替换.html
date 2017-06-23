@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var idCard = "441881197908182251";
+		console.log("隐藏" + idCard.replace(idCard.substr(10,6), "******"));
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="firstController">
+		{{idCard | rightIdcard}}
+	</div>
+</body>
+<script type="text/javascript" src="../../lib/angular.js"></script>
+<script type="text/javascript">
+//运用 Angular 中的 filter 服务，为身份证写一个过滤器
+//将身份证年月日转化为 *   例如：
+//	421123198007120121
+//	421123********0121
+	var app=angular.module('myApp',[])
+    .filter('rightIdcard', rightIdcard)
+    .controller('firstController', ['$scope', function($scope){
+    	$scope.idCard="421123198007120121";
+    }])
+	  function rightIdcard() {
+	    return function(input) {
+	      return  input.replace(input.substr(6,8), "******");
+	    };
+	  }
+</script>
+</html>
