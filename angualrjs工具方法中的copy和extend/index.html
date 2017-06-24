@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angualrjs工具方法中的copy和extend</title>
+</head>
+<body ng-app="myApp" ng-controller="firstController">
+  <div ng-repeat="f1 in fields1 track by $index">
+      <label>{{f1.name}}</label>
+      <input type="text" ng-model="f1.model">
+  </div>
+  <hr />
+  <div ng-repeat="f2 in fields2 track by $index">
+      <label>{{f2.name}}</label>
+      <input type="text" ng-model="f2.model">
+  </div>
+
+</body>
+<script type="text/javascript" src="../lib/angular.js"></script>
+<script type="text/javascript">
+angular.module("myApp",[]).controller("firstController", function ($scope) {
+    $scope.fields1 = [{name: 'filed1',model: 'a'},{name: 'filed2',model: 'b'}];
+    $scope.fields2 = [];
+    /*
+    * angular.copy(source, destination)
+    * 为对象或数组创建深拷贝
+    * */
+    angular.copy($scope.fields1, $scope.fields2);
+
+    var mySource = {
+      'name' : 'sakshi', 
+      'age' : '24', 
+      'obj' :{'key':'value'}
+    };
+    var myDest = {};
+
+    /*
+     * angular.extend(destination, src1, src2 …)
+     * 为对象或数组创建浅拷贝，只能拷贝一层对象或基本类型数据的数组，不能拷贝对象数组
+     * extend 比 copy 效率高
+     * */
+    angular.extend(myDest, mySource);
+    myDest.obj.key = 'aaa';
+    console.log(mySource.obj.key);
+    console.log(myDest.obj.key);
+})
+</script>
+</html>
