@@ -1,10 +1,10 @@
 ### **angualrjs中ng-if与ng-show或hide区别**
 
-```
-1. ng-if在后面表达式为 true 的时候才创建这个 dom 节点，ng-show是初始时就创建了，用 display:block和 display:none 来控制显示和不显示。
+>1. ng-if在后面表达式为 true 的时候才创建这个 dom 节点，ng-show是初始时就创建了，用 display:block和 display:none 来控制显示和不显示。
+>
+>2. ng-if会（隐式地）产生新作用域，ng-switch、 ng-include 等会动态创建一块界面的也是如此。这样会导致，在 ng-if中用基本变量绑定 ng-model，并在外层 div 中把此 model 绑定给另一个显示区域，内层改变时，外层不会同步改变，因为此时已经是两个变量了。
 
-2. ng-if会（隐式地）产生新作用域，ng-switch、 ng-include 等会动态创建一块界面的也是如此。这样会导致，在 ng-if中用基本变量绑定 ng-model，并在外层 div 中把此 model 绑定给另一个显示区域，内层改变时，外层不会同步改变，因为此时已经是两个变量了。
-```
+
 
 ```html
 <body ng-app="myApp">
