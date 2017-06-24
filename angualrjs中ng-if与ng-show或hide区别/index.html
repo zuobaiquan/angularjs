@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>angualrjs中ng-if与ng-show或hide区别</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="firstController">
+    <div>========ng-if========</div>
+    <p>外层的showname1值：{{showname1}}</p>
+    <div ng-if="true">
+        <input type="text" ng-model="showname1">
+        <p>内层的name值：{{showname1}}</p>
+    </div>
+
+    <hr/>
+    <div>========ng-show========</div>
+    <p>外层的showname2值：{{showname2}}</p>
+    <div ng-show="true">
+        <input type="text" ng-model="showname2">
+        <p>内层的name值：{{showname2}}</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../lib/angular.js"></script>
+<script type="text/javascript">
+    angular.module("myApp",[]).controller("firstController", function ($scope) {
+        $scope.showname1="zuobaiquan01";
+        $scope.showname2="zuobaiquan01";
+    });  
+</script>
+</html>
