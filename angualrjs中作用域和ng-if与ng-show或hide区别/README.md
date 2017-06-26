@@ -42,6 +42,8 @@
 
 通常情况下，页面中 `ng-model` 绑定的变量都是在对应的 Controller 中定义的。如果一个变量未在当前作用域中定义，JavaScript 会通过当前 Controller 的 prototype **向上查找**，也就是**作用域的继承**。
 
+更多内容：https://github.com/xufei/blog/issues/18
+
 #### 基本类型变量
 
 ```html
