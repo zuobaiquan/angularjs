@@ -15,6 +15,7 @@ var app = angular.module('myApp',[])
           html+='</div>';
           html+='<div style="border: 1px solid #f0f0f0;display:inline-block;text-align:center;cursor:pointer;" ng-repeat="item in weekList track by $index"><span style="height:36px;line-height:36px;width:36px;display:inline-block">{{item}}</span></div>';
           html+='<div style="border: 1px solid #f0f0f0;display:inline-block;text-align:center;cursor:pointer;" ng-repeat="item in datelist track by $index"><span style="height:36px;line-height:36px;width:36px;display:inline-block" ng-style="selDatestyle(item.year,item.month,item.showDate)" ng-click="selectDate(item.year,item.month,item.showDate)">{{item.showDate}}</span></div>';
+          html+='<div style="height:36px;line-height:36px;width:266px;text-align:center;background:#ddd;" ng-click="hiddenPicker()">确定</div>';
           html+='</div>';
           html+='</div>';
           return html;
@@ -44,6 +45,9 @@ var app = angular.module('myApp',[])
 
           scope.showPicker=function(){
               scope.showpick=!scope.showpick;
+          }
+          scope.hiddenPicker=function(){
+              scope.showpick=false;
           }
           scope.selectDate=function(year,month,day){
               //不能选过去的时间
