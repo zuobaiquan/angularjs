@@ -34,15 +34,6 @@ var app = angular.module('myApp',[])
 
           year = today.getFullYear();
           month = today.getMonth() + 1;
-          var firstDay = new Date(year, month - 1, 1);//取得当前月份1号
-          var firstDayWeekDay = firstDay.getDay();//取得当前月份1号是星期几
-          if (firstDayWeekDay === 0) { //当为星期日（0）时，将值重新设置为7
-              firstDayWeekDay = 7;
-          }
-          year = firstDay.getFullYear();
-          month = firstDay.getMonth() + 1;
-          day = firstDay.getDate();
-
           scope.showPicker=function(){
               scope.showpick=!scope.showpick;
           }
