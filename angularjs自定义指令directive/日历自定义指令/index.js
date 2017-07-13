@@ -4,8 +4,8 @@ var app = angular.module('myApp',[])
         template: function(elem, attrs) {
           var html="";
           html+='<div style="position:relative">';
-          html += '<div ng-click="showPicker()" style="border: 1px solid #cccccc;border-radius: 4px;padding: 5px;height: 24px;line-height: 24px;width: auto">{{showselDatelist(result)}}</div>';
-          html+='<div ng-show="showpick" style="height:266px;width:266px;background:#ffffff;">';
+          html+='<div ng-click="showPicker()" style="border: 1px solid #cccccc;border-radius: 4px;padding: 5px;height: 24px;line-height: 24px;width: auto">{{showselDatelist(result)}}</div>';
+          html+='<div ng-show="showpick" style="height:266px;width:266px;background:#ffffff;position:absolute;left:0;top:24;z-index:999;">';
           html+='<div style="height:36px;width:266px;text-align:center;background:#ddd;">';
           html+='<span ng-click="preMonth()" style="width:43px;text-align:center;display:inline-block;cursor:pointer;">'+'<';
           html+='</span>';
