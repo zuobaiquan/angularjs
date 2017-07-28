@@ -1,0 +1,29 @@
+@import 'variable.less';
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    border-top: 2px solid #e8e8e8;
+    background-color: @footerBgColor;
+    color: #c2cfcc;
+    font-size: 30px;
+    .footer-tab{
+        height: 100%;
+        flex: 1;
+        text-align: center;
+        &.selected{
+            color: @footerTabSelect;
+            background-color: @footerTabSelectBg;
+        }
+        .fa{
+            font-size: 0.45rem;
+            margin-right: 5px;
+        }
+    }
+}

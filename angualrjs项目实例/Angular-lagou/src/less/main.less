@@ -1,0 +1,135 @@
+@import "header.less";
+@import "footer.less";
+@import "loginBar.less";
+@import "position.less";
+@import "property.less";
+@import "login.less";
+@import "mine.less";
+@import "jobs.less";
+@import "company.less";
+@import "search.less";
+@import "tab.less";
+@import "sheet.less";
+
+*{
+  font-family: "novecento_sans_widenormal","HiraginoSansGB-W3","STHeiti","Microsoft JhengHei","Microsoft YaHei";
+}
+html,body{
+  height:100%;
+  width:100%;
+}
+body {
+    background-color: @bodyBgColor;
+}
+a{text-decoration: none;}
+a:link{text-decoration: none;}   
+a:active{text-decoration: none;}   
+a:visited{text-decoration: none;}   
+a:hover{text-decoration: none;} 
+
+.fixed{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.toast-container {
+    position:fixed;
+    bottom:150px;
+    left:50%;
+    z-index:9999;
+    line-height:35px;
+    opacity:0;
+    transition:opacity .3s;
+    transform:translate(-50%,0)
+}
+.toast-container.mui-active {
+	  opacity:.9
+}
+.toast-message {
+    padding:20px 50px;
+    font-size:28px;
+    color:#fff;
+    text-align:center;
+    background-color:#323232;
+    border-radius:12px
+}
+
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}

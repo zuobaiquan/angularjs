@@ -1,0 +1,91 @@
+[{
+    "id": "p1",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/00/06/Cgo8PFTUWAaAbD7PAACAXTzCmiw113.jpg",
+    "job": "前端开发工程师",
+    "jobType": "技术",
+    "companyId": "c4",
+    "companyName": "爱奇艺",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s7",
+    "salaryName": "25k以上",
+    "experience": "3-5年",
+    "education": "本科",
+    "benefit": "薪资高，待遇好",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-11 14:25",
+    "state": "1"
+  },{
+    "id": "p5",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/0C/6C/Cgo8PFT1X2uAUbGsAABCAddtkWg960.jpg",
+    "job": "运营工程师",
+    "jobType": "运营",
+    "companyId": "c1",
+    "companyName": "慕课网",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s2",
+    "scaleName": "50-100人",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s5",
+    "salaryName": "10k-15k",
+    "experience": "1-3年",
+    "education": "本科",
+    "benefit": "发展前景好",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-01 11:05",
+    "state": "0"
+  }, {
+    "id": "p2",
+    "imageUrl": "https://www.lgstatic.com/image2/M00/10/51/CgqLKVYt3X6AM3jeAAA7ivNTiPg788.jpg?cc=0.486460896441713",
+    "job": "前端研发工程师",
+    "jobType": "研发",
+    "companyId": "c2",
+    "companyName": "滴滴打车（小桔科技）",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s6",
+    "salaryName": "15K-25K",
+    "experience": "1-3年",
+    "education": "本科及以上",
+    "benefit": "平台好，成长空间大",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-01 10:47",
+    "state": "-1"
+  }]

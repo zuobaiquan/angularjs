@@ -1,0 +1,28 @@
+{
+  "id": "p3",
+  "imageUrl": "https://www.lgstatic.com/image1/M00/42/DC/Cgo8PFXNdImAA0hiAACBD0dX7Ds225.png?cc=0.6919486154416709",
+  "name": "前端研发工程师",
+  "companyId": "c3",
+  "companyName": "滴滴打车（小桔科技）",
+  "cityId": "c1",
+  "cityName": "北京",
+  "scaleId": "s4",
+  "scaleName": "500人以上",
+  "industryId": "i1",
+  "industryName": "互联网",
+  "salaryId": "s6",
+  "salaryName": "15K-25K",
+  "experience": "1-3年",
+  "education": "本科及以上",
+  "benefit": "平台好，成长空间大",
+  "description": [
+    {
+      "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+    },{
+      "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+    },{
+      "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+    },{
+      "text": "负责可视化产品、通用组件的开发"
+    }]
+}

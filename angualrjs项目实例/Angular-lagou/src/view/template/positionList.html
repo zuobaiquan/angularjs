@@ -1,0 +1,18 @@
+<ul class="position-list">
+    <li class="list-item" ng-repeat="item in data | filterByObj:filterObj" ui-sref="jobs({id:item.id})">
+        <img class="item-logo" ng-src="{{item.imageUrl}}">
+        <div class="item-desc">
+            <h2 class="item-title">{{item.companyName}}</h2>
+            <span ng-if="item.state" class="item-state" ng-class="{'fail': item.state==-1}">【{{stateList[item.state]}}】</span>
+            <span ng-if="item.passState && item.passState!=0" class="item-pass" ng-bind="item.offer?'√ 已收到Offer':'确认收到Offer'" ng-class="{'passed': item.offer}" ng-click="confirmOffer($event,item)"></span>
+            <span ng-if="isFavorite" class="item-star" ng-click="toggleFavorite($event,item)">
+                <i class="fa" ng-class="{'fa-star': item.favorite,'fa-star-o': !item.favorite}"></i>
+            </span>
+            <p class="item-info clearfix">
+                <span class="item-pos">{{item.job}}[{{item.cityName}}]</span>
+                <span class="item-salary">{{item.salaryName}}</span>
+            </p>
+            <p class="item-time">{{item.date}}</p>
+        </div>
+    </li>
+</ul>

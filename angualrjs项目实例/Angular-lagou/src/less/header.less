@@ -1,0 +1,26 @@
+@import "variable.less";
+
+.header {
+    .logo {
+        position: relative;
+        background: @headerBgColor;
+        text-align: center;
+        color: @defaultColor;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: 32px;
+        .left,.right{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 60px;
+            font-size: 38px;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+    }
+}

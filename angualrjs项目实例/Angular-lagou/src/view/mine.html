@@ -1,0 +1,40 @@
+<div class="mine-wrapper">
+    <div class="sign-header">
+        <div class="avatar">
+            <img ng-src="{{avatar}}">
+        </div>
+        <p class="sign-link" ng-show="!isLogin">
+            <a ui-sref="login">登录</a> / <a ui-sref="register">注册</a> 
+        </p>
+        <p class="user" ng-show="isLogin">{{name}}</p>
+        <p class="small">职场从来没有过客</p>
+    </div>
+    <div class="mine-list-wrapper">
+        <ul class="mine-list">
+            <li>
+                <a class="clearfix" ng-click="goPost($event)">
+                    <i class="fa fa-paper-plane-o"></i>投递<span class="fr fa fa-angle-right"></span>
+                </a>
+            </li>
+            <li>
+                <a class="clearfix" ng-click="goPass($event)">
+                    <i class="fa fa-envelope-open-o"></i>面试<span class="fr fa fa-angle-right"></span>
+                </a>
+            </li>
+            <li class="space"></li>
+            <li class="ng-hide">
+                <a class="clearfix" href="javascript:;">
+                    <i class="fa fa-commenting-o"></i>邀约<span class="fr fa fa-angle-right"></span>
+                </a>
+            </li>
+            <li>
+                <a class="clearfix" ng-click="goFavor($event)">
+                    <i class="fa fa-bookmark-o"></i>收藏<span class="fr fa fa-angle-right"></span>
+                </a>
+            </li>
+            <li class="space"></li>
+            <li class="logout" ng-show="isLogin"><a ng-click="logout($event)">退出登录</a></li>
+        </ul>
+    </div>
+    <app-footer></app-footer>
+</div>

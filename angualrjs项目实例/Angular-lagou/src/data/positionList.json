@@ -1,0 +1,208 @@
+[{
+    "id": "p1",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/00/06/Cgo8PFTUWAaAbD7PAACAXTzCmiw113.jpg",
+    "job": "前端开发工程师",
+    "jobType": "技术",
+    "companyId": "c4",
+    "companyName": "爱奇艺",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s7",
+    "salaryName": "25k以上",
+    "experience": "3-5年",
+    "education": "本科",
+    "benefit": "薪资高，待遇好",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-11 14:25"
+  },
+  {
+    "id": "p6",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/27/C6/CgYXBlVcKSSAVHrLAABtiWHaEpo614.png",
+    "job": "Java开发工程师",
+    "jobType": "技术",
+    "companyId": "c5",
+    "companyName": "扇贝单词",
+    "cityId": "c2",
+    "cityName": "上海",
+    "scaleId": "s3",
+    "scaleName": "100~500人",
+    "industryId": "i1",
+    "industryName": "教育",
+    "salaryId": "s4",
+    "salaryName": "8K-10K",
+    "experience": "1-3年",
+    "education": "本科",
+    "benefit": "个人成长快，15薪",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-11 08:54"
+  },
+  {
+    "id": "p7",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/00/03/CgYXBlTUV_qALGv0AABEuOJDipU378.jpg",
+    "job": "Android研发工程师",
+    "jobType": "研发",
+    "companyId": "c6",
+    "companyName": "腾讯",
+    "cityId": "c3",
+    "cityName": "广州",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "游戏，社交",
+    "salaryId": "s4",
+    "salaryName": "8K-10K",
+    "experience": "1-3年",
+    "education": "大专及以上",
+    "benefit": "上市公司，周末双休,健身房,班车,职业成长",
+    "description": [
+      {
+        "text": "负责手机Qzone android终端应用的架构设计；"
+      },{
+        "text": "负责手机Qzone android版本现有功能的维护及新功能模块的开发；"
+      },{
+        "text": "负责定位并解决现有模块存在的问题；;"
+      },{
+        "text": "负责承担版本的系统设计、性能及内存调优工作。"
+      }],
+    "date": "2017-04-08 10:01"
+  },
+  {
+    "id": "p3",
+    "imageUrl": "https://www.lgstatic.com/i/image/M00/04/01/CgqKkVbFXXqAPo0fAAATqvTo2-I592.png",
+    "job": "销售",
+    "jobType": "销售",
+    "companyId": "c3",
+    "companyName": "人人行(借贷宝)",
+    "cityId": "c2",
+    "cityName": "上海",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s2",
+    "salaryName": "3k-5k",
+    "experience": "1-3年",
+    "education": "专科",
+    "benefit": "成长空间大",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-02 18:27"
+  }, {
+    "id": "p4",
+    "imageUrl": "https://www.lgstatic.com/i/image/M00/04/01/CgqKkVbFXXqAPo0fAAATqvTo2-I592.png",
+    "job": "产品经理",
+    "jobType": "产品",
+    "companyId": "c3",
+    "companyName": "人人行(借贷宝)",
+    "cityId": "c3",
+    "cityName": "广州",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s6",
+    "salaryName": "15k-25k",
+    "experience": "5年以上",
+    "education": "本科",
+    "benefit": "公司氛围好",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-01 11:55"
+  }, {
+    "id": "p2",
+    "imageUrl": "https://www.lgstatic.com/image2/M00/10/51/CgqLKVYt3X6AM3jeAAA7ivNTiPg788.jpg?cc=0.486460896441713",
+    "job": "前端研发工程师",
+    "jobType": "研发",
+    "companyId": "c2",
+    "companyName": "滴滴打车（小桔科技）",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s6",
+    "salaryName": "15K-25K",
+    "experience": "1-3年",
+    "education": "本科及以上",
+    "benefit": "平台好，成长空间大",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-01 10:47"
+  }, {
+    "id": "p5",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/0C/6C/Cgo8PFT1X2uAUbGsAABCAddtkWg960.jpg",
+    "job": "运营工程师",
+    "jobType": "运营",
+    "companyId": "c1",
+    "companyName": "慕课网",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s2",
+    "scaleName": "50-100人",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s5",
+    "salaryName": "10k-15k",
+    "experience": "1-3年",
+    "education": "本科",
+    "benefit": "发展前景好",
+    "description": [
+      {
+        "text": "负责公司网站平台与Web项目的开发、维护、升级，完成核心代码的编写;"
+      },{
+        "text": "负责产品设计的前端代码开发工作，产出原型，配合完成后端数据的接口；"
+      },{
+        "text": "负责对产品页面性能的优化和维护，持续提升用户体验;"
+      },{
+        "text": "负责可视化产品、通用组件的开发"
+      }],
+    "date": "2017-04-01 11:05"
+  }
+]

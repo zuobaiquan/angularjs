@@ -1,0 +1,110 @@
+@import 'property.less';
+@import 'variable.less';
+
+.login-wrap,.register-wrap{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(135deg,#029253,#00887b);
+    .login-container{
+        width: 90%;
+        padding: 40px 0;
+        margin: 0 auto;
+
+        .username{
+            .top-radius(10px);
+            border-bottom: 2px solid @lineColor;
+        }
+        .password{
+            .bottom-radius(10px);
+        }
+    }
+    .register-container{
+        width: 90%;
+        padding: 40px 0;
+        margin: 0 auto;
+        .input-wrapper{
+            margin-bottom: 30px;
+            input{
+                border-bottom: 1px solid #e0e0e0;
+                border-radius: 10px;
+            }
+        }
+        .message-wrapper{
+            .getCode{
+                position: absolute;
+                width: 100px;
+                right: 5%;
+                bottom: 30%;
+                font-size: 28px;
+                padding: 12px 15px;
+                text-align: center;
+                border-radius: 4px;
+                border: 1px solid @mainTextColor;
+                background-color: #fff;
+                color: @mainTextColor;
+                line-height: 1;
+
+                &.disabled{
+                    border: 1px solid #ccc;
+                    color: #ccc;
+                }
+            }
+            .validation-invalid{
+                right: 24%;
+            }
+        }
+        
+    }
+    .submit-btn,.regist-btn{
+        display: block;
+        width: 100%;
+        font-size: 32px;
+        border: none;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5%;
+    }
+    .submit-btn{
+        color: #fff;
+        background: #0ac599;
+        box-shadow: 0 2px 0 #008765;
+        margin: 40px 0;
+    }
+    .regist-text{
+        color: #45e3be;
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    .regist-btn{
+        color: #45e3be;
+        border: 1px solid #45e3be;
+        background: transparent;
+        margin: 16px 0;
+    }
+}
+ .input-wrapper{
+    position: relative;
+    input{
+        border-bottom: 1px solid @lineColor;
+        width: 90%;
+        border: 0;
+        outline: 0;
+        font-size: 28px;
+        color: #333;
+        background: #fff;
+        border-radius: 0;
+        padding: 6% 5%;
+        margin: 0;
+    }
+    .validation-invalid{
+        position: absolute;
+        right: 5%;
+        top: 36%;
+        font-size: 24px;
+        color: @dangerColor;
+        line-height: 1.2;
+    }
+}

@@ -1,21 +1,22 @@
 var app = angular.module('myApp',[])
-.directive('customTags',function(){
-    return {
+.directive("mydatetimePicker", function() {
+   return {
         template: function(elem, attrs) {
           var html="";
-          html+='<div style="position:relative">';
-          html+='<div ng-click="showPicker()" style="border: 1px solid #cccccc;border-radius: 4px;padding: 5px;height: 24px;line-height: 24px;width: auto">{{showselDatelist(result)}}</div>';
-          html+='<div ng-show="showpick" style="height:266px;width:266px;background:#ffffff;position:absolute;left:0;top:24;z-index:999;">';
-          html+='<div style="height:36px;width:266px;text-align:center;background:#ddd;">';
-          html+='<span ng-click="preMonth()" style="width:43px;text-align:center;display:inline-block;cursor:pointer;">'+'<';
+          html+='<div class="datepicker-container">';
+          html+='<input class="picker-input" readonly="true" ng-model="result" placeholder="点击添加时间" ng-click="showPicker()" />';
+          html+='<img class="picker-img" ng-src="datepicker.png" />';
+          html+='<div ng-show="showpick" class="picker-con">';
+          html+='<div class="picker-contop">';
+          html+='<span ng-click="preMonth()" class="contop-pre">'+'<';
           html+='</span>';
-          html+='<span style="height:36px;line-height:36px;width:180px;display:inline-block;">'+'{{currentYear}}-{{currentMonth}}'+'</span>';
-          html+='<span ng-click="nextMonth()" style="width:43px;text-align:center;display:inline-block;cursor:pointer;">'+'>';
+          html+='<span class="contop-middle">'+'{{currentYear}}-{{currentMonth}}'+'</span>';
+          html+='<span ng-click="nextMonth()" class="contop-next">'+'>';
           html+='</span>';
           html+='</div>';
-          html+='<div style="border: 1px solid #f0f0f0;display:inline-block;text-align:center;cursor:pointer;" ng-repeat="item in weekList track by $index"><span style="height:36px;line-height:36px;width:36px;display:inline-block">{{item}}</span></div>';
-          html+='<div style="border: 1px solid #f0f0f0;display:inline-block;text-align:center;cursor:pointer;" ng-repeat="item in datelist track by $index"><span style="height:36px;line-height:36px;width:36px;display:inline-block" ng-style="selDatestyle(item.year,item.month,item.showDate)" ng-click="selectDate(item.year,item.month,item.showDate)">{{item.showDate}}</span></div>';
-          html+='<div style="height:36px;line-height:36px;width:266px;text-align:center;background:#ddd;" ng-click="hiddenPicker()">确定</div>';
+          html+='<div class="picker-eachday" ng-repeat="item in weekList track by $index"><span class="eachday-text">{{item}}</span></div>';
+          html+='<div class="picker-eachday" ng-repeat="item in datelist track by $index"><span class="each-text" ng-style="selDatestyle(item.year,item.month,item.showDate)" ng-click="selectDate(item.year,item.month,item.showDate)">{{item.showDate}}</span></div>';
+          html+='<div class="picker-buttom" ng-click="hiddenPicker()">确定</div>';
           html+='</div>';
           html+='</div>';
           return html;
@@ -24,14 +25,16 @@ var app = angular.module('myApp',[])
         scope: {
             result: '=',
             showpick:"@",
-            chooseStyle:'@'
+            chooseStyle:'@',
+            callback:"&"
         },
         link: function(scope, element, attributes) {
-          scope.result=[];
+          if(scope.result==''||typeof scope.result=='undefined'){
+            scope.result=[];
+          }
           scope.chooseStyle=[];
           var today = new Date();
           var nowyear2=today.getFullYear(),nowmonth2= today.getMonth() + 1,nowday2=today.getDate();
-
           year = today.getFullYear();
           month = today.getMonth() + 1;
           scope.showPicker=function(){
@@ -39,6 +42,11 @@ var app = angular.module('myApp',[])
           }
           scope.hiddenPicker=function(){
               scope.showpick=false;
+              if(scope.callback){
+                scope.callback({data:{
+                   type:1
+                }});
+             }
           }
           scope.selectDate=function(year,month,day){
               //不能选过去的时间
@@ -48,7 +56,7 @@ var app = angular.module('myApp',[])
               month=parseInt(month)<10?('0'+month):month;
               day=parseInt(day)<10?('0'+day):day;
               var newdate=year+"-"+month+"-"+day;
-              for(var j=0;j<scope.result.length;j++){
+              for(var j in scope.result){
                 if(scope.result[j]==newdate){
                     scope.result.splice(j,1);
                     return ;
@@ -58,24 +66,24 @@ var app = angular.module('myApp',[])
           }
         },
         controller:function($scope){
-          $scope.weekList=['日','一','二','三','四','五','六'];
+          $scope.weekList=['一','二','三','四','五','六','日'];
           $scope.init=function(year,month){
-            var firstDay = new Date(year, month - 1, 1);//取得当前月份1号
-            var firstDayWeekDay = firstDay.getDay();//取得当前月份1号是星期几
-            if (firstDayWeekDay === 0) { //当为星期日（0）时，将值重新设置为7
+            var firstDay = new Date(year, month - 1, 1);
+            var firstDayWeekDay = firstDay.getDay();
+            if (firstDayWeekDay === 0) {
                 firstDayWeekDay = 7;
             }
             year = firstDay.getFullYear();
             month = firstDay.getMonth() + 1;
             day = firstDay.getDate();
-            var lastDayOfLastMonth = new Date(year, month - 1, 0); //获取上个月最后一天的日期
-            var lastDateOfLastMonth = lastDayOfLastMonth.getDate();//通过最后一天的日期获取上个月总天数
-            var preMonthDayCount = firstDayWeekDay - 1; //上个月需要显示出来的天数
-            var lastDay = new Date(year, month, 0);//取得当前月份最后一天的日期
-            var lastDate = lastDay.getDate(); //通过最后一天的日期获取当前月总天数
+            var lastDayOfLastMonth = new Date(year, month - 1, 0);
+            var lastDateOfLastMonth = lastDayOfLastMonth.getDate();
+            var preMonthDayCount = firstDayWeekDay - 1;
+            var lastDay = new Date(year, month, 0);
+            var lastDate = lastDay.getDate();
             $scope.datelist=[];
             for (var i = 0; i < 7 * 6; i++) {
-                var date = i + 1 - preMonthDayCount;//date用于计算显示的是几号
+                var date = i + 1 - preMonthDayCount;
                 var showDate = date;
                 var thisMonth = month;
                 if (date <= 0) {
@@ -93,9 +101,9 @@ var app = angular.module('myApp',[])
                 }
                 $scope.datelist.push({
                     year:year,
-                    month: thisMonth, //当前表格需要显示的是哪个月份的日期
-                    date: date, //date用于计算显示的是几号
-                    showDate: showDate //当前需要显示几号
+                    month: thisMonth,
+                    date: date,
+                    showDate: showDate
                 });
             }
           }
@@ -133,24 +141,55 @@ var app = angular.module('myApp',[])
               $scope.currentYear=curyear;
             }
           }
-          $scope.showselDatelist=function(item){
-             return item.join(",");
-          }
           $scope.selDatestyle=function(year,month,day){
+            $scope.colorStyle={};
             month=parseInt(month)<10?('0'+month):month;
             day=parseInt(day)<10?('0'+day):day;
             var nowdatetime=year+'-'+month+'-'+day;
-            console.log(nowdatetime,$scope.result);
-            for(var i=0;i<$scope.result.length;i++){
+
+            var todaydate = new Date();
+            todayyear = todaydate.getFullYear();
+            todaymonth = todaydate.getMonth() + 1;
+            todayday = todaydate.getDate();
+            if((year<todayyear)||(year==todayyear&&month<todaymonth)||(year==todayyear&&month==todaymonth&&day<todayday)){
+               $scope.colorStyle={'background-color':'#CBC4C4'};
+            }
+            for(var i in $scope.result){
                 if(nowdatetime==$scope.result[i]){
-                   return {'background':'red'}
+                   $scope.colorStyle={'background':'#FA5050','color':'#ffffff'};
+                   return $scope.colorStyle;
                 }
             }
-            return {'background':''}
+            return $scope.colorStyle;
           }
         }
     }
 })
-app.controller('firstController', function ($scope) {
-
+.controller('timeController', function ($scope) {
+    $scope.seldatetime="";
+    $scope.getAllselTime=function(){
+        var tempArr=[],newArr = [];
+        $scope.reserveTimelist=[{month:'',child:[]}];
+        $scope.reserveTimelist.shift();
+        angular.forEach($scope.seldatetime, function (item) {
+            tempArr.push(item.substr(0,7));
+        });
+        tempArr.forEach(function(item){
+            if(newArr.indexOf(item) == -1){
+                newArr.push(item);
+            }
+        });
+        for(var kk=0;kk<newArr.length;kk++){
+            $scope.reserveTimelist.push({
+                month:newArr[kk],child:[]
+            });
+            for(var kkk=0;kkk<$scope.seldatetime.length;kkk++){
+                if($scope.seldatetime[kkk].substr(0,7)==newArr[kk]){
+                    $scope.reserveTimelist[kk].child.push($scope.seldatetime[kkk]);
+                }
+            }
+        }
+        return $scope.reserveTimelist;
+    }
+    
 });

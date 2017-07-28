@@ -1,0 +1,87 @@
+@import 'variable.less';
+
+.position-list{
+    padding-bottom: 80px;
+    .list-item{
+        padding: 28px;
+        border-bottom: 2px solid @listLineColor;
+        transition: all 0.2s ease-in-out;
+        &:active{
+            background-color: #f0f0f0;
+        }
+
+        .item-logo{
+            float: left;
+            width: 120px;
+            height: 120px;
+        }
+        .item-desc{
+            position: relative;
+            margin-left: 140px;
+            height: 124px;
+            color: #333;
+            .item-title{
+                font-size: 32px;
+                font-weight: 600;
+                margin-bottom: 12px;
+                width: 80%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .item-state{
+                position: absolute;
+                right: -15px;
+                top: 0;
+                z-index: 1;
+                font-size: 28px;
+                color: @mainTextColor;
+                &.fail{
+                    color: @dangerColor;
+                }
+            }
+            .item-star{
+                position: absolute;
+                right: 5px;
+                top: -5px;
+                z-index: 1;
+                font-size: 40px;
+                color: @starColor;
+            }
+            .item-pass{
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                font-size: 28px;
+                color: @mainTextColor;
+                &.passed{
+                    color: #333;
+                }
+            }
+            .item-info{
+                margin-bottom: 12px;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                .item-pos{
+                    font-size: 24px;
+                    float: left;
+                    width: 60%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .item-salary{
+                    font-size: 28px;
+                    color: @mainTextColor;
+                    float: right;
+                }
+            }
+            .item-time{
+                font-size: 20px;
+                color: #888;
+            }
+        }
+    }
+}

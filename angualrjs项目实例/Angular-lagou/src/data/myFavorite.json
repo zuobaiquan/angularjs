@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p7",
+    "imageUrl": "https://www.lgstatic.com/image1/M00/00/03/CgYXBlTUV_qALGv0AABEuOJDipU378.jpg",
+    "job": "Android研发工程师",
+    "jobType": "研发",
+    "companyId": "c6",
+    "companyName": "腾讯",
+    "cityId": "c3",
+    "cityName": "广州",
+    "scaleId": "s4",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "游戏，社交",
+    "salaryId": "s4",
+    "salaryName": "8K-10K",
+    "experience": "1-3年",
+    "education": "大专及以上",
+    "benefit": "上市公司，周末双休,健身房,班车,职业成长",
+    "description": [
+      {
+        "text": "负责手机Qzone android终端应用的架构设计；"
+      },{
+        "text": "负责手机Qzone android版本现有功能的维护及新功能模块的开发；"
+      },{
+        "text": "负责定位并解决现有模块存在的问题；;"
+      },{
+        "text": "负责承担版本的系统设计、性能及内存调优工作。"
+      }],
+    "date": "2017-04-08 10:01",
+    "favorite": true
+  }]

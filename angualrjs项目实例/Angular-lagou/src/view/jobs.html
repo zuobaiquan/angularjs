@@ -1,0 +1,56 @@
+<app-header show-back="true" show-home="true">职位详情</app-header>
+<div class="job-wrapper">
+    <div class="postitle">
+        <h2 class="title">{{job.job}}</h2>
+        <div class="collicon" ng-show="isLogin">
+            <span ng-click="toggleFavorite()" class="icon fa" ng-class="{'fa-star-o': !isFavorite,'fa-star': isFavorite}"></span>
+            <span class="text" ng-bind="isFavorite? '已收藏':'未收藏'"></span>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="items clearfix">
+            <span class="item salary">
+                <i class="fa fa-rmb"></i>
+                {{job.salaryName}}
+            </span>
+            <span class="item address">
+                <i class="fa fa-map-marker"></i>
+                {{job.cityName}}
+            </span>
+            <span class="item jobnature">
+                <i class="fa fa-bookmark"></i>
+                {{job.industryName}}
+            </span>
+            <span class="item workyear">
+                <i class="fa fa-briefcase"></i>
+                {{job.experience}}
+            </span>
+            <span class="item education">
+                <i class="fa fa-graduation-cap"></i>
+                {{job.education}}
+            </span>
+        </div>
+        <div class="temptation">
+            职位诱惑: {{job.benefit}}
+        </div>
+    </div>
+    <div class="company" ui-sref="company({id:job.companyId})">
+        <img ng-src="{{job.imageUrl}}" class="logo">
+        <div class="desc">
+            <h2 class="title">{{job.companyName}}</h2>
+            <p class="info">
+                {{job.industryName}} / {{job.scaleName}}
+            </p>
+        </div>
+    </div>
+    <div class="positiondesc">
+        <div class="title">职位描述</div>
+        <div class="content">
+            <p>岗位职责：</p>
+            <p ng-repeat="item in job.description">
+                {{$index+1}}.{{item.text}}
+            </p>
+        </div>
+    </div>
+</div>
+<button class="jobs-delivery" ng-click="jobDelivery()">{{btnText}}</button>

@@ -1,0 +1,61 @@
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+.clearfix{
+  &:after{
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+.top-radius(@px){
+  border-top-left-radius: @px;
+  border-top-right-radius: @px;
+}
+.bottom-radius(@px){
+  border-bottom-left-radius: @px;
+  border-bottom-right-radius: @px;
+}
+
+.fs(@px) {
+  font-size: unit(@px / 37.5, rem);
+}
+.w(@px){
+  width: unit(@px / 37.5, rem);
+}
+.h(@px){
+  height: unit(@px / 37.5, rem);
+}
+.lh(@px){
+  line-height: unit(@px / 37.5, rem);
+}
+.mt(@px){
+  margin-top: unit(@px / 37.5, rem);
+}
+.mt(@px){
+  margin-bottom: unit(@px / 37.5, rem);
+}
+.mr(@px){
+  margin-right: unit(@px / 37.5, rem);
+}
+.ml(@px){
+  margin-left: unit(@px / 37.5, rem);
+}
+.pt(@px) {
+  padding-top: unit(@px / 37.5, rem);
+}
+.pl(@px) {
+  padding-left: unit(@px / 37.5, rem);
+}
+.pr(@px) {
+  padding-right: unit(@px / 37.5, rem);
+}
+.pb(@px) {
+  padding-bottom: unit(@px / 37.5, rem);
+}

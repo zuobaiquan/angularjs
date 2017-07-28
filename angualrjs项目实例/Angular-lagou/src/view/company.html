@@ -1,0 +1,28 @@
+<app-header show-back="true" show-home="true">公司详情</app-header>
+<div class="company-wrapper">
+    <div class="company">
+        <img ng-src="{{company.imageUrl}}" class="logo">
+        <div class="desc">
+            <h2 class="title">{{company.companyName}}</h2>
+            <p class="city"><i class="fa fa-map-marker"></i>{{company.cityName}}</p>
+            <p class="info">
+                {{company.industryName}} / {{company.scaleName}}
+            </p>
+        </div>
+    </div>
+    <div class="positype">
+        <div class="header">职位分类</div>
+        <ul class="clearfix">
+            <li class="type" ng-repeat="pos in posList" ng-click="showPositionList(pos.jobType)" ng-class="{'active':pos.jobType===activeType}">{{pos.jobType}}</li>
+        </ul>
+    </div>
+    <ul class="posilist">
+        <li class="clearfix" ng-repeat="pos in posList | positionTypeFilter: activeType" ui-sref="jobs({id:pos.id})">
+            <div class="fl left">
+                <h3 class="name">{{pos.job}}[ {{pos.cityName}} ]</h3>
+                <span class="time">{{pos.date}}</span>
+            </div>
+            <div class="fr right">{{pos.salaryName}}</div>
+        </li>
+    </ul>
+</div>

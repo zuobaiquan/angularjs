@@ -1,0 +1,50 @@
+@import "variable.less";
+
+.search-bar{
+    background: @headerBgColor;
+    display: flex;
+    height: 80px;
+    .input-wrap{
+        position: relative;
+        flex: 1;
+        padding: 15px 30px;
+    }
+    input{
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        padding: 10px 0 10px 50px;
+        border: 1px solid @listLineColor;
+        border-radius: 40px;
+        font-size: 25px;
+        color: #666;
+        line-height: 30px;
+    }
+    .fa{
+        position: absolute;
+        left: 50px;
+        top: 30px;
+        color: #ccc;
+        font-size: 20px;
+    }
+    .btn-search{
+        width: 100px;
+        height: 100%;
+        line-height: 80px;
+        font-size: 26px;
+        text-align: left;
+        padding-left: 10px;
+        border: none;
+        color: #fff;
+        background: none;
+    }
+}
+.poslist-wrap{
+    padding-top: 150px;
+    .empty{
+        color: #ccc;
+        text-align: center;
+        margin-top: 80px;
+        font-size: 24px;
+    }
+}

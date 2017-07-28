@@ -1,0 +1,19 @@
+<div class="register-wrap">
+    <div class="register-container">
+        <form name="form">
+            <div class="input-wrapper">
+                <input class="username" type="text" name="phone" placeholder="手机号" ng-model="user.phone" validator="required,phone">
+            </div>
+            <div class="input-wrapper">
+                <input class="password" type="password" name="password" placeholder="设置6-16位密码" ng-model="user.password" validator="required,password">
+            </div>
+            <div class="input-wrapper message-wrapper">
+                <input class="password" type="text" name="code" placeholder="短信验证码" ng-model="code" validator="required,code">
+                <button class="getCode" ng-click="send()" ng-bind="time?time:'获取'" ng-class="{'disabled': time}"></button>
+            </div>
+            <input type="submit" class="submit-btn" value="注册" validation-submit="form" ng-click="submit()">
+        </form>
+        <div class="regist-text">已有账号？</div>
+        <button class="regist-btn" ui-sref="login">登录</button>
+    </div>
+</div>

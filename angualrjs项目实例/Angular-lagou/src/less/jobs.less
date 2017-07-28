@@ -1,0 +1,144 @@
+@import 'variable.less';
+
+.job-wrapper{
+    padding-bottom: 80px;
+    .postitle{
+        height:80px;
+        line-height:80px;
+        padding:0 30px;
+        border-bottom:1px solid @listLineColor;
+        &:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        .title{
+            color:#333;
+            font-size: 32px;
+            font-weight: bold;
+            max-width:70%;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            float:left;
+        }
+        .collicon{
+            float:right;
+            width:70px;
+            text-align:center;
+            padding: 6px 10px 0 10px;
+            height:100%;
+            .icon{
+                display:block;
+                color: @starColor;
+                font-size: 32px;
+                line-height: 45px;
+            }
+            .text{
+                display:block;
+                color:#888;
+                font-size: 18px;
+                line-height:30px;
+            }
+        }
+    }
+    .detail{
+        border-bottom:1px solid @listLineColor;
+        min-height: 20px;
+        padding: 30px;
+        .item{
+            float:left;
+            color:#333;
+            font-size: 23px;
+            position:relative;
+            width: 33.33%;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            margin-bottom:25px;
+            &:nth-child(3n) {
+	            text-align:right;
+            }
+            &:nth-child(3n-1) {
+	            text-align:center;
+            }
+            i.fa{
+                color: @mainTextColor;
+                margin-right: 10px;
+            }
+        }
+        .temptation{
+            color:#888;
+            word-break:break-all;
+            font-size: 26px;
+        }
+    }
+     .company {
+        border-bottom:1px solid @listLineColor;
+        min-height:20px;
+        padding:30px;
+        padding-left: 130px;
+        &:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        .logo{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-left: -100px;
+        }
+        .desc{
+            width: 100%;
+            margin-left: 25px;
+            min-height: 20px;
+            .title{
+                color: @mainTextColor;
+                font-size: 35px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-bottom: 10px;
+            }
+            .info{
+                color: #888;
+                font-size: 24px;
+            }
+        }
+     }
+     .positiondesc{
+         .title{
+            height: 72px;
+            line-height: 72px;
+            padding-left: 30px;
+            color: @mainTextColor;
+            font-size: 28px;
+            background-color: @titleBgColor;
+         }
+         .content{
+            word-break: break-all;
+            padding: 30px;
+            color: #555;
+            font-size: 24px;
+            line-height: 45px;
+         }
+     }
+}
+.jobs-delivery{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-color: @mainTextColor;
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    text-align: center;
+}

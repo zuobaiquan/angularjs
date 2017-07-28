@@ -1,0 +1,15 @@
+<div class="login-wrap">
+    <div class="login-container">
+        <form name="form">
+            <div class="input-wrapper">
+                <input class="username" type="text" name="phone" placeholder="请输入手机号" ng-model="user.phone" validator="required,phone">
+            </div>
+            <div class="input-wrapper">
+                <input class="password" type="password" name="password" placeholder="请输入密码" ng-model="user.password" validator="required,password">
+            </div>
+            <input type="submit" class="submit-btn" value="登录" validation-submit="form" ng-click="submit()">
+        </form>
+        <div class="regist-text">还没账号？</div>
+        <button class="regist-btn" ui-sref="register">注册</button>
+    </div>
+</div>
