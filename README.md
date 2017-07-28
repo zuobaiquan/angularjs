@@ -4,11 +4,9 @@ date: 2017-05-09 11:01:49
 tags: AngularJS
 ---
 
-入门例子
+[入门例子](http://zuobaiquan.github.io/angularjs/angularJS%20%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%BB%83%E4%B9%A0/index.html)
 
-http://zuobaiquan.github.io/angularjs/angularJS%20%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%BB%83%E4%B9%A0/index.html
-
-自定义指令（多选日历）http://zuobaiquan.github.io/angularjs/angularjs%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4directive/%E6%97%A5%E5%8E%86%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/index.html
+[自定义指令（多选日历）](http://zuobaiquan.github.io/angularjs/angularjs%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4directive/%E6%97%A5%E5%8E%86%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/index.html)
 
 ## 1.angular.bind(self, fn, args)
 
