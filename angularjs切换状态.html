@@ -15,6 +15,7 @@
 	angular.module("myApp",[])
 	.controller('firstController', function($scope){
 		$scope.status=false;
+		
 		$scope.changeStatus=function(event){
 			$scope.status=!$scope.status;
 			angular.element(event.target).html("当前状态"+$scope.status);
