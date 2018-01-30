@@ -1,0 +1,77 @@
+<div class="modal-content" style="margin-top:1%;">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">收藏统计详情</h4>
+    </div>
+    <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll">
+            <div class="row">
+              <label class="control-label" style="float:left;height:34px;line-height:34px;">收藏时间</label>
+                <div class="dropdown col-sm-4">
+                    <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#">
+                        <div class="input-group">
+                            <input autocomplete="off" id="inputtime" placeholder="开始时间" type="text" class="form-control" ng-model="smartTable.start">
+                            <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker ng-model="smartTable.start" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',modelType:'YYYY-MM-DD',minView:'day'}" ></datetimepicker>
+                    </ul>
+                </div>
+                <div class="dropdown col-sm-4">
+                    <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#">
+                        <div class="input-group">
+                            <input autocomplete="off" id="inputtime2" placeholder="结束时间" type="text" class="form-control" ng-model="smartTable.end">
+                            <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker ng-model="smartTable.end" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',modelType:'YYYY-MM-DD',minView:'day'}" ></datetimepicker>
+                    </ul>
+                </div>
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-primary" ng-click="getList(tableState)">搜索</button>&nbsp;<button type="button" class="btn btn-primary" ng-click="removeContent()">清除</button>
+                </div>
+            </div>
+            <br /><br />
+            <div class="table-contain">
+                <table class="table table-bordered table-hover table-buttonborder-none" st-table="tableData" st-pipe="getList">
+                    <thead>
+                    <tr class="active">
+                        <th>序号</th>
+                        <th>用户昵称</th>
+                        <th>收藏时间</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-show="!isLoading">
+                    <tr ng-repeat="item in tableData track by $index" class="table-tr">
+                        <td>{{$index+itemFrom}}</td>
+                        <td>{{item.nickname }}</td>
+                        <td>{{item.createTime }}</td>
+                    </tr>
+                    </tbody>
+                    <tbody ng-show="isLoading">
+                    <tr>
+                        <td colspan="12" class="text-center">Loading ... </td>
+                    </tr>
+                    </tbody>
+                    <br  />
+                    <tfoot class="table-ajax-tfoot" style="margin-top:40px;">
+                    <tr>
+                        <td colspan="12" class="text-right">
+                            <div st-displayed-pages="3" st-pagination=""  st-items-by-page="smartTable.pageSize" st-template="app/pages/modal/page.html"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="table-tbody-con">
+                显示第{{itemFrom}}条-第{{itemTo}}条记录 总计{{datasTotalNum}}条记录
+            </div>
+        </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">请选择删除的原因</h4>
+    </div>
+    <form name="myForm" class="form-horizontal" id="testform" method="post">
+        <div class="col-sm-10">
+            <label class="radio-inline custom-radio nowrap">
+                <input type="radio" value="1" ng-checked="true" ng-click="isShowcg(1)" name="inlineRadioOptions">
+                <span>淫秽色情内容</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+                <input type="radio" value="2" ng-click="isShowcg(2)" name="inlineRadioOptions">
+                <span>非法广告内容</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+                <input type="radio" value="3" ng-click="isShowcg(3)" name="inlineRadioOptions">
+                <span>反社会反和谐内容</span>
+            </label>
+        </div>
+    </form>
+    <br />
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="delComment()">确定</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

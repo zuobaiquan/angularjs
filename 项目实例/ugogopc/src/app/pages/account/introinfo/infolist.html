@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll" ng-init="getList()">
+            <!-- <h3 class="teacher_title">{{infotitle}}</h3>
+            <div ng-if="showexport&&!showisadd" class="box_item">
+                <img class="boxitem_img" ng-src="{{tableData.expertPerson.avatar}}" />
+                <h5 title="{{tableData.expertPerson.realName}}">{{tableData.expertPerson.realName | removeWord:15 }}</h5>
+                <a class="btn btn-primary" ui-sref="account.introinfo-editshopex({item:tableData})">编辑</a>
+            </div>
+            <div ng-if="showisadd">
+                <div class="box_item" style="text-align: center" ng-click="goToaddpage(tableData)">
+                    <img style="margin: 79px 0;" src="./assets/img/u1170.png" alt="" width="100" height="100">
+                </div>
+            </div>
+            <div ng-if="showshop&&!showisadd" class="box_item">
+                <img class="boxitem_img" ng-src="{{tableData.shop.avatar}}" />
+                <h5 title="{{tableData.shop.shopName}}">{{tableData.shop.shopName}}</h5>
+                <a class="btn btn-primary" ui-sref="account.introinfo-editshopex({item:tableData})">编辑</a>
+            </div> -->
+            <h3 class="teacher_title teacher_spe">达人介绍</h3>
+            <div class="teacher_item">
+                <div class="box_item" ng-repeat="item in tableData.teacherIntroList">
+                    <img class="boxitem_img" ng-src="{{item.avatar}}" />
+                    <h5 title="{{item.name}}">{{item.name | removeWord:15 }}</h5>
+                    <button class="btn btn-default btn-spe" ng-click="deleteTeacher(item.id)">删除</button>
+                    <a class="btn btn-primary" ui-sref="account.introinfo-edit({item:tableData.teacherIntroList[$index]})">编辑</a>
+                </div>
+            </div>
+            <div class="teacher_item">
+                <div class="box_item" style="text-align: center" ng-click="goToteacherpage()">
+                    <img style="margin: 79px 0;" src="./assets/img/u1170.png" alt="" width="100" height="100">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

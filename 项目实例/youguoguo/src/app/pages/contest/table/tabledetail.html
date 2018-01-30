@@ -1,0 +1,31 @@
+<div class="modal-content" ng-init="init()">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">{{modal.title}}</h4>
+    </div>
+    <form name="myForm" class="form-horizontal" style="max-height:420px;overflow:auto;">
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">体验名称</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{tableData.name}}</label>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">联系方式</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{tableData.contactPhone}}</label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">体验简介</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{tableData.info}}</label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">备注</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{tableData.remark}}</label>
+        </div>
+        <div class="modal-footer" style="text-align: center">
+            <button style="margin-left: 30%" type="button" class="btn btn-primary" ng-click="getTableNum(tableData.lastId,-1)">上一个</button>
+            <button type="button" class="btn btn-primary" ng-click="getTableNum(tableData.nextId,1)">下一个</button>
+        </div>
+
+</div>

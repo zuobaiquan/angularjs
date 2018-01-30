@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll">
+            <div class="form-horizontal" name="myForm">
+                <div class="form-group">
+                    <label for="inputname" class="col-sm-2 control-label">推送主题：</label>
+                    <div class="col-sm-8">
+                        <input autocomplete="off" type="text" maxlength="15" class="form-control" id="inputname" placeholder="推送主题限制15字以内" ng-model="sysPushRequest.title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">推送对象：</label>
+                    <div class="col-sm-5">
+                        <div class="col-md-3">
+                            <label class="checkbox-inline custom-checkbox nowrap">
+                                <input type="checkbox" value="1" ng-model="item1" ng-change="isShowcg(item1,1)">
+                                <span>商户端</span>
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="checkbox-inline custom-checkbox nowrap">
+                                <input type="checkbox" value="2" ng-model="item2" ng-change="isShowcg(item2,2)">
+                                <span>用户端</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label class="col-sm-2 control-label">推送图片：</label>
+                    <div class="col-sm-8">
+                        <image-upload
+                                init="vm.init()"
+                                data-token="vm.token"
+                                data-key="vm.key.value"
+                                data-link="vm.link"
+                                file-id="logo1"
+                                src="./assets/img/image-425232.png"
+                                data-height="96"
+                                data-result="sysPushRequest.picture"
+                                data-width="160"
+                                data-max-size="300"
+                                data-top="190"
+                                data-tops="210"
+                                data-progress="vm.progress"
+                        ></image-upload>
+                    </div>
+                </div> -->
+                <div  class="row">
+                    <label class="col-sm-2 control-label">推送内容：</label>
+                    <div class="col-lg-8 col-md-8" ng-controller="RichTextCtrl">
+                        <div style="border-top: 1px solid #ddd;">
+                            <summernote
+                                height="300" config="options"
+                                lang="zh-CN"
+                                on-image-upload="imageUpload(files)"
+                                on-init="init()"
+                                editor="editor"
+                                ng-model = "sysPushRequest.pushContext"
+                            ></summernote>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <button type="button" class="btn btn-primary" ng-click="submit()" ng-disabled="disable">保存</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" ng-click="confirm('marketing.notice')">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>

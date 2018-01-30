@@ -1,0 +1,72 @@
+<div class="modal-content">
+ <div class="modal-header">
+  <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+   <em class="ion-ios-close-empty sn-link-close"></em>
+  </button>
+  <h4 class="modal-title">{{modal.title}}</h4>
+ </div>
+ <form name="myForm" class="form-horizontal" style="max-height:420px;overflow:auto;">
+  <div class="form-group" ng-class="{'has-error':myForm.name.$dirty&&myForm.name.$invalid}">
+   <label for="inputtitle" class="col-sm-3 control-label">城市名称：</label>
+   <div class="col-sm-8">
+    <input type="text" readonly="true" style="cursor: pointer" autocomplete="off" ng-click="selCity()" name="name" ng-maxlength=50 ng-required="true" class="form-control"
+           id="inputtitle" placeholder="请选择城市名称" ng-model="modal.params.cityName" >
+   </div>
+   <label class="col-sm-3 control-label"></label>
+   <div class="col-sm-8">
+    <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.name.$dirty&&myForm.name.$error.required">城市名称不能为空</div>
+   </div>
+   <label class="col-sm-3 control-label"></label>
+   <div class="col-sm-8" id="showCityname" style="display: none">
+       <ul id="data-order">
+           <li value='hot' ng-click="selValue('hot')">热门</li>
+           <li value='ABCD' ng-click="selValue('ABCD')">ABCD</li>
+           <li value='EFGH' ng-click="selValue('EFGH')">EFGH</li>
+           <li value='JKLM' ng-click="selValue('JKLM')">JKLM</li>
+           <li value='NPQR' ng-click="selValue('NPQR')">NPQR</li>
+           <li value='STWX' ng-click="selValue('STWX')">STWX</li>
+           <li value='YZ' ng-click="selValue('YZ')">YZ</li>
+       </ul>
+       <div ng-if="!isHot" class="showcity" ng-repeat="item in allcityList">
+           <div class="itemlist-con">
+               <p class="item-name">{{allcityList[$index][0].name}}</p>
+               <ul>
+                   <li ng-repeat="itemname in allcityList[$index][0].citys">
+                       <span ng-click="selItemname(itemname)">{{itemname}}</span>
+                   </li>
+               </ul>
+           </div>
+       </div>
+       <div ng-if="isHot" class="showcity" ng-repeat="item in allcityList">
+           <div class="itemlist-con">
+               <p class="item-name">{{item.name}}</p>
+               <ul>
+                   <li ng-click="selItemname(itemname)" ng-repeat="itemname in item.citys">{{itemname}}</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+  </div>
+
+ <div class="form-group" ng-class="{'has-error':myForm.sort.$dirty&&myForm.sort.$invalid}">
+     <label for="inputidx" class="col-sm-3 control-label">顺序：</label>
+     <div class="col-sm-8">
+         <input autocomplete="off" type="text" maxlength="10" name="sort" ng-pattern="/^\d+$/" ng-required="true" class="form-control" id="inputidx" placeholder="点击输入数字" ng-model="modal.params.sort">
+     </div>
+     <label class="col-sm-3 control-label"></label>
+     <div class="col-sm-8">
+         <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.sort.$dirty&&myForm.sort.$error.required" style="padding:10px;">顺序不能为空</div>
+     </div>
+     <label class="col-sm-3 control-label"></label>
+     <div class="col-sm-8">
+         <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.sort.$dirty&&myForm.sort.$error.pattern" style="padding:10px;">顺序格式不正确</div>
+     </div>
+ </div>
+
+
+ </form>
+ <div class="modal-footer">
+  <button type="button" ng-disabled="disable||myForm.$invalid" class="btn btn-primary" ng-click="submit()">保存</button>
+  <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+ </div>
+</div>

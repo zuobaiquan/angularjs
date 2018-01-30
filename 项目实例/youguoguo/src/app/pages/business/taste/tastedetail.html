@@ -1,0 +1,155 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">体验项目审核</h4>
+    </div>
+    <form name="myForm" class="form-horizontal" ng-init="getInfo()" style="max-height:420px;overflow:auto;">
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验名称</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label" ng-bind="tasteInfo.name"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验类别</label>
+            <label style="text-align: left;margin-left:5px;border:1px solid #0066FF;text-align:center;border-radius: 5px;" class="col-sm-2 control-label" ng-repeat="item in tasteInfo.projectTypeList">{{item.name}}</label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验价格</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">¥{{tasteInfo.price}}/人</label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验时长</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label" ng-bind="tasteInfo.duration"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">人数上限</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">
+			{{tasteInfo.maxNum==-1?"不限":tasteInfo.maxNum}}
+			</label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>可预订日期</label>
+            <div ng-show="tasteInfo.type==1" class="col-sm-8" style="text-align: left;font-weight:bolder;height:auto;word-break:break-all;"
+                  >
+                  <span ng-repeat="timedate in tasteInfo.projectDateList" style="margin-right:10px;line-height:30px;"  ng-bind="timedate.reserveDate | date:'yyyy年MM月dd日'"></span>
+            </div>
+			<label ng-show="tasteInfo.type!=1" style="text-align: left;font-weight:bolder;">
+                &nbsp;&nbsp;&nbsp;{{typeText(tasteInfo.type)}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>可预订时段设置</label>
+            <table class="table" style="width: 60%;">
+                <tr>
+                    <td>名称</td>
+                    <td>开始时间</td>
+                    <td>结束时间</td>
+                </tr>
+                <tr ng-repeat="item in tasteInfo.projectTimeFrameList">
+                    <td>时段{{$index+1}}</td>
+                    <td>{{timeSubstring(0,5,item.timeFrame)}}</td>
+                    <td>{{timeSubstring(9,14,item.timeFrame)}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验地址</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label" ng-bind="tasteInfo.address"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label left-label"><span style="color:red">*</span>上传平面海报短视频</label>
+        </div>
+        <div class="form-group" style="margin:0 auto;width: 84%;">
+            <div ng-repeat="item in tasteInfo.url track by $index" >
+                <div ng-if="getFiletype(item)==1">
+                    <img style="margin-bottom:5px;max-width: 500px;max-height:400px;" src="{{item}}" alt="">
+                </div>
+                <div ng-if="getFiletype(item)==2">
+                    <video style="margin-bottom:5px;max-width: 500px;max-height:400px;"  controls="controls">
+                        <source src="{{item}}">你的浏览器不支持视频播放，请更换主流浏览器</video>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>体验简介</label>
+            <div style="text-align: left;font-weight:bolder;height:auto;word-break:break-all;" class="col-sm-8 control-label">{{tasteInfo.projectIntro}}</div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>包含服务</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label" ng-bind="tasteInfo.projectService"></label>
+        </div>
+        <div class="form-group" style="margin: 0;">
+            <label class="col-sm-3 control-label" style="text-align:left;margin-left:3%;"><span style="color:red">*</span>体验流程</label>
+        </div>
+        <div ng-repeat="item in tasteInfo.projectFlowList track by $index" class="form-group" style="margin:0 auto;width: 84%;margin-bottom: 12px;">
+            <label style="font-weight:bolder" class="col-sm-2 control-label">第{{$index+1}}步</label>
+            <label style="text-align: left;font-weight:bolder" class="col-sm-9 control-label">{{item.stepIntro}}</label>
+            <div ng-repeat="picitem in item.stepPhotoList" >
+                <div ng-if="getFiletype(picitem)==1">
+                    <img style="margin-bottom:5px;max-width: 500px;max-height:400px;" src="{{picitem}}" alt="">
+                </div>
+                <div ng-if="getFiletype(picitem)==2">
+                    <video style="margin-bottom:5px;max-width: 500px;max-height:400px;"  controls="controls">
+                        <source src="{{picitem}}">你的浏览器不支持视频播放，请更换主流浏览器</video>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label"><span style="color:red">*</span>预订须知</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label" ng-bind="tasteInfo.projectNotice"></label>
+        </div>
+        <div class="form-group">
+            <!-- <label ng-show="exdata" class="col-sm-3 control-label left-label">达人介绍</label> -->
+            <label ng-show="showTeacher" class="col-sm-3 control-label left-label">达人介绍</label>
+            <label ng-show="shopdata" class="col-sm-3 control-label left-label">店家介绍</label>
+        </div>
+        <!-- <div class="form-group" ng-show="exdata"> -->
+        <div class="form-group" ng-show="showTeacher">
+            <div style="width:180px;margin:0 auto;">
+                <img style="display: block;border-radius: 50%;width: 180px;height: 180px;" ng-src="{{teacherIntro.avatar}}" alt="">
+                <div style="text-align: center;">
+                    <label class="control-label" title="{{teacherIntro.realName}}">{{teacherIntro.realName | removeWord:14 }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-show="shopdata">
+            <div style="width:180px;margin:0 auto;">
+                <img style="display: block;border-radius: 50%;width: 180px;height: 180px;" ng-src="{{shopinfo.avatar}}" alt="">
+                <div style="text-align: center;">
+                    <label class="control-label" title="{{shopinfo.shopName}}">{{shopinfo.shopName}}</label>
+                </div>
+                <div style="text-align: center;">
+                    <label class="control-label" title="{{shopinfo.shopIntroduce}}">{{shopinfo.shopIntroduce | removeWord:14 }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label ng-show="showTeacher" class="col-sm-3 control-label left-label">老师介绍</label>
+        </div>
+        <div class="form-group" ng-show="showTeacher">
+            <div style="width:180px;margin:0 auto;">
+                <img style="display: block;border-radius: 50%;width: 180px;height: 180px;" ng-src="{{teacherIntro.avatar}}" alt="">
+                <div style="text-align: center;">
+                    <label class="control-label" title="{{teacherIntro.name}}">{{teacherIntro.name}}</label>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <label class="control-label" ng-bind-html="teacherIntro.intro | to_trusted"></label>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <label class="col-sm-3 control-label left-label">发布者信息</label><br /><br /><br />
+            <label class="col-sm-3 control-label">姓名</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-9 control-label" ng-bind="tasteInfo.account.realName"></label>
+            <label class="col-sm-3 control-label">手机号码</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-9 control-label" ng-bind="tasteInfo.account.phone"></label>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" ng-show="tasteInfo.status==0" class="btn btn-primary" ng-click="passTaste(tasteInfo.id)">通过</button>
+        <button type="button" ng-show="tasteInfo.status==0" class="btn btn-primary" ng-click="refuseTaste(tasteInfo.id)">驳回</button>
+    </div>
+</div>

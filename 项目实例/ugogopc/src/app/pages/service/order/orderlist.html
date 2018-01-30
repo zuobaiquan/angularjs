@@ -1,0 +1,14 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+    <uib-tab heading="待确认" ng-click="changetab(1)" >
+        <div ng-include="'app/pages/service/order/template.html'"></div>
+    </uib-tab>
+    <uib-tab heading="接待中" ng-click="changetab(2)">
+        <div ng-include="'app/pages/service/order/template.html'"></div>
+    </uib-tab>
+    <uib-tab heading="已结束" ng-click="changetab(3)">
+        <div ng-include="'app/pages/service/order/template.html'"></div>
+    </uib-tab>
+    <uib-tab heading="退款管理" ng-click="changetab(4)">
+        <div ng-include="'app/pages/service/order/template.html'"></div>
+    </uib-tab>
+</uib-tabset>

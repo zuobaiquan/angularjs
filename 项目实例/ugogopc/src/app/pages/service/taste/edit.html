@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-12 flow-step">
+      <ul class="step-list">
+        <li class="{{showStep1?'current-step':''}}">01基础信息</li>
+        <li class="{{showStep2?'current-step':''}}">02海报与流程</li>
+        <li class="{{showStep3?'current-step':''}}">03服务详情</li>
+      </ul>
+    </div>
+    <div ng-if="operate=='edit'" ng-init="getInfo()"></div>
+    <div ng-if="operate=='add'" ng-init="getallAdddata()"></div>
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll">
+          <form class="form-horizontal" name="myForm">
+            <div ng-include="'app/pages/service/taste/stepfirst.html'"></div>
+            <div ng-include="'app/pages/service/taste/stepsecond.html'"></div>
+            <div ng-include="'app/pages/service/taste/stepthird.html'"></div>
+          </form>
+      </div> 
+    </div>
+  </div>

@@ -1,0 +1,122 @@
+<div class="baseinfo-box3" ng-show="showStep3">
+  <div class="base-info01">
+    <div class="form-group" ng-class="{'has-error':myForm.projectintro.$dirty&&myForm.projectintro.$invalid}">
+       <label class="col-sm-12 control-label left-titile"><span style="color:red;">*</span>体验简介</label>
+       <div style="margin-left:4%;">
+         <div class="col-sm-12" style="padding:0;">
+           <textarea-input data-len=1000 required="true" data-name="projectintro" data-col="col-sm-10" data-placeholder="不少于20字" text-input="projectRequest.projectIntro"></textarea-input>
+         </div>
+         <label class="col-sm-11 control-label label-tips" ng-show="myForm.projectintro.$dirty&&myForm.projectintro.$error.required">*体验简介不能为空</label>
+         <label class="col-sm-11 control-label label-tips" ng-show="textInputcount(projectRequest.projectIntro,20)">*体验简介至少20个字</label>
+       </div>
+     </div>
+   </div>
+   <div class="base-info02 base-container">
+     <div class="form-group title-margin project-line">
+        <label class="col-sm-12 control-label left-titile" style="padding: 0;"><span style="color:red;">*</span>包含服务：</label>
+        <div class="col-sm-12 projectnoticeInput" ng-repeat="itemservice in projectService track by $index">
+           <label style="margin:0 10px;float:left;margin-right:0;">{{$index+1}}.</label>
+           <div class="col-sm-11" style="padding:0;">
+             <textarea-input data-len=100 required="true" data-name="itemservice" data-col="col-sm-11" data-placeholder="100字以内" text-input="itemservice.service"></textarea-input>
+             <!-- <input autocomplete="off" placeholder="100字以内" ng-required="true" maxlength=100 type="text" class="form-control" ng-model="itemservice.service"> -->
+             <img ng-hide="projectService.length==1" ng-click="deleteItem($index,projectService)" class="delete-imgbtn"  src="./assets/img/deletebtn.png" alt="">
+           </div>
+        </div>
+      </div>
+      <div style="text-align:center;color:#ff3939;padding-bottom:20px;">
+          <label style="cursor:pointer" ng-click="addServiceMore()">继续添加</label>
+      </div>
+    </div>
+
+    <div class="base-info02 base-container">
+      <div class="form-group title-margin project-line">
+         <label class="col-sm-12 control-label left-titile" style="padding: 0;"><span style="color:red;">*</span>预订须知：</label>
+         <div class="col-sm-12 projectnoticeInput" ng-repeat="itemnotice in projectNotice track by $index">
+           <label style="margin:0 10px;float:left;margin-right:0;">{{$index+1}}.</label>
+           <div class="col-sm-11" style="padding:0;">
+              <textarea-input data-len=100 required="true" data-name="itemnotice" data-col="col-sm-11" data-placeholder="100字以内" text-input="itemnotice.notice"></textarea-input>
+              <!-- <input autocomplete="off" placeholder="100字以内" ng-required="true" maxlength=100 type="text" class="form-control" ng-model="itemnotice.notice"> -->
+              <img ng-hide="projectNotice.length==1"  ng-click="deleteItem($index,projectNotice)" class="delete-imgbtn"  src="./assets/img/deletebtn.png" alt="">
+            </div>
+
+         </div>
+       </div>
+       <div style="text-align:center;color:#ff3939;padding-bottom:20px;">
+           <label style="cursor:pointer" ng-click="addNoticeMore()">继续添加</label>
+       </div>
+     </div>
+
+     <div class="base-info03">
+       <!-- <div class="form-group">
+           <label class="col-sm-12 control-label left-titile2">介绍（非必填）：</label>
+           <label class="col-sm-12 control-label left-titile3" >请选择下面需要的介绍资料（每类最多选择一个）</label>
+       </div>
+       <div ng-if="isexpOrshop" class="form-group">
+           <label class="col-sm-2 control-label left-titile">A.达人介绍</label>
+       </div>
+       <div ng-if="!isexpOrshop" class="form-group">
+           <label class="col-sm-2 control-label left-titile">A.店家介绍</label>
+       </div>
+       <div class="form-group">
+           <label class="col-sm-2 control-label"></label>
+           <div class="col-sm-10">
+              <div class="tea_itembox">
+                  <div ng-if="isexpOrshop" class="item_boreder">
+                     <img class="tea_itemimg" ng-src="{{alladddatalist.expertPerson.avatar}}" />
+                     <h5 title="{{alladddatalist.expertPerson.realName}}">{{alladddatalist.expertPerson.realName | removeWord:10 }}</h5>
+                  </div>
+                  <div ng-if="!isexpOrshop" class="item_boreder">
+                      <img class="tea_itemimg" ng-src="{{alladddatalist.shop.avatar}}" />
+                      <h5 title="{{alladddatalist.shop.name}}">{{alladddatalist.shop.name | removeWord:10  }}</h5>
+                  </div>
+                  <div class="tea_radio">
+                     <label class="radio-inline custom-radio nowrap" ng-init="exportcheck=false;shopcheck=false;">
+                         <input ng-if="!isexpOrshop" type="radio" ng-checked="shopcheck" ng-click="shopcheck=!shopcheck;shopexportCg(alladddatalist.shop.id,shopcheck,1)" name="inlineRadioOptions1">
+                         <input ng-if="isexpOrshop" type="radio" ng-checked="exportcheck" ng-click="exportcheck=!exportcheck;shopexportCg(alladddatalist.expertPerson.id,exportcheck,2)" name="inlineRadioOptions1">
+                         <span></span>
+                     </label>
+                  </div>
+              </div>
+           </div>
+         </div> -->
+       <div class="form-group" ng-show="alladddatalist.teacherIntroList.length!=0">
+           <label class="col-sm-2 control-label left-titile">达人介绍</label>
+       </div>
+       <div class="form-group">
+           <label class="col-sm-2 control-label"></label>
+           <div class="col-sm-10">
+               <div class="tea_itembox" ng-repeat="item in alladddatalist.teacherIntroList">
+                   <div class="item_boreder">
+                       <img class="tea_itemimg" ng-src="{{item.avatar}}" />
+                       <h5 title="{{item.name}}">{{item.name | removeWord:10 }}</h5>
+                   </div>
+                   <div class="tea_radio">
+                       <label class="radio-inline custom-radio nowrap">
+                           <input type="radio" ng-click="items[$index].ischeck=!items[$index].ischeck;teacherCg(items,$index,item.id)" ng-checked="items[$index].ischeck"  name="inlineRadioOptions2">
+                           <span></span>
+                       </label>
+                   </div>
+               </div>
+           </div>
+       </div>
+     </div>
+     <div class="form-group next-step">
+        <a ng-click="submit()" class="next-stepbtn">发布</a>
+        <a ng-click="nextStep1()" class="next-stepbtn nextstep-cancel">上一步</a>
+     </div>
+</div>
+
+<div ng-show="!vm.res&&vm.progress!=0" class="mask">
+   <div class="loader">
+     <div class="loader-inner ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+   </div>
+ </div>

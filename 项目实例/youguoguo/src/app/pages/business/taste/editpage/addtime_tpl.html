@@ -1,0 +1,55 @@
+<div class="modal-content" ng-init = "init()">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">可预订时段设置</h4>
+        <hr style="margin-bottom:0">
+    </div>
+    <form name="myForm" class="form-horizontal">
+        <div class="modal-body" style="margin:0 auto;text-align: center;height:auto">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">开始时间</label>
+                <div class="col-sm-7" ng-init="showhour1=true;showsecond1=false;showstarttime1=false;showendtime1=false;showstarttimedis=true;showendtimedis=true">
+                    <input type="text" readonly="true" ng-click="showstarttime1=!showstarttime1" class="form-control" ng-model="time.startTime">
+                    <div ng-show="showstarttime1&&showstarttimedis">
+                      <ul class="addtime-type">
+                        <li ng-click="showhour1=true;showsecond1=false;">小时</li>
+                        <li ng-click="showhour1=false;showsecond1=true;">分钟</li>
+                        <li ng-click="showstarttime1=false;">收起</li>
+                      </ul>
+                      <ul class="addtime-tpl" ng-show="showhour1">
+                        <li ng-repeat="itemhour in hourData" ng-click="seltimeHour(itemhour,1)">{{itemhour}}</li>
+                      </ul>
+                      <ul class="addtime-tpl" ng-show="showsecond1">
+                        <li ng-repeat="itemsecond in secondData" ng-click="seltimeSecond(itemsecond,1)">{{itemsecond}}</li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">结束时间</label>
+                <div class="col-sm-7" ng-init="showhour2=true;showsecond2=false;showstarttime2=false;showendtime2=false;">
+                    <input type="text" readonly="true" ng-click="showendtime2=!showendtime2" class="form-control" ng-model="time.endTime">
+                    <div ng-show="showendtime2&&showendtimedis">
+                      <ul class="addtime-type">
+                        <li ng-click="showhour2=true;showsecond2=false;">小时</li>
+                        <li ng-click="showhour2=false;showsecond2=true;">分钟</li>
+                        <li ng-click="showendtime2=false;">收起</li>
+                      </ul>
+                      <ul class="addtime-tpl" ng-show="showhour2">
+                        <li ng-repeat="itemhour in hourData" ng-click="seltimeHour(itemhour,2)">{{itemhour}}</li>
+                      </ul>
+                      <ul class="addtime-tpl" ng-show="showsecond2">
+                        <li ng-repeat="itemsecond in secondData" ng-click="seltimeSecond(itemsecond,2)">{{itemsecond}}</li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="submit()" ng-disabled="myForm.$invalid">保存</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

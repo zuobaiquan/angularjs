@@ -1,0 +1,26 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">撤销备注</h4>
+    </div>
+    <form name="myForm" class="form-horizontal" id="testform" method="post" enctype="multipart/form-data">
+        <div class="form-group" ng-class="{'has-error':myForm.explain.$dirty&&myForm.explain.$invalid}">
+            <div class="col-sm-12">
+                <textarea-input data-len=250 data-name="explain" data-col="col-sm-12" data-placeholder="" text-input="modal.params.explain"></textarea-input>
+            </div>
+            <div class="col-sm-12">
+                <label class="col-sm-2"></label>
+                <div  class="col-sm-10" style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.explain.$dirty&&myForm.explain.$error.required">备注不能为空</div>
+            </div>
+        </div>
+        <div class="form-group" style="color:red;margin: 0 20px;">
+          注：撤销退款视为交易完成，资金会立即转到达人账户，请和双方确认后再进行此操作；
+        </div>
+    </form>
+    <div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+        <button type="button" ng-disabled="myForm.$invalid||modal.params.explain==''" class="btn btn-primary" ng-click="submit()">提交</button>  
+    </div>
+</div>

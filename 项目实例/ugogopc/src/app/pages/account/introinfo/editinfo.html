@@ -1,0 +1,64 @@
+<div class="row" >
+    <div class="col-md-12" style="padding-top:30px;">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll" ng-init="getallAdddata()">
+            <div class="form-horizontal" name="myForm">
+                <div class="form-group account-con">
+                    <label class="col-sm-2 control-label"><span style="color:red;">*</span>头像</label>
+                    <div class="col-sm-2">
+                        <image-upload
+                            init="vm.init()"
+                            data-token="vm.token"
+                            data-key="vm.key.value"
+                            data-link="vm.link"
+                            file-id="avator"
+                            src="./assets/img/image-180.png"
+                            data-height="180"
+                            data-result="teacherIntro.avatar"
+                            data-width="180"
+                            data-max-size="300"
+                            data-top="280"
+                            data-tops="210"
+                            data-res="vm.res"
+                            data-filetype="png,jpg,bmp"
+                            data-progress="vm.progress"
+                        ></image-upload>
+                    </div>
+                    <label class="col-sm-4">
+                        上传的头像会自动生成头像缩略图，支持JPG、GIF、PNG等图片格式 推荐尺寸：180*180像素
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="inputname" class="col-sm-2 control-label">
+                        <span style="color:red;">*</span>名称</label>
+                    <div class="col-sm-4">
+                        <input autocomplete="off" type="text" class="form-control" maxlength="50" id="inputname" placeholder="" ng-model="teacherIntro.name">
+                    </div>
+                </div>
+                <div  class="row">
+                    <label class="col-sm-2 control-label"><span style="color:red;">*</span>简介</label>
+                    <div class="col-sm-10" style="padding:0;margin-bottom:10px;">
+                      <textarea-input data-len=500 required="true" data-name="projectintro" data-col="col-sm-10" data-placeholder="不超过500字" text-input="teacherIntro.intro"></textarea-input>
+                    </div>
+                    <!-- <div class="col-lg-8 col-md-8" ng-controller="RichTextCtrl">
+                        <div ba-panel style="border-top: 1px solid #ddd;" ba-panel-class="with-scroll" ba-panel-zoom-in="true">
+                            <summernote
+                                height="200"
+                                config="options"
+                                lang="zh-CN"
+                                on-image-upload="imageUpload(files)"
+                                on-init="init()"
+                                editor="editor"
+                                ng-model = "teacherIntro.intro"
+                            ></summernote>
+                        </div>
+                    </div> -->
+                </div>
+                </form>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <button type="button" class="btn btn-primary" ng-click="submitInfo()" ng-disabled="disable">保存</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" ng-click="confirm('account.introinfo')">取消管理</button>
+                </div>
+            </div>
+        </div>
+    </div>

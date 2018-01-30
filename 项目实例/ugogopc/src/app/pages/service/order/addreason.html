@@ -1,0 +1,25 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">{{modal.title}}</h4>
+    </div>
+    <form class="form-horizontal" id="testform" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label ng-repeat="item in rangeServicelist"
+                       ng-click="changeStyle(item.id,item.typeName,item.ischoose)"
+                    style="text-align:center;width: 15%;margin-left:14px;border-radius: 5px;border:1px solid #ddd;"
+                    id="{{item.id}}">{{item.typeName}}</label>
+            </div>
+            <div class="col-sm-12">
+                <textarea-input data-len=250 data-name="description" data-col="col-sm-12" data-placeholder="其他原因" text-input="reasoninput"></textarea-input>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="submit()">提交</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

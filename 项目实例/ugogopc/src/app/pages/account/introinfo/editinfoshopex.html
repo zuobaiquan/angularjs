@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-12" style="padding-top:30px;">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll" ng-init="getallAdddata()">
+            <div class="form-horizontal" name="myForm">
+                <div class="form-group account-con">
+                    <label class="col-sm-2 control-label"><span style="color:red;">*</span>头像</label>
+                    <div class="col-sm-2">
+                        <image-upload
+                            init="vm.init()"
+                            data-token="vm.token"
+                            data-key="vm.key.value"
+                            data-link="vm.link"
+                            file-id="avator"
+                            data-height="180"
+                            data-result="introinfo.avatar"
+                            data-width="180"
+                            data-max-size="300"
+                            data-top="280"
+                            data-tops="210"
+                            data-res="vm.res"
+                            data-filetype="png,jpg,bmp"
+                            data-progress="vm.progress"
+                        ></image-upload>
+                    </div>
+                    <label class="col-sm-4">
+                        上传的头像会自动生成头像缩略图，支持JPG、GIF、PNG等图片格式 推荐尺寸：180*180像素
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="inputname" class="col-sm-2 control-label">
+                        <span style="color:red;">*</span>名称</label>
+                    <div class="col-sm-4">
+                        <input autocomplete="off" type="text" class="form-control" id="inputname" placeholder="" ng-model="introinfo.name">
+                    </div>
+                </div>
+                <div  class="row">
+                    <label class="col-sm-2 control-label"><span style="color:red;">*</span>简介</label>
+                    <div class="col-lg-8 col-md-8">
+                        <textarea class="form-control" ng-model="introinfo.intro"></textarea>
+                    </div>
+                </div>
+                <br /><br />
+                </form>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <button type="button" class="btn btn-primary" ng-click="submitshopex()" ng-disabled="disable">保存</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" ng-click="confirm('account.introinfo')">取消管理</button>
+                </div>
+            </div>
+        </div>
+    </div>

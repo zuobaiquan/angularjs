@@ -1,0 +1,16 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">查看已选日期</h4>
+    </div>
+    <div class="modal-body">
+       <div class="" ng-repeat="item in reserveTimelist track by $index">
+           <p>{{item.month}}</p>
+           <div style="margin-bottom:20px;">
+              <span style="text-align:center;width: 27%;padding: 10px;margin:10px;border-radius: 5px;border:1px solid #ddd;display:inline-block;" ng-repeat="item1 in item.child | orderBy:item1">{{item1}}</span>
+           </div>
+       </div>
+    </div>
+</div>

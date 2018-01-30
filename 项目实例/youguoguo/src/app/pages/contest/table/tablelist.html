@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll">
+            <div class="row">
+                <div class="col-sm-3" style="float:right;padding: 0;">
+                    <input type="text" style="height:33px;padding-left:10px;width: 250px;border:none;border-radius:5px;outline:none;border:1px solid #ddd;" ng-model="smartTable.searchContent" placeholder="搜索体验名称/手机号" ng-keyup="getList(tableState)">
+                </div>
+            </div>
+            <br />
+            <div class="table-contain">
+                <table class="table table-bordered table-hover table-buttonborder-none" st-table="tableData" st-pipe="getList">
+                    <thead>
+                    <tr class="active">
+                        <th>序号</th>
+                        <th>操作</th>
+                        <th>体验名称</th>
+                        <th style="width:16%;">报名时间</th>
+                        <th>联系方式</th>
+                        <th>项目简介</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-show="!isLoading">
+                    <tr ng-repeat="item in tableData track by $index" class="table-tr">
+                        <td>{{$index+itemFrom}}</td>
+                        <td>
+                            <a class='btn btn-sm btn-rounded btn-default' ng-click="tableDetail(item.id)"  type='a'>查看详情</a>
+                        </td>
+                        <td>{{item.name}}</td>
+                        <td style="width:16%;">{{item.createDate | limitTo:16}}</td>
+                        <td>{{item.contactPhone }}</td>
+                        <td>{{item.info }}</td>
+                        <td>{{item.remark}}</td>
+                    </tr>
+                    </tbody>
+                    <tbody ng-show="isLoading">
+                    <tr>
+                        <td colspan="12" class="text-center">Loading ... </td>
+                    </tr>
+                    </tbody>
+                    <tfoot class="table-ajax-tfoot">
+                    <tr>
+                        <td colspan="12" class="text-right">
+                            <div st-displayed-pages="3" st-pagination=""  st-items-by-page="smartTable.pageSize" st-template="app/pages/modal/page.html"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="table-tbody-con">
+                显示第{{itemFrom}}条-第{{itemTo}}条记录 总计{{datasTotalNum}}条记录
+            </div>
+        </div>
+    </div>
+</div>

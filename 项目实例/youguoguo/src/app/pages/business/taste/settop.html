@@ -1,0 +1,20 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">请选择置顶的类型</h4>
+    </div>
+    <div class="modal-body">
+    	<div class="form-group">
+		    <select class="form-control selectpicker with-search" data-live-search="true" title="选择置顶类型" selectpicker
+		            ng-model="typeId"
+		            ng-options="item.id as item.name for item in typeList">
+		    </select>
+		</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button"  class="btn btn-primary" ng-click="submit()" ng-disabled="!typeId">保存</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

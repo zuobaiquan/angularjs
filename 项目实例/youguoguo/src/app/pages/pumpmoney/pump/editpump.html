@@ -1,0 +1,44 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">{{modal.title}}</h4>
+    </div>
+    <form name="myForm" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">店家/名称：</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{modal.data.shopName!=null?modal.data.shopName:'--'}}</label>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">真实姓名：</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{modal.data.name}}</label>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">性质：</label>
+            <label style="text-align: left;font-weight:bolder;" class="col-sm-8 control-label">{{modal.data.dignityName}}</label>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':myForm.percentage.$dirty&&myForm.percentage.$invalid}">
+            <label for="inputidx" class="col-sm-3 control-label">抽成比例：</label>
+            <div class="col-sm-7" style="position: relative;">
+                <input autocomplete="off" type="text" maxlength="10" name="percentage" ng-pattern="/^(\d{1,2}(\.\d{1,2})?|100)$/" ng-required="true" class="form-control" id="inputidx" placeholder="点击输入数字" ng-model="modal.params.percentage">
+                <label style="position: absolute;right:25px;top:0;font-size: 18px;">%</label>
+            </div>
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-7">
+                <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.percentage.$dirty&&myForm.percentage.$error.required" style="padding:10px;">抽成比例不能为空</div>
+            </div>
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-7">
+                <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.percentage.$dirty&&myForm.percentage.$error.pattern" style="padding:10px;">抽成比例格式不正确</div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" ng-disabled="myForm.$invalid" class="btn btn-primary" ng-click="submit()">完成设置</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
+  <a href="#/index" class="al-logo clearfix">
+    <img ng-src="./assets/img/logo.png" alt="" style="vertical-align:middle;margin-right:20px;" width="70" height="40">
+  </a>
+  <a href="#/index" class="al-logo clearfix"><span>游果果旅行体验管家</span></a>
+
+  <!-- <div class="search">
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for...">
+  </div> -->
+
+  <div class="user-profile clearfix">
+    <div class="al-user-profile" uib-dropdown>
+      <a style="float: left;" uib-dropdown-toggle class="profile-toggle-link">
+        <img ng-src="{{ugogologo}}">
+      </a>
+      <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+        <li><i class="dropdown-arr"></i></li>
+        <li ng-click="resetPass()"><a href><i class="fa fa-cog"></i>修改密码</a></li>
+        <li ng-click="signOut()"><a href class="signout"><i class="fa fa-power-off"></i>退出登录</a></li>
+      </ul>
+    </div>
+    <!-- <msg-center></msg-center> -->
+  </div>
+</div>

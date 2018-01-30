@@ -1,0 +1,93 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">{{modal.title}}</h4>
+    </div>
+    <form name="myForm" class="form-horizontal" id="testform" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">选择日期：</label>
+        <div class="col-sm-9">
+          <div class="dropdown col-sm-3 time-button" style="padding: 0;">
+                <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target=".dropdown-start-parent">
+                  <button type="button" name="button" class="btn btn-default">选择日期</button>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker ng-model="modal.params.date" data-before-render="startDateBeforeRender($dates)" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',modelType:'YYYY-MM-DD',minView:'day'}" ></datetimepicker>
+                </ul>
+            </div>
+            <div class="col-sm-4" style="text-align:left;line-height:30px;">{{modal.params.date}}</div>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.pricefirst.$dirty&&myForm.pricefirst.$invalid}">
+          <label for="inputpricefirst" class="col-sm-3 control-label">一等奖：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-pattern="/^\d+$/" type="text" name="pricefirst" maxlength=10 class="form-control" id="inputpricefirst" placeholder="请输入数字" ng-model="modal.params.prize[0]">
+          </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.pricefirst.$dirty&&myForm.pricefirst.$error.pattern" style="padding:10px;">一等奖数字格式不正确</div>
+          </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.pricesecond.$dirty&&myForm.pricesecond.$invalid}">
+          <label for="inputpricesecond" class="col-sm-3 control-label">二等奖：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-pattern="/^\d+$/" type="text" name="pricesecond" maxlength=10 class="form-control" id="inputpricesecond" placeholder="请输入数字" ng-model="modal.params.prize[1]">
+          </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.pricesecond.$dirty&&myForm.pricesecond.$error.pattern" style="padding:10px;">二等奖数字格式不正确</div>
+          </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.pricethird.$dirty&&myForm.pricethird.$invalid}">
+          <label for="inputpricethird" class="col-sm-3 control-label">三等奖：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-pattern="/^\d+$/" type="text" name="pricethird" maxlength=10 class="form-control" id="inputpricethird" placeholder="请输入数字" ng-model="modal.params.prize[2]">
+          </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.pricethird.$dirty&&myForm.pricethird.$error.pattern" style="padding:10px;">三等奖数字格式不正确</div>
+          </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.priceforth.$dirty&&myForm.priceforth.$invalid}">
+          <label for="inputpriceforth" class="col-sm-3 control-label">四等奖：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-pattern="/^\d+$/" type="text" name="priceforth" maxlength=10 class="form-control" id="inputpriceforth" placeholder="请输入数字" ng-model="modal.params.prize[3]">
+          </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.priceforth.$dirty&&myForm.priceforth.$error.pattern" style="padding:10px;">四等奖数字格式不正确</div>
+          </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.pricefifth.$dirty&&myForm.pricefifth.$invalid}">
+          <label for="inputpricefifth" class="col-sm-3 control-label">五等奖：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-pattern="/^\d+$/" type="text" name="pricefifth" maxlength=10 class="form-control" id="inputpricefifth" placeholder="请输入数字" ng-model="modal.params.prize[4]">
+          </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.pricefifth.$dirty&&myForm.pricefifth.$error.pattern" style="padding:10px;">五等奖数字格式不正确</div>
+          </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error':myForm.pricefifth.$dirty&&myForm.notwinner.$invalid}">
+          <label for="notwinner" class="col-sm-3 control-label">不中奖概率：</label>
+          <div class="col-sm-8">
+              <input autocomplete="off" ng-required="true" style="width: 80%;float:left" ng-pattern="/^(?:0|[1-9][0-9]?|100)$/" type="text" name="notwinner" maxlength=10 ng-required="true" class="form-control" id="notwinner" placeholder="请输入0到100之间的数字" ng-model="modal.params.idle">
+              <div class="col-sm-1" style="line-height: 34px;">%</div>
+          </div>
+          <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-8">
+                <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.notwinner.$dirty&&myForm.notwinner.$error.required" style="padding:10px;">不中奖概率数字不能为空</div>
+            </div>
+          <label class="col-sm-3 control-label"></label>
+          <div class="col-sm-8">
+              <div style="padding:10px;" class="alert alert-danger help-block" ng-show="myForm.notwinner.$dirty&&myForm.notwinner.$error.pattern" style="padding:10px;">不中奖概率数字格式不正确</div>
+          </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" ng-disabled="disable|| myForm.$invalid" class="btn btn-primary" ng-click="submit()">保存</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

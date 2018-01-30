@@ -1,0 +1,16 @@
+<div class="modal-content" ng-init = "init()">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">{{title}}</h4>
+        <hr style="margin-bottom:0">
+    </div>
+    <form name="myForm">
+        <div class="modal-body" style="margin:0 auto;text-align: center;">
+        <img ng-if="pic!=''" style="margin-bottom:20px;max-width: 500px;max-height:500px;" src="{{pic}}" alt="">
+        <img ng-if="pic==''" style="margin-bottom:20px;" src="./assets/img/image-425232.png" alt="" height='500px' width='400px'>
+        </div>
+    </form>
+</div>
+  

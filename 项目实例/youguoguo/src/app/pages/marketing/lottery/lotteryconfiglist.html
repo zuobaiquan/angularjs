@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-title="fsplus table title if needed" ba-panel-class="with-scroll" ng-init="getList()">
+            <a ng-click="addLottery(tableData)" class="btn btn-default">添加抽奖日期</a>
+            <a ng-click="editLotterytotal(totalData)" class="btn btn-default">修改奖品总数量</a><br /><br />
+            <div class="table-contain">
+                <table class="table table-bordered table-hover table-buttonborder-none">
+                    <thead>
+                    <tr class="active">
+                        <th>修改</th>
+                        <th>当日次数限制</th>
+                        <th>一等奖</th>
+                        <th>二等奖</th>
+                        <th>三等奖</th>
+                        <th>四等奖</th>
+                        <th>五等奖</th>
+                        <th>不中奖概率</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-show="!isLoading">
+                    <tr ng-repeat="item in tableData track by $index" class="table-tr">
+                        <td><a class='btn btn-sm btn-rounded btn-default' ng-click="editLottery(item,tableData)" >修改</a></td>
+                        <td>{{showDatetext(item.date)}}</td>
+                        <td>{{item.prize[0]}}</td>
+                        <td>{{item.prize[1]}}</td>
+                        <td>{{item.prize[2]}}</td>
+                        <td>{{item.prize[3]}}</td>
+                        <td>{{item.prize[4]}}</td>
+                        <td>{{item.idle+"%"}}</td>
+                    </tr>
+                    <tr class="table-tr">
+                      <td>奖品剩余数量</td>
+                      <td>--</td>
+                      <td>{{remainData[0]}}</td>
+                      <td>{{remainData[1]}}</td>
+                      <td>{{remainData[2]}}</td>
+                      <td>{{remainData[3]}}</td>
+                      <td>{{remainData[4]}}</td>
+                      <td>--</td>
+                    </tr>
+					<tr class="table-tr">
+                      <td>奖品总数量</td>
+                      <td>--</td>
+                      <td>{{totalData[0]}}</td>
+                      <td>{{totalData[1]}}</td>
+                      <td>{{totalData[2]}}</td>
+                      <td>{{totalData[3]}}</td>
+                      <td>{{totalData[4]}}</td>
+                      <td>--</td>
+                    </tr>
+                    </tbody>
+                    <tbody ng-show="isLoading">
+                      <tr>
+                          <td colspan="12" class="text-center">Loading ... </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+.table-buttonborder-none {
+    border-bottom: none;
+    position: relative;
+}
+
+.table-img-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    padding: 4px;
+    border: 1px solid #e8e8e8;
+    border-radius: 50%;
+}
+.table-img-fabric {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    padding: 4px;
+    border: 1px solid #e8e8e8;
+}
+
+table td,
+table th {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.table-tr > td {
+    height: 85px;
+}
+
+tfoot td {
+    border: none;
+}
+
+.table-ajax-tfoot {
+    position: absolute;
+    right: 18px;
+    margin-top: 5px;
+
+    td {
+        border: none !important;
+    }
+}
+
+.table-tbody-con {
+    height: 80px;
+    color: #8BA0B6;
+    padding-top: 25px;
+}
+
+.select-page-size-wrap {
+    width: 280px;
+    margin-top: 8px;
+
+    label {
+        margin-left: 15px;
+
+        .table-select {
+            width: 150px !important;
+        }
+    }
+}
+
+.table-contain {
+    position: relative;
+    .table-right-search {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+        input{
+            height: 33px;
+            padding-left: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+            outline:none;
+        }
+    }
+}
+@media (max-width:767px) {
+    .table-right-search{
+        position: initial !important;
+        margin-bottom: 15px;
+        margin-top: -5px;
+    }
+}
+.table-top{
+    margin-bottom: 15px;
+}
+.table-menu-tr{
+    height: 50px;
+}
+
+.table-height-45{
+  height: 45px;
+}
+
+.table-contain {
+    position: relative;
+    .table-only-right-search {
+        float:right;
+        margin-bottom: 10px;
+        margin-top:-5px;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+        input{
+            height: 33px;
+            padding-left: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+            outline:none;
+        }
+    }
+}
