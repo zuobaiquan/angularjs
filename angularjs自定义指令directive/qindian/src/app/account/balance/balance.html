@@ -1,0 +1,29 @@
+<ion-view class="account-content" view-title="我的账户">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+        </div>
+        <h1 class="title">我的账户</h1>
+        <div class="buttons">
+            <button class="button button-clear icon-right detail" ui-sref="balanceRecord">明细</button>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="qindian-account-info">
+            <div class="info-container">
+                <div class="balance-con">
+                    <div class="cover-con">
+                        <div class="cover"><img src="img/wallet.png" alt=""></div>
+                    </div>
+                    <div class="price-con">
+                        <div class="price-my"><span>我的余额</span></div>
+                        <div class="price-number"><span>¥{{vm.accountBase.account.balance || 0}}</span></div>
+                    </div>
+                </div>
+                <div class="btn-sure">
+                    <a ui-sref="recharge"><button class="button name" >充值</button></a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

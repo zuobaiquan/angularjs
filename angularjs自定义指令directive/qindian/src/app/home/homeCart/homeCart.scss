@@ -1,0 +1,114 @@
+
+// 基本样式
+.cart-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    .cm-item {
+      border-right: transparent;
+      border-left: transparent;
+      border-top: transparent;
+      padding-left: 0;
+      &:nth-last-child(1) {
+        border: none;
+      }
+      .cm-desc {
+        margin-left: 13px;
+        // height: 61px;
+        float: left;
+        font-size: 1.1rem;
+        color: #FA4343;
+        .cm-title{
+          display: block;
+        }
+        .cm-title {
+          color: #333;
+          font-size: 1.5rem;
+          margin-bottom: 2px;
+        }
+        .price-now {
+          font-size: 1.5rem;
+        }
+        .cm-price {
+          position: absolute;
+          right: 121px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .cm-count {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 11px;
+        bottom: 10px;
+        font-size: 1.6rem;
+        .btn-sub {
+          color: $qd-main-color;
+          margin-right: 10px;
+        }
+        .btn-add {
+          color: $qd-main-color;
+          margin-left: 10px;
+        }
+        .cm-number {
+          display: inline-block;
+          text-align: center;
+        }
+        .cm-empty {
+          span {
+            color: #999;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+
+  }
+.cart-title-con {
+  overflow: hidden;
+  background-color: #F5F5F5;
+  position: relative;
+  .title {
+    color: #999;
+    font-size: 1.4rem;
+    padding-left: 12px;
+    margin: 10px 0;
+    margin-left: 10px;
+    float: left;
+    border-left: 4px solid #F7C736;
+  }
+  .clear-con {
+    color: #999;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    position: absolute;
+    a {
+      color: #999;
+      font-size: 1.2rem;
+    }
+  }
+}
+// 
+.cart-con {
+  bottom: 50px;
+  transition: all .2s ease-in;
+  max-height: 80%;
+  width: 100%;
+  position: absolute;
+  height: 0;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+}
+.cart-show {
+  height: 51%;
+  z-index: 8;
+  opacity: 1;
+  .cart-list {
+    height: 100%;
+    padding-bottom: 40px;
+  }
+}
+

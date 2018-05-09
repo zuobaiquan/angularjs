@@ -1,0 +1,48 @@
+<ion-view class="account-content" view-title="账户信息">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+        </div>
+        <h1 class="title">账户信息</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="qindian-account-info">
+            <div class="info-container">
+                <div class="user-infos">
+                    <ion-list>
+                        <ion-item class="nva-item info-item" ng-click="vm.setAvatar()">
+                            <div class="item-con header-line">
+                                头像
+                                <div class="con-right">
+                                    <div class="header"><img ng-src="{{'http://'+vm.accountBase.avatar+'?imageView2/1/w/71/h/71'}}" alt=""></div>
+                                    <i class="ion-chevron-right icon-right header-right"></i>
+                                </div>
+
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item info-item">
+                            <div class="item-con" ui-sref="editname">
+                                昵称
+                                <div class="con-right">
+                                    <span class="name">{{vm.accountBase.nickname}}</span>
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item info-item">
+                            <div class="item-con" ui-sref="edittel">
+                                手机号
+                                <div class="con-right">
+                                    <span class="tel">{{vm.accountBase.phone}}</span>
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+
+                            </div>
+                        </ion-item>
+
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

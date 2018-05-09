@@ -1,0 +1,22 @@
+<ion-view class="home-content" view-title="亲点易取">
+    <ion-content scroll="false">
+        <div class="qindian-home">
+            <home-top ></home-top>
+            <home-con ng-if="!vm.loadState.isLoading && !vm.loadState.isError"></home-con>
+            <div class="con-empty" ng-if="vm.loadState.isLoading || vm.loadState.isError">
+                <div class="empty" ng-if="vm.loadState.isLoading && !vm.loadState.isError">
+                    <i class="qd-menu-empty"></i>
+                    <span>更新菜单中，敬请期待</span>
+                </div>
+                <div class="error" ng-if="vm.loadState.isError">
+                    <i class="qd-internet-error"></i>
+                    <span class="desc">网络出现异常</span>
+                    <button class="refresh" ui-sref="home">刷新</button>
+                </div>
+            </div>
+            <home-footer ng-show="!vm.loadState.isLoading && !vm.loadState.isError"></home-footer>
+            <home-cart ng-class="{'cart-show': vm.isShowCart}"></home-cart>
+        </div>
+        <div class="mask" ng-show="vm.isShowCart" ng-click="vm.showPopup()"></div>
+    </ion-content>
+</ion-view>

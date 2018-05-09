@@ -1,0 +1,51 @@
+<ion-view class="account-content" view-title="搜索">
+  <ion-content scroll="false">
+    <div class="qindian-search">
+      <div class="search-con">
+        <div class="search-title">
+          <input type="text" class="search-key" placeholder="&#xe903 请输入商品名称">
+          <a href="" class="calel" ui-sref="search"><span>取消</span></a>
+        </div>
+        <div class="result-con" ng-if="searchResult.hasResult">
+          <div class="list-con">
+            <ion-list>
+              <ion-item class="cm-item" ng-repeat="item in ['包子','粥','饮品','营养午餐']">
+                <a href="">
+                  <div class="cm-img">
+                    <img src="https://img.alicdn.com/imgextra/i1/34/TB2jI2GfOpnpuFjSZFkXXc4ZpXa_!!34-0-yamato.jpg_2200x2200Q30s0.jpg">
+                  </div>
+                  <div class="cm-desc">
+                    <span class="cm-title">香菇菜包</span>
+                    <span class="cm-sub-title">月售218份</span>
+                    <div class="cm-price">¥<span class="price-now">1.8 </span><span class="price-before">¥2.3</span></div>
+                  </div>
+                </a>
+
+                <div class="cm-count">
+                  <div class="count-wapper" ng-if="item !== '包子'">
+                    <a class="btn-sub" ng-show="singleCount" ng-click='changeArticleCount("sub")'><i class="qd-subtract"></i></a>
+                    <div class="cm-number"><span>{{singleCount}}</span></div>
+                    <a class="btn-add" ng-click='changeArticleCount("add")'><i class="qd-plus"></i></a>
+                  </div>
+                  <div class="cm-empty" ng-if="item === '包子'">
+                    <span>补货中</span>
+                  </div>
+                </div>
+
+              </ion-item>
+            </ion-list>
+          </div>
+          <div class="result-nomore">
+            <span>没有更多了</span>
+          </div>
+        </div>
+        <div class="order-empty" ng-if="true">
+          <div class="empty-con">
+            <i class="qd-search-empty sorry-icon"></i>
+            <span class="desc">搜索无结果{{searchResult.hasResult}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

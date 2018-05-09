@@ -1,0 +1,44 @@
+<ion-view class="order-pay-content" view-title="支付">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ng-click="exitPay()"></button>
+    </div>
+    <h1 class="title">支付</h1>
+  </ion-header-bar>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="order-pay-body">
+      <ion-list>
+        <ion-item class="pay-time">
+          <div class="remain-con">
+            <ion-item class="remain-time">
+              <span class="title">支付剩余时间</span>
+              <span class="time">{{countdownTime.m < 10 ? '0'+countdownTime.m : countdownTime.m|| '00'}}:{{countdownTime.s < 10 ? '0'+countdownTime.s : countdownTime.s || '00'}}</span>
+            </ion-item>
+            <div class="pay-money-con">
+              <span>待支付金额</span>
+              <span class="money">¥ {{amount}}</span>
+            </div>
+            
+          </div>
+        </ion-item>
+        <span class="pay-func-title">选择支付方式</span>
+        <ion-radio ng-model="payType.type" ng-value="1" class="pay-func-con" icon="qd-check">
+          <i class="qd-pay-wx-js pay-type-icon"></i>
+          <div class="pay-type-right">
+            微信支付
+          </div>
+          
+        </ion-radio>
+        <ion-radio class="pay-func-con" ng-model="payType.type" ng-value="2" icon="qd-check">
+          <i class="qd-wallet pay-type-icon"></i>
+          <div class="pay-type-right last">
+            余额支付
+          </div>
+        </ion-radio>
+      </ion-list>
+      <div class="btn-sure">
+        <a><button class="button name" ng-click="pay()">确认支付</button></a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no" />
+  <meta name="format-detection" content="address=no" />
+  <meta name="format-detection" content="date=no" />
+  <title></title>
+
+  <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+  <!-- compiled css output -->
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:sass -->
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <!-- endbuild -->
+
+  <!--Weixin JS SDK-->
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:third-library-js -->
+  <!-- NOTE: the inject-endinject tags are used by gulp-inject - DO NOT REMOVE -->
+  <!-- inject:js -->
+
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic-datepicker/ionic-datepicker.bundle.min.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:js -->
+
+  <!-- app modules -->
+  <script src="app/app.modules.js"></script>
+
+  <!-- menu modules -->
+  <!--  <script src="app/menu/menu.module.js"></script>
+    <script src="app/menu/menu.controller.js"></script> -->
+
+  <!-- home modules -->
+  <script src="app/home/home.module.js"></script>
+  <script src="app/home/home.controller.js"></script>
+
+  <script src="app/home/homeTop/homeTop.directive.js"></script>
+
+  <script src="app/home/homeCon/homeCon.controller.js"></script>
+  <script src="app/home/homeCon/homeCon.directive.js"></script>
+
+  <script src="app/home/homeFooter/homeFooter.controller.js"></script>
+  <script src="app/home/homeFooter/homeFooter.directive.js"></script>
+
+  <script src="app/home/homeCart/homeCart.directive.js"></script>
+
+
+  <!-- account modules-->
+  <script src="app/account/account.module.js"></script>
+  <script src="app/account/account.controller.js"></script>
+  <script src="app/account/account-info/account-info.module.js"></script>
+  <script src="app/account/edit-username/edit-username.controller.js"></script>
+  <script src="app/account/edit-tel/edit-tel.controller.js"></script>
+  <script src="app/account/balance-record/balance-record.controller.js"></script>
+  <script src="app/account/balance/recharge/recharge.controller.js"></script>
+
+  <!-- order modules -->
+  <script src="app/order/order.module.js"></script>
+  <script src="app/order/order-detail/order-detail.controller.js"></script>
+  <script src="app/order/ensure-order/ensure-order.controller.js"></script>
+  <script src="app/order/order-pay/order-pay.controller.js"></script>
+  <script src="app/order/order-myself/order-myself.controller.js"></script>
+
+  <!-- search modules -->
+  <script src="app/search/search.module.js"></script>
+  <script src="app/search/search.controller.js"></script>
+
+  <!-- location modules -->
+  <script src="app/location/location.module.js"></script>
+  <script src="app/location/location.controller.js"></script>
+  <script src="app/location/location-search/location-search.controller.js"></script>
+
+  <!-- group-buy -->
+  <script src="app/group-buy/group-buy.module.js"></script>
+  <script src="app/group-buy/group-buy.controller.js"></script>
+  <script src="app/group-buy/share/group-share.controller.js"></script>
+
+  <!-- coupon -->
+  <script src="app/coupons/coupon-share/coupon-share.module.js"></script>
+  <script src="app/coupons/coupon-share/coupon-share.controller.js"></script>
+
+  <!-- loginMock -->
+  <script src="app/loginMock/loginMock.module.js"></script>
+
+  <!-- 用户红包列表 -->
+  <script src="app/account/coupon/coupon.controller.js"></script>
+  <script src="app/order/pick/pick.module.js"></script>
+
+  <!-- app services -->
+  <script src="app/service/common.service.js"></script>
+  <script src="app/service/api.service.js"></script>
+  <script src="app/service/auth.service.js"></script>
+  <script src="app/home/home.service.js"></script>
+  <script src="app/location/location.service.js"></script>
+
+  <!-- scripts belonging to the root "app" module are placed here -->
+  <script src="app/app.js"></script>
+  <script src="app/app.routes.js"></script>
+  <script src="app/app.directive.js"></script>
+  <script src="app/app.filter.js"></script>
+  <script src="app/config/config.js"></script>
+
+  <!-- endbuild -->
+
+  <!-- ANGULAR-TEMPLATECACHE -->
+  <!-- build:templates -->
+  <script src="app/app.templates.js"></script>
+  <!-- endbuild -->
+
+
+</head>
+
+<body ng-app="starter">
+  <ion-nav-view name="content"></ion-nav-view>
+</body>
+
+</html>

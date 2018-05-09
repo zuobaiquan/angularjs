@@ -1,0 +1,106 @@
+  .group-buy {
+  .group--state {
+    height: 41px;
+    margin-top: 44px;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .state--item {
+    float: left;
+    width: 50%;
+    text-align: center;
+    line-height: 41px;
+    font-size: 1.3rem;
+    color: $font-black-1;
+    position: relative;
+    &.state__active .state--line {
+      display: block;
+    }
+  }
+  .state--line {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 4px solid $qd-main-color;
+    display: none;
+  }
+  .group-content {
+    background: #F5F5F5;
+    margin-top: 41px;
+  }
+  .group-order {
+    margin-top: 10px;
+    font-size: 13px;
+    color: $font-black-3;
+    background-color: white;
+  }
+  .order--block {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+  .order--header {
+    overflow: hidden;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .header--id,
+  .header--state {
+    height: 39px;
+    line-height: 40px;
+    float: left;
+    color: $font-black-1;
+  }
+  .header--state {
+    float: right;
+  }
+  .order--content {
+    margin: 18px 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  .content--desc {
+    line-height: 27px;
+  }
+  .order--footer {
+    border-bottom: 1px solid $border-color-e5;
+    border-top: 1px solid $border-color-e5;
+    padding: 16px 12px;
+  }
+  .footer--desc {
+    line-height: 27px;
+    .number {
+      color: #F7C736;
+    }
+    .discount {
+      color: #FA4343;
+    }
+  }
+  .btn-bcancel-order {
+      border: 1px solid $font-red-1;
+      color: $font-red-1;
+      text-align: center;
+      border-radius: 2px;
+      margin: 10px auto;
+      float: right;
+      background-color: transparent;
+      text-align: center;
+      &.invalid {
+        color: #ccc;
+        border-color: #ccc;
+      }
+  }
+}
+
+.dishes {
+  white-space: nowrap;
+  margin-top: 10px;
+  .dishes--item {
+    margin-right: 13px;
+    width: 61px;
+    height: 61px;
+    border-radius: 2px;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+}

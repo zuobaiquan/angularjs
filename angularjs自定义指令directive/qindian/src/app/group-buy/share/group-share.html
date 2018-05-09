@@ -1,0 +1,60 @@
+<ion-view class="group-share" view-title="团购">
+  <div class="banner-con-header">
+    <ion-header-bar align-title="center" class="bar-positive">
+      <div class="buttons">
+        <button class="button button-clear icon-left ion-ios-arrow-back" ng-click="goBack()"></button>
+      </div>
+      <h1 class="title">团购</h1>
+      <div class="buttons">
+        <button class="button button-clear ion-android-share-alt" ng-click="vm.promptShare()"></button>
+      </div>
+    </ion-header-bar>
+    <div class="group--state">团购状态：{{vm.groupInfo.status == 0 ? '正在进行中' : '已结束'}}</div>
+  </div>
+
+  <ion-content scroll="true" class="group-content" scrollbar-y="false">
+    <div class="group-order">
+      <div class="order-time">
+        <div class="time--desc">团购结束时间</div>
+        <div class="time--close">{{vm.endTime}}</div>
+      </div>
+      <div class="group-goods group-item">
+        <div class="goods--title title">
+          <i class="icon qd-tag"></i>团购商品
+        </div>
+        <div class="goods--dishes dishes">
+          <ion-scroll direction="x" scrollbar-x="false">
+            <img src="{{vm.QINIU_LINK + food.picture}}" alt="" class="dishes--item" ng-repeat="food in vm.groupFoods" ng-click="vm.openParticular(food)">
+          </ion-scroll>
+        </div>
+      </div>
+      <div class="group-member group-item">
+        <div class="member--title title">
+          <i class="member--icon icon ion-person-stalker"></i>共<span>{{vm.joinUsers}}</span>人参团
+        </div>
+        <div class="member--header">
+          <img src="{{head.avatar}}" alt="" class="header--item" ng-class="{'member--header__more': vm.justity}" ng-repeat="head in vm.actor track by $index">
+          <i class="ion-more header--item__more header--item" id="J_moreHeader" ng-if="vm.hasMore"></i>
+        </div>
+      </div>
+      <a class="item group-item group--btn">
+        当前团购折扣
+        <span class="item-note discount">
+          {{vm.discount}}折
+        </span>
+      </a>
+      <a class="item group-item group--btn" ui-sref="groupRule">
+        团购规则
+        <span class="item-note">
+          <i class="ion-chevron-right"></i>
+        </span>
+      </a>
+      <div class="group--join" ng-if="vm.joinBtn && vm.isJoin && vm.groupInfo.status == 0">
+        <button class="button button-full button-energized group--join" type="button" ng-click="vm.join()">我要参团</button>        
+      </div>
+      <div class="group--join" ng-if="!vm.isJoin &&  vm.groupInfo.status == 0">
+        <button class="button button-full button-energized group--join" type="button" ng-click="">您已参加此次团购</button>        
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,117 @@
+.qindian-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f5f5;
+  .search-title {
+    background-color: #F7C736;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    .search-key {
+      width: 82.6666667%;
+      margin: auto;
+      height: 29px;
+      border-radius: 5px;
+      text-align: center;
+      font-family: 'qindian' !important;
+    }
+    .calel {
+      float: right;
+      line-height: 45px;
+      font-size: 1.4rem;
+      margin-right: 14px;
+    }
+  }
+
+  .result-con {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 45px;
+    .list-con {
+      padding-left: 1.4rem;
+      background-color: #fff;
+      border-bottom: 1px solid $con-border-color-1;
+    }
+    .cm-item {
+      border-right: transparent;
+      border-left: transparent;
+      border-top: transparent;
+      padding-left: 0;
+      &:last-child {
+        border: none;
+      }
+      .cm-img {
+        width: 61px;
+        height: 61px;
+        float: left;
+        img {
+          width: 61px;
+          height: 100%;
+          border-radius: 2px;
+        }
+      }
+      .cm-desc {
+        margin-left: 13px;
+        height: 61px;
+        float: left;
+        font-size: 1.1rem;
+        color: $font-red-1;
+        .cm-title, .cm-sub-title {
+          display: block;
+        }
+        .cm-title {
+          color: $font-black-1;
+          font-size: 1.5rem;
+          margin-bottom: 2px;
+        }
+        .cm-sub-title {
+          color: $font-black-2;
+          margin-bottom: 1px;
+        }
+        .price-now {
+          font-size: 1.5rem;
+        }
+        .price-before {
+          text-decoration: line-through;
+          color: #999;
+        }
+      }
+      .cm-count {
+        position: absolute;
+        right: 11px;
+        bottom: 10px;
+        .btn-sub {
+          color: $qd-main-color;
+        }
+        .btn-add {
+          color: $qd-main-color
+        }
+        .cm-number {
+          width: 15px;
+          display: inline-block;
+          text-align: center;
+        }
+        .cm-empty {
+          span {
+            color: $font-black-3;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .result-nomore {
+      margin: 30px auto;
+      text-align: center;
+      color: $font-black-4;
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <div class="obtain--wapper location" ng-class="{merchant: type === 'merchant'}">
+    <div class="particular--cancle">
+      <i class="ion-ios-close-outline icon-canel" ng-click="closeCupboard()"></i>
+      <div class="line"></div>
+    </div>
+    <div class="kdgs-con">
+      <div class="location-con">
+        <span class="part-title">商家支持的收货柜</span>
+        <div class="locations kdg">
+          <div class="kdg" ng-repeat="item in cupboardList" ng-click="chooseBoard(item)">
+            <div class="con-left">
+              <div class="info">
+                <span class="location-name">{{item.name}}</span><span class="kdg-name">{{item.address}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-modal-view>

@@ -1,0 +1,132 @@
+<ion-view class="order-detail-content" view-title="订单详情">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ng-click="goBack()"></button>
+    </div>
+    <h1 class="title">订单详情{{downTime}}</h1>
+  </ion-header-bar>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="order-detail-body" ng-class="{'footer-margin' : order.status === 0}">
+      <ion-list>
+        <!--待支付订单显示此顶部-->
+        <ion-item class="order-detail-top" ng-if="order.status === 0">
+          <span class="title">支付剩余时间</span>
+          <span class="time">{{countdownTime.m < 10 ? '0'+countdownTime.m : countdownTime.m|| '00'}}:{{countdownTime.s < 10 ? '0'+countdownTime.s : countdownTime.s || '00'}}</span>
+          <!--<button class="btn-bcancel-order" ng-click="cancelOrder()">取消订单</button>-->
+        </ion-item>
+        <!-- 待配送订单显示此顶部 -->
+        <ion-item class="order-detail-top" ng-if="order.status === 1">
+          <span class="title">订单已支付</span>
+          <span class="state">等待配送</span>
+          <button class="btn-bcancel-order" ng-click="cancelOrder()">取消订单</button>
+          <span class="send-coupon" ng-if="isShare" ng-click="promptShare()"><i class="qd-coupon"></i>发红包</span>
+        </ion-item>
+        <!-- 订单待收货显示此顶部 -->
+        <ion-item class="order-detail-top" ng-if="order.status === 2">
+          <span class="title">订单待收货</span>
+          <div class="rq-code"><img src="http://qr.liantu.com/api.php?text={{order.code}}"></div>
+          <span class="order-id">{{order.code}}</span>
+          <span class="send-coupon" ng-if="isShare" ng-click="promptShare()"><i class="qd-coupon"></i>发红包</span>
+        </ion-item>
+        <!-- 以收货订单的顶部 -->
+        <ion-item class="order-detail-top" ng-if="order.status === 3">
+          <span class="title">订单状态</span>
+          <span class="state">已收货</span>
+          <span class="send-coupon" ng-if="isShare" ng-click="promptShare()"><i class="qd-coupon"></i>发红包</span>
+        </ion-item>
+        <ion-item class="order-detail-top" ng-if="order.status === 4">
+          <span class="title">订单状态</span>
+          <span class="state">已过期</span>
+        </ion-item>
+        <ion-item class="order-detail-top" ng-if="order.status === 5">
+          <span class="title">订单状态</span>
+          <span class="state">已取消</span>
+        </ion-item>
+        <!-- start ====此样式暂时位于 ensure-order样式中==== -->
+        <ion-item class="breakfast order-item">
+          <div class="food-con">
+            <ion-item class="sub-item-title item-icon-right" >
+              <i class="qd-time"></i>
+              <span class="title">{{typeObj[order.type].name}}</span>
+              <span class="time">(预计{{typeObj[order.type].startTime}}-{{typeObj[order.type].endTime}})</span>
+              <a class="icon time-picker">
+                <div class="select-time col-bottom">
+                  {{order.arrivalDate}}
+                  <i class="ion-ios-arrow-right"></i>
+                </div>
+              </a>
+            </ion-item>
+            <div class="foods">
+              <ul>
+                <li class="food-item" ng-repeat="item in order.details">
+                  <span class="food-name">{{item.food.name}}</span>
+                  <span class="food-count">×{{item.amount}}</span>
+                  <span class="food-price exprice">¥{{item.price * item.amount}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="coupon order-item">
+          <ion-item class="coupon-item " ng-if="false">
+            折扣价格
+            <span class="coupon-right coupon-price order-item-right">
+              - ¥4
+            </span>
+          </ion-item>
+          <ion-item class="coupon-item" ng-if="false">
+            优惠券
+            <div class="coupon-right order-item-right">
+              <span>暂无可用优惠券</span>
+              <i class="ion-ios-arrow-right"></i>
+            </div>
+          </ion-item>
+          <!--已支付订单会显示实际付款金额-->
+          <ion-item class="coupon-item">
+            实付
+            <div class="coupon-right order-item-right coupon-price">
+              <span>¥{{order.price}}</span>
+            </div>
+          </ion-item>
+        </ion-item>
+        <ion-item class="ensure-location order-item">
+          <ion-item class="little-item title">
+            <span class="order-id">收货信息</span>
+          </ion-item>
+          <div class="top-location-con">
+            <i class="qd-location"></i>
+            <div class="location-info">
+              <span class="location-name">{{order.cupboard.address}}</span>
+              <span class="kdg-name">{{order.cupboard.name}}</span>
+            </div>
+          </div>
+        </ion-item>
+        <!-- end ====此样式暂时位于 ensure-order样式中==== -->
+        <ion-item class="order-item other-info">
+          <ion-item class="little-item title">
+            <span class="order-id">订单信息</span>
+          </ion-item>
+          <ion-item class="little-item">
+            <span class="order-id">订单编号： {{order.orderNo}}</span>
+          </ion-item>
+          <ion-item class="little-item" >
+            <span class="order-id">下单时间： {{order.orderTime}}</span>
+          </ion-item>
+          <!-- 支付完成后的订单显示支付方式 -->
+          <ion-item class="little-item" ng-if="order.status !== 0" ng-init="payType = ['余额支付', '微信支付']">
+            <span class="order-id">支付方式： {{payType[order.payRecord.type - 1]}}</span>
+          </ion-item>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+  <!-- 待支付订单显示付款footer -->
+  <ion-footer-bar align-title="left" class="bar-assertive" ng-if="order.status === 0">
+    <div class="home-order-footer">
+      <h1 class="title show-price">待支付 ¥{{order.price}} <span class="footer-coupon-price" ng-if="false">优惠 ¥4</span></h1>
+      <div class="buttons" ng-click="doSomething()">
+        <button class="btn-clear" ng-click="payOrder()">付款</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

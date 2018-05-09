@@ -1,0 +1,37 @@
+<ion-view class="group-buy" view-title="亲点易取">
+  <div class="banner-con-header">
+    <ion-header-bar align-title="center" class="bar-positive">
+      <!--<div class="buttons">
+        <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+      </div>-->
+      <h1 class="title">亲点易取</h1>
+      <div class="buttons" ng-if="false">
+        <button class="button button-clear ion-android-share-alt"></button>
+      </div>
+    </ion-header-bar>
+  </div>
+  <ion-content scroll="true" class="coupon-share-content qindian-coupon-content" scrollbar-y="false">
+    <div class="coupon-logo">
+      <div class="logo-container"><img src="img/coupon-share@2x.png" alt=""></div>
+    </div>
+    <div class="coupon-body">
+      <div class="left-price">¥ <span class="price">{{vm.coupon.amount}}</span></div>
+      <div class="right-desc">
+        <div class="desc-title">通用红包</div>
+        <ul class="desc-detail">
+          <li class="desc-item">· 满{{vm.coupon.conditions}}可用</li>
+          <li class="desc-item">· 限此微信用户使用</li>
+          <li class="desc-item">· {{vm.coupon.receiveTime.slice(0,10)}} 至 {{vm.coupon.expirationTime.slice(0,10)}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coupon-tel">
+      <span class="tel--desc">红包已放入当前账户</span>
+      <!--<span class="tel--edit">修改 >></span>-->
+
+    </div>
+    <div class="coupon--receive">
+      <button class="button button-full button-energized" type="button" ui-sref="home">立即使用</button>
+    </div>
+  </ion-content>
+</ion-view>

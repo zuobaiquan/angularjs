@@ -1,0 +1,34 @@
+.name-input-container {
+    position: relative;
+  .name-input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-left: 10px;
+    -webkit-appearance:none;
+  }
+  .ion-close-circled {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      color: #e5e5e5;
+  }
+
+}
+.btn-sure {
+  .name.button{
+    display: block;
+    width: 90.9333333%;
+    margin: 50px auto 0;
+    border-radius: 5px;
+    background-color: #F7C736;
+    color: #fff;
+    font-size: 1.6rem;
+    
+  }
+}

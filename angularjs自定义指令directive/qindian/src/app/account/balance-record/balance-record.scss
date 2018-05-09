@@ -1,0 +1,74 @@
+  .pay-record {
+    position: static;
+  }
+  
+  .balance-record-con {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    .cm-item {
+      border-right: transparent;
+      border-left: transparent;
+      border-top: transparent;
+      padding-left: 0;
+      &:last-child {
+        border: none;
+      }
+      .record-item-con {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        color: $font-black-3;
+        .pay-time-con {
+          font-size: 1.3rem;
+          margin-left: 11px;
+          .date,.tiem {
+            display: block;
+          }
+        }
+        .pay-civer {
+          display: inline-block;
+          height: 34px;
+          margin: auto 0;
+          line-height: 34px;
+          font-size: 1.2rem;
+          display: flex;
+          .qd-pay-wx {
+            font-size: 3rem;
+            color: #9DDC4C;
+            margin-right: 12px;
+          }
+        }
+        .pay-civer.ye {
+          .qd-pay-ye {
+            font-size: 3rem;
+            color: #FFA14F;
+            margin-right: 12px;
+          }
+          
+        }
+        .pay-func {
+          display: inline-block;
+          
+        }
+        
+      }
+      .pay-money-con {
+          color: $font-black-1;
+          font-size: 1.5rem;
+          min-width: 60px;
+          text-align: right;
+          .ion-ios-arrow-right {
+            color: $font-black-3;
+          }
+      }
+      
+    }
+    .result-nomore {
+      margin: 30px auto;
+      text-align: center;
+      color: $font-black-4;
+      font-size: 1.2rem;
+    }
+  }

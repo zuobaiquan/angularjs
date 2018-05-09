@@ -1,0 +1,15 @@
+<ion-footer-bar align-title="left" class="bar-assertive">
+  <div class="buttons">
+    <button class="button" ng-click="vm.showPopup()"><i class="qd-basket"></i></button>
+    <div class="amount">{{vm.sumCount}}</div>
+  </div>
+  <h1 class="title">
+    <ul>
+      <li class="sum-price"><span>{{vm.orderInfo.amount |currency:'¥':2}}</span></li>
+      <li class="sub-desc" ng-if="false"><span>再买¥5减配送费¥6</span></li>
+    </ul>
+  </h1>
+  <div class="buttons">
+    <button class="btn-clear " ui-sref="ensureOrder({orderType: 0})" ng-disabled="!vm.sumCount" ng-class="{disable: vm.sumCount === 0}"><span>去结算</span></button>
+  </div>
+</ion-footer-bar>

@@ -1,0 +1,36 @@
+<ion-view class="account-content" view-title="优惠券">
+  <ion-header-bar align-title="center" class="bar-positive">
+  <div class="buttons">
+    <button class="button button-clear icon-left ion-ios-arrow-back" ng-click="vm.goBack()"></button>
+  </div>
+  <h1 class="title">优惠券</h1>
+</ion-header-bar>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="qindian-coupon-content">
+      <div class="coupon-con" ng-if="true">
+        <ul class="coupons">
+          <li class="coupon" ng-repeat="item in vm.coupons">
+            <div class="coupon-body">
+              <div class="left-price">¥ <span class="price">{{item.amount}}</span></div>
+              <div class="right-desc">
+                <div class="desc-title">通用红包</div>
+                <ul class="desc-detail">
+                  <li class="desc-item">· 满{{item.conditions}}可用</li>
+                  <li class="desc-item">· 仅限账户本人使用</li>
+                  <li class="desc-item">· {{item.receiveTime.slice(0,10)}} 至 {{item.expirationTime.slice(0,10)}}</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="order-empty" ng-if="false">
+        <div class="empty-con">
+          <i class="qd-coupon-empty sorry-icon"></i>
+          <span class="desc">当前无可用优惠券</span>
+        </div>
+      </div>
+      <div ng-class="{'footer-nomore':vm.coupons.length <= 5,'footer-more': vm.coupons.length >5}"><a ui-sref="couponInvalid({status: 2})"><span>没有更多有效券了 | 查看过期券 >></span></a></div>
+    </div>
+  </ion-content>
+</ion-view>

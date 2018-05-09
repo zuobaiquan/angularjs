@@ -1,0 +1,23 @@
+<ion-view class="coupon-edit" view-title="亲点易取">
+  <div class="banner-con-header">
+    <ion-header-bar align-title="center" class="bar-positive">
+      <div class="buttons">
+        <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+      </div>
+      <h1 class="title">亲点易取</h1>
+    </ion-header-bar>
+    <ion-content scroll="true" class="coupon-share-content qindian-coupon-content" scrollbar-y="false">
+      <div class="current-tel">当前手机号：<span>13012345678</span></div>
+      <div class="tel-input-container">
+        <div class="input-container">
+          <i class="ion-ipad input-icon"></i>
+          <input class="tel-input input" type="text" placeholder="请填写手机号" ng-model="vm.params.phone">
+        </div>
+      </div>
+      <div class="coupon--receive">
+        <button class="button button-full button-energized" type="button">修改</button>
+      </div>
+      <div class="edit-desc">手机号码修改后将在下次抢红包时生效</div>
+    </ion-content>
+  </div>
+</ion-view>

@@ -1,0 +1,38 @@
+.modal.location-item {
+    margin: 0;
+    margin-bottom: 5px;
+    border: none;
+    background-color: #fff;
+    .qd-location {
+      float: left;
+      padding: 16px;
+      padding-left: 0;
+      color: $font-black-4;
+    }
+    .top-location-con {
+      overflow: hidden;
+    }
+    .location-info {
+      float: left;
+      font-size: 1.4rem;
+      width: 100%;
+      .location-name {
+        display: block;
+        color: $font-black-4;
+        margin-bottom: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .kdg-name {
+        color: $font-black-4;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+}
+.obtain--wapper.location {
+  background-image: url(../img/location-choose.png);
+  .coupons {
+    margin-top: 30px;
+  }
+}

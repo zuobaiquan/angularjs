@@ -1,0 +1,63 @@
+.qindian-coupon-content {
+  min-height: 500px;
+  .coupon {
+    width: 93.3333333%;
+    height: 28.8%;
+    margin: 0 auto;
+    margin-top: 11px;
+    position: relative;
+    &-body {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      background: url('../img/coupon-bg.png') no-repeat;
+      background-size: 100% 100%;
+      .left-price {
+        color: $font-red-1;
+        font-size: 1.5rem;
+        width: 31.4285714%;
+        text-align: center;
+        .price {
+          font-size: 3rem;
+        }
+      }
+      .right-desc {
+        margin-left: 07.1428571%;
+        padding: 10px 0;
+        .desc-title {
+          font-size: 1.4rem;
+          color: $font-black-1;
+          margin-bottom: 5px;
+        }
+        .desc-detail {
+          color: $font-black-3;
+          font-size: 1.1rem;
+          .desc-item {
+            // max-width: 45.1428571%;
+            line-height: 18px;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+  .footer-nomore {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    a {
+      color: $font-black-3;
+    }
+  }
+  .footer-more {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+    a {
+      color: $font-black-3;
+    }
+  }
+}

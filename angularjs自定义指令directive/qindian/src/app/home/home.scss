@@ -1,0 +1,59 @@
+/****/
+
+/**home style**/
+.qindian-home{
+	width:100%;
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+// 遮罩
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.5019607843137255;
+	z-index: 7;
+  transition: all .2s ease-in;
+}
+// 空菜品
+.con-empty{
+  flex-grow: 1;
+  .empty,.error {
+    .qd-menu-empty,.qd-internet-error {
+      margin: 0 auto;
+      display: block;
+      margin-top: 50%;
+      font-size: 10rem;
+    }
+    .qd-internet-error {
+      margin-top: 30%;
+    }
+    font-size: 1.3rem;
+    color: $font-black-4;
+    text-align: center;
+    .desc {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      transform: translateY(-50%);
+    }
+    .refresh {
+      color: $qd-main-color;
+      padding: 6px 17px;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 1px solid $qd-main-color;
+      background-color: transparent;
+      transform: translateY(-50%);
+    }
+  }
+}

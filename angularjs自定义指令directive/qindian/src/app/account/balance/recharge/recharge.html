@@ -1,0 +1,35 @@
+<ion-view class="account-content" view-title="充值">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="account">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="balance"></button>
+    </div>
+    <h1 class="title">充值</h1>
+  </ion-header-bar>
+  <ion-content scroll="false">
+    <div class="qindian-account-info">
+      <div class="info-container">
+        <div class="recharge-con">
+          <span class="recharge-title">请选择充值金额</span>
+          <ul class="charges">
+            <li>
+              <div class="charge-item">
+                <ion-radio class="check-charge" ng-model="vm.params.money" ng-value="50">¥50<span ng-if="vm.rule['50']"  strong class="send-panel"><img class="send-icon" src="./img/send-icon@2x.png" alt="">{{vm.rule['50']}}</span></ion-radio>
+                <ion-radio class="check-charge" ng-model="vm.params.money" ng-value="100">¥100<span ng-if="vm.rule['100']"  strong class="send-panel"><img class="send-icon" src="./img/send-icon@2x.png" alt="">{{vm.rule['100']}}</span></ion-radio>
+              </div>
+            </li>
+            <li>
+              <div class="charge-item">
+                <ion-radio class="check-charge" ng-model="vm.params.money" ng-value="200">¥200<span ng-if="vm.rule['200']"  strong class="send-panel"><img class="send-icon" src="./img/send-icon@2x.png" alt="">{{vm.rule['200']}}</span></ion-radio>                
+                <ion-radio class="check-charge" ng-model="vm.params.money" ng-value="500">¥500<span ng-if="vm.rule['500']"  strong class="send-panel"><img class="send-icon" src="./img/send-icon@2x.png" alt="">{{vm.rule['500']}}</span></ion-radio>
+              </div>
+            </li>
+          </ul>
+          <div class="btn-sure">
+            <a><button class="button name" ng-click="vm.recharge()">确认充值</button></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

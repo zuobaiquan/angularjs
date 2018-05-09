@@ -1,0 +1,47 @@
+.obtain--wapper {
+  width: 80.2666667%;
+  min-height: 150px;
+  margin: 0 auto;
+  
+  border-radius: 5px 5px;
+  margin-top: 41.66666667%;
+  background-image: url('../img/pay-obtain@2x.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position-y: 40px;
+  &::after {
+    content: '';
+    display: table;
+  }
+  &.merchant {
+    background-image: url('../img/merchant-obtain@2x.png')
+  }
+  
+  .coupons {
+    
+    min-height: 100px;
+    margin: 80px 20px 23px;
+    margin-bottom: 0;
+    background-color: #FEEDB9;
+    overflow: hidden;
+    .coupon-body {
+      background-size: 100% auto;
+      margin: 0 6px;
+      height: 78px;
+      margin-bottom: 9px;
+    }
+  }
+  .desc {
+    line-height: 3.6rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: $font-black-2;
+  }
+  .coupon--line {
+    background: url('../img/obtain-line@2x.png') no-repeat;
+    background-size: 100% auto;
+    padding-top: 15px;
+    margin: 0 20px 23px;
+  }
+}
+

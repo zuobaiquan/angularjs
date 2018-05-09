@@ -1,0 +1,32 @@
+<ion-view class="kdg-content" view-title="收货柜选择">
+  <ion-content scroll="true">
+    <div class="qindian-search">
+      <div class="search-con">
+        <div class="location-search-title">
+          <ion-item class="info-title">
+            <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="location"></button>
+            <span>收货柜选择</span>
+          </ion-item>
+        </div>
+        <div class="kdgs-con">
+          <div class="location-con">
+            <span class="part-title">附近的收货柜</span>
+              <div class="locations kdg">
+                <div class="kdg" ng-repeat="item in vm.nearbyCupboards" ng-click="vm.setCurrentBoard(item)">
+                    <div class="con-left">
+                      <div class="info">
+                        <span class="location-name">{{item.name}}</span><span class="kdg-name">{{item.address}}</span>
+                      </div>
+                    </div>
+                    <div class="con-right">
+                      <i class="qd-location"></i>
+                      <span>{{(item.distance).toString().slice(0,5)}}m</span>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

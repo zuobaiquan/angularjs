@@ -1,0 +1,73 @@
+<ion-view class="account-content grey-bg" view-title="个人中心">
+    <ion-content scroll="true">
+        <div class="qindian-account">
+            <div class="user-container">
+                <div class="top-container">
+                    <!--<a ui-sref="home"><i class="ion-chevron-left icon-left"></i></a>-->
+                    <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="home"></button>
+                    <div class="user-header" ui-sref="info">
+                        <img ng-src="{{'http://'+vm.accountBase.avatar+'?imageView2/1/w/71/h/71'}}" alt="">
+                    </div>
+                    <div class="user-name">
+                        <a >{{vm.accountBase.account.nickname}}</a>
+                        <i class="ion-chevron-right icon-right"></i>
+                    </div>
+                </div>
+                <div class="user-functions">
+                    <ion-list>
+                        <ion-item class="nva-item func-item" >
+                            <i class="qd-wallet"></i>
+                            <div class="item-con border"   ui-sref="balance">
+                                我的账户
+                                <div class="con-right">
+                                    <span class="residual">¥{{vm.accountBase.account.balance}}</span>
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item func-item">
+                            <i class="qd-coupon"></i>
+                            <div class="item-con" ui-sref="coupon({status: 0})">
+                                优惠券
+                                <div class="con-right">
+                                    <span class="preCard">{{vm.accountBase.couponCount}}张</span>
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+                                
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item func-item">
+                            <i class="qd-order"></i>
+                            <div class="item-con border" ui-sref="myOrder">
+                                我的订单
+                                <div class="con-right">
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item func-item">
+                            <i class="qd-tag"></i>
+                            <div class="item-con" ui-sref="groupBut">
+                                我的团购
+                                <div class="con-right">
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="nva-item func-item" ng-if="false">
+                            <i class="qd-customer"></i>
+                            <div class="item-con" ui-sref="customer">
+                                联系客服
+                                <div class="con-right">
+                                    <i class="ion-chevron-right icon-right"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item class="quit" ng-click="vm.logout()">退出登录</ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

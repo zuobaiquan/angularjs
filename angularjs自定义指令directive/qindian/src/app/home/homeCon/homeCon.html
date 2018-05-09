@@ -1,0 +1,56 @@
+<div class="con-container" ng-style="">
+  <div class="left-nva" id="testId">
+    <ion-list>
+      <ion-item class="forefather-category nva-item" ng-repeat="(fatherIndex, category) in vm.foods" ng-class="{'ba-sidebar-item-expanded': fatherIndex === 0}">
+        <a ng-click="toggle($event)">{{category.name}}</a>
+        <ion-item class="sub-category nva-item" ng-repeat="(index, subCategory) in category.children" ng-click="activeCategories($event, subCategory)"
+          data-categoryID="{{index}}" ng-class="{'item-active':(index === 0) && (fatherIndex === 0) && !activeCategory.ele}"
+          data-bannerSecondId="{{subCategory.id}}" , data-subCategory="{{subCategory}}">
+          <a href="">{{subCategory.name}}</a>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="right-con">
+    <div class="con-title"><span>{{activeCategory.data.name || vm.foods[0].children[0].name}}</span></div>
+    <div class="commoditys" ng-show="activeCategory.data.foods.length !== 0">
+      <ion-list>
+        <ion-item class="cm-item" ng-repeat="item in (activeCategory.data.foods || vm.foods[0].children[0].foods)">
+          <a href="" ng-click="openParticular(item)">
+            <div class="cm-img">
+              <img ng-src="{{vm.QINIU_LINK+item.picture}}">
+              <div class="sell-out" ng-if="!item.inventory">
+                  <span>售磬</span>
+              </div>
+            </div>
+            <div class="cm-desc">
+              <span class="cm-title">{{item.name}}</span>
+              <span class="cm-sub-title">月销售{{item.sales}}份  {{item.startDate.slice(5,10).replace('-','.') + '-' + item.endDate.slice(5,10).replace('-','.')}}</span>
+              <div class="cm-price">¥<span class="price-now">{{item.price}} </span>
+                <span class="price-before" ng-if="item.price !== item.originalPrice">¥{{item.originalPrice}}</span></div>
+            </div>
+          </a>
+
+          <div class="cm-count">
+            <div class="expire-time"></div>
+            <div class="count-wapper" ng-if="item !== '包子'">
+              <a class="btn-sub" ng-show="vm.count[item.id]" ng-click='vm.changeArticleCount("sub", item)'><i class="qd-subtract"></i></a>
+              <div class="cm-number"><span>{{vm.count[item.id] || 0}}</span></div>
+              <a class="btn-add" ng-click='vm.changeArticleCount("add", item)'><i class="qd-plus"></i></a>
+            </div>
+            <div class="cm-empty" ng-if="item === '包子'">
+              <span>补货中</span>
+            </div>
+          </div>
+
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="con-empty commoditys" ng-show="!activeCategory.data || activeCategory.data.foods.length === 0">
+      <i class="qd-menu-empty"></i>
+      <span>暂无菜品，敬请期待</span>
+    </div>
+  </div>
+
+
+</div>

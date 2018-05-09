@@ -1,0 +1,75 @@
+<ion-view class="account-content" view-title="搜索">
+  <ion-content scroll="false">
+    <div class="qindian-search">
+      <div class="search-con">
+        <div class="search-title">
+          <!--ui-sref="searchResult"-->
+          <input type="text" class="search-key" placeholder="&#xe903 请输入商品名称" ng-model="searchData.key" ng-keyup="search($event)">
+          <a href="" class="calel" ui-sref="home"><span>取消</span></a>
+        </div>
+        <div class="hot-search-con" ng-show="!searchData.isSearch">
+          <div class="hot-search" ng-if="false">
+            <span class="hot-title">热门搜索</span>
+            <div class="hot-words">
+              <span class="word" ng-repeat="item in ['香菇菜包','奶黄包','青椒肉丝饭','炒饭','肉包','酸辣土豆丝','鲜虾饺','雪菜肉丝套餐饭']">
+                  <a ng-click="keySearch(item)">{{item}}</a>
+                </span>
+            </div>
+          </div>
+          <div class="hot-search">
+            <div class="hot-title-container">
+              <span class="hot-title">历史搜索记录</span>
+              <a href="" class="clear-hostory" ng-click="clearHistories()"><i class="ion-trash-a"></i></a>
+            </div>
+            <div class="hot-words">
+              <span class="word" ng-repeat="item in searchHistory">
+                <a ng-click="keySearch(item)">{{item}}</a>
+            </span>
+            </div>
+          </div>
+        </div>
+        <!-- search result -->
+        <div class="result-con" ng-if="searchResult.hasResult">
+          <div class="list-con">
+            <ion-list>
+              <ion-item class="cm-item" ng-repeat="item in searchResult.data">
+                <a href="">
+                  <div class="cm-img">
+                    <img ng-src="{{QINIU_LINK + item.picture}}">
+                  </div>
+                  <div class="cm-desc">
+                    <span class="cm-title">{{item.name}}</span>
+                    <span class="cm-sub-title">月售{{item.sales}}份</span>
+                    <div class="cm-price">¥<span class="price-now">{{item.price}}</span><span class="price-before" ng-if="item.price !== item.originalPrice">¥{{item.originalPrice}}</span></div>
+                  </div>
+                </a>
+
+                <div class="cm-count">
+                  <div class="count-wapper" ng-if="item !== '包子'">
+                    <a class="btn-sub" ng-show="count[item.id]" ng-click='changeArticleCount("sub", item)'><i class="qd-subtract"></i></a>
+                    <div class="cm-number"><span>{{count[item.id] || 0}}</span></div>
+                    <a class="btn-add" ng-click='changeArticleCount("add", item)'><i class="qd-plus"></i></a>
+                  </div>
+                  <div class="cm-empty" ng-if="item === '包子'">
+                    <span>补货中</span>
+                  </div>
+                </div>
+
+              </ion-item>
+            </ion-list>
+          </div>
+          <div class="result-nomore">
+            <span>没有更多了</span>
+          </div>
+        </div>
+        <div class="order-empty" ng-if="!searchResult.hasResult && searchData.isSearch">
+          <div class="empty-con">
+            <i class="qd-search-empty sorry-icon"></i>
+            <span class="desc">搜索无结果</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

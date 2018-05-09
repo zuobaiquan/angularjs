@@ -1,0 +1,51 @@
+.coupon-share-content {
+  .coupon-logo{
+    margin-top: 11.173913043%;
+  }
+  .coupon-body {
+    margin: 20px 13px 11px 12px;
+  }
+  .logo-container {
+    margin: 0 auto;
+    width: 89px;
+    >img {
+      width: 100%;
+    }
+  }
+  .coupon-tel {
+    font-size: 1.3rem;
+    line-height: 3.6rem;
+    color: $font-black-1;
+    text-align: center;
+  }
+  .tel--edit {
+    color: #FA4343;
+    font-size: 1.4rem;
+  }
+  .coupon--receive {
+    margin: 42px 18px 0 17px;
+    > button {
+      border-radius: 5px;
+    }
+  }
+}
+.coupon-edit {
+  .current-tel {
+    line-height: 3.6rem;
+    font-size: 1.5rem;
+    color: $font-black-1;
+    text-align: center;
+    > span {
+      color: $qd-main-color;
+    }
+  }
+  .tel-input {
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .edit-desc {
+    color: $font-black-3;
+    font-size: 1.3rem;
+    line-height: 3.6rem;
+    text-align: center;
+  }
+}

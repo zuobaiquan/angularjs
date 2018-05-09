@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <div class="obtain--wapper" ng-class="{merchant: type === 'merchant'}">
+    <div class="particular--cancle">
+      <i class="ion-ios-close-outline icon-canel" ng-click="closeModal()"></i>
+      <div class="line"></div>
+    </div>
+    <div class="coupons qindian-coupon-content">
+      <div class="desc">可用于抵扣在线支付时的订单金额</div>
+      <div class="coupon-body" ng-repeat="item in coupons">
+        <div class="left-price">¥ <span class="price">{{item.amount}}</span></div>
+        <div class="right-desc">
+          <!--<div class="desc-title">通用红包</div>-->
+          <ul class="desc-detail">
+            <li class="desc-item">· 满{{item.conditions}}可用</li>
+            <li class="desc-item">· 限此微信用户使用</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="coupon--line"></div>
+  </div>
+
+</ion-modal-view>

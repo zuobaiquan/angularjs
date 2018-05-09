@@ -1,0 +1,109 @@
+//2D旋转
+@mixin transform2d($deg:0deg) {
+    transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    /* IE 9 */
+    -webkit-transform: rotate($deg);
+    /* Safari and Chrome */
+    -o-transform: rotate($deg);
+    /* Opera */
+    -moz-transform: rotate($deg);
+    /* Firefox */
+}
+//一行文字溢出省略
+@mixin ellipsis() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+html{
+    font-size: 62.5%;
+}
+@media (min-width: 375px) {
+    html{
+        font-size: 66%
+    }
+}
+@media (min-width: 414px) {
+    html{
+        font-size: 70%
+    }
+}
+body {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 25%;
+    margin-top: 1rem;
+    z-index: 999;
+    color: #fff;
+    height: 2rem;
+    min-width: 50%;
+    max-width: 85%;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 2rem;
+    border-radius: 2rem;
+}
+
+// 搜索框样式
+.search-key {
+    width: 82.6666667%;
+    margin: auto;
+    height: 29px !important;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'qindian' !important;
+}
+
+.full-screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+// 重写Ionic_Header背景颜色
+.bar.bar-positive {
+    background-color: #F7C736;
+    border: none;
+    background-image: none;
+}
+.grey-bg {
+    background-color: #f5f5f5;
+}
+use.js-wx {
+    fill: #4FC534;
+}
+
+// Ionic日期选择器样式
+.ionic_datepicker_popup {
+    .popup-body .selected_date_full.ng-binding, .selected_date,.popup-buttons button {
+        background-color: $qd-main-color !important;
+    }
+    .today {
+    border: 1px solid $qd-main-color !important;
+    }
+    .popup-body {
+        .button-clear {
+            color: $qd-main-color !important;
+        }
+        .month_select, .year_select {
+            border-color: $qd-main-color !important;
+            &::after {
+                color: $qd-main-color !important;
+            }
+        }
+    }
+}

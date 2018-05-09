@@ -1,0 +1,141 @@
+.location-content {
+  background-color: #f5f5f5;
+}
+
+.location-body {
+  background-color: #f5f5f5;
+}
+
+.location-search-title {
+  .info-title {
+    background-color: $qd-main-color;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    .icon-left {
+      float: left;
+      position: absolute;
+      color: #fff;
+      left: 10px;
+      top: 0;
+    }
+    .search-key {
+      margin-top: 20px;
+    }
+  }
+}
+
+.location-con {
+  overflow: hidden;
+  .part-title {
+    display: block;
+    color: #999;
+    margin: 14px 0 14px 11px;
+    font-size: 1.3rem;
+  }
+  .clear-hostory {
+    right: 18px;
+    color: #999;
+    float: right;
+    margin-right: 18px;
+  }
+  .location-item {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    .qd-location {
+      float: left;
+      padding: 16px;
+      padding-left: 0;
+      color: $font-black-4;
+    }
+    .location-info {
+      float: left;
+      font-size: 1.4rem;
+      .location-name {
+        display: block;
+        color: $font-black-4;
+        margin-bottom: 10px;
+      }
+      .kdg-name {
+        color: $font-black-4;
+      }
+    }
+    &.now {
+      .qd-location {
+        color: #44BAFE;
+      }
+      .location-name {
+        color: $font-black-1;
+      }
+    }
+  }
+  .locations {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .con-left {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+      .qd-location {
+        margin-left: 10px;
+      }
+      .info {
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-left: 17px;
+        .location-name {
+          display: block;
+          color: $font-black-1;
+        }
+        .kdg-name {
+          display: block;
+          color: $font-black-4;
+        }
+      }
+    }
+    .con-right {
+      margin-right: 10px;
+    }
+    &.now {
+      .qd-location {
+        color: #44BAFE;
+      }
+    }
+    &.hostories,
+    &.bearby {
+      .con-left {
+        border-bottom: 1px solid $con-border-color-1;
+      }
+      display: block;
+      color: $font-black-4 !important;
+      .location-name {
+        color: $font-black-4 !important;
+      }
+    }
+    &.bearby {
+      .location-more {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        .con-left {
+          border: none;
+        }
+        .con-right {
+          color: $font-black-1;
+        }
+      }
+      .con-left {
+        padding: 15px 0;
+        .location-name {
+          color: $font-black-1 !important;
+        }
+        ;
+      }
+    }
+  }
+}

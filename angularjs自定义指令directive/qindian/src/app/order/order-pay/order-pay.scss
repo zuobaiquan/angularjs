@@ -1,0 +1,99 @@
+.order-pay-body {
+  .pay-time {
+    .remain-time{
+      padding: 0;
+      padding-bottom: 16px;
+      border: none;
+      border-bottom: 1px solid $con-border-color-1;
+      text-align: center;
+      .title{
+        display: block;
+        margin-bottom: 18px;
+        font-size: 1.2rem;
+        color: $font-black-4;
+      }
+      .time {
+        font-size: 2.2rem;
+        color: $font-black-1;
+      }
+    }
+    .pay-money-con{
+      margin-top: 16px;
+      color: $font-black-1;
+      font-size: 1.3rem;
+      .money {
+        font-size: 1.5rem;
+        color: $font-red-1;
+        float: right;
+
+      }
+    }
+  }
+  .pay-func-title {
+    height: 45px;
+    display: block;
+    line-height: 45px;
+    padding-left: 16px;
+    font-size: 1.3rem;
+    color: $font-black-3;
+  }
+  // radio
+  .pay-func-con {
+    border: none;
+    // padding-bottom: 0;
+    .qd-check {
+      
+      font-size: 1rem;
+      font-size: 1.6rem;
+      line-height: 30px;
+    }
+    &.item-radio .radio-icon {
+      visibility: visible;
+      color: #E5E5E5;
+    }
+    &.item-radio input:checked + .radio-content .radio-icon {
+      color: $qd-main-color;
+    } 
+    .item-content {
+      padding-bottom: 0;
+    }
+    &:last-child {
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      .pay-type-right {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+    .item-content {
+      vertical-align: bottom;
+      border: none;
+    }
+    .pay-type-right {
+      margin-left: 51px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      font-size: 1.5rem;
+      color: $font-black-1;
+      .pay-type-icon {
+        position: absolute;
+        right: 16px;
+      }  
+    }
+    .pay-type-icon{
+      width: 21px;
+      height: 20px;
+      position: absolute;
+      color: #FF993F;
+      &.qd-pay-wx-js {
+        color: #4FC534;
+      }
+    }
+    
+  }
+  .item-radio input:checked + .radio-content .item-content {
+      background: #fff;
+      // border: 1px solid $qd-main-color !important;
+      color: $qd-main-color !important;
+    }
+}

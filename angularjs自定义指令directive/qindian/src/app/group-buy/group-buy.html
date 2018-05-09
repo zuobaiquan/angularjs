@@ -1,0 +1,57 @@
+<ion-view class="group-buy" view-title="我的团购">
+  <div class="banner-con-header">
+    <ion-header-bar align-title="center" class="bar-positive">
+      <div class="buttons">
+        <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+      </div>
+      <h1 class="title">我的团购</h1>
+    </ion-header-bar>
+    <div class="group--state">
+      <div class="state--item state__active" ng-click="vm.changeState($event)">
+        进行中
+        <div class="state--line"></div>
+      </div>
+      <div class="state--item" ng-click="vm.changeState($event)">
+        已结束
+        <div class="state--line"></div>
+      </div>
+    </div>
+  </div>
+
+  <ion-content scroll="true" class="group-content" scrollbar-y="false">
+    <div class="group-order" ng-repeat="item in vm.orders" ng-click="vm.detail(item);$event.stopPropagation();">
+      <div class="order--header order--block">
+        <div class="header--id">订单编号 {{item.orderNo}}</div>
+        <div class="header--state">{{item.status === 0 ? '团购中' : '已结束'}}</div>
+      </div>
+      <div class="order--content order--block">
+        <button class="btn-bcancel-order" ng-click="vm.payGroupOrder(item);$event.stopPropagation();" ng-if="vm.tag.code === 0 && item.ostatus === 0">支付订单</button>
+        <button class="btn-bcancel-order" ng-click="vm.cancelOrder(item);$event.stopPropagation();" ng-if="vm.tag.code === 0 && item.ostatus === 1">取消订单</button>
+        <button class="btn-bcancel-order invalid" ng-if="vm.tag.code === 0 && item.ostatus === 5">已取消订单</button>
+        <div class="content--desc">下单时间：{{item.orderTime.slice(0,3).join('-')}} {{item.orderTime.slice(3,5).join(':')}}</div>
+        <div class="content--desc">配送时间：{{item.arrivalDate}} 09:30-10:30</div>
+        <div class="content--desc">团购商品：</div>
+        <div class="content--dishes dishes">
+          <ion-scroll direction="x" scrollbar-x="false">
+            <img src="{{vm.QINIU_LINK + img.picture}}" class="dishes--item" ng-repeat="img in item.foodList">
+          </ion-scroll>
+        </div>
+      </div>
+      <div class="order--footer">
+        <div class="footer--desc">团购结束时间：{{item.endTime.slice(0,3).join('/')}} 21:30</div>
+        <div class="footer--desc">当前参团人数：<span class="number">{{item.offerNum}}人</span></div>
+        <div class="footer--desc">当前参团折扣：<span class="discount">{{item.discount/10}}折</span></div>
+        <!--<div class="footer--desc">当前参团折扣：<span class="discount">{{item.discount/10}}折</span></div>-->
+      </div>
+    </div>
+    <div class="order-empty" ng-if="vm.isNull">
+      <div class="empty-con">
+        <i class="qd-order-empty sorry-icon"></i>
+        <span class="desc">当前无团购记录</span>
+        <button class="make-order" ui-sref="home">去下单</button>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="vm.groupOrders()" distance="1%" ng-if="vm.noMore">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

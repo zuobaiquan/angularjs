@@ -1,0 +1,37 @@
+<div class="cart-con">
+  
+  <div class="cart-title-con">
+    <div class="title">
+      <span>购物车</span>
+    </div>
+    <div class="clear-con">
+      <i class="ion-trash-a"></i>
+      <a href="" class="btn-clear" ng-click="vm.clearCart()">清空</a>
+    </div>
+    
+  </div>
+  <div class="cart-list">
+    <ion-list>
+      <ion-item class="cm-item" ng-repeat="item in vm.orderInfo.foods">
+        <a href="">
+          <div class="cm-desc">
+            <span class="cm-title">{{item.name}}</span>
+            <div class="cm-price"><span class="price-now">{{item.amount * item.singlePrice |currency:'¥':'2'}} </span></div>
+          </div>
+        </a>
+
+        <div class="cm-count">
+          <div class="count-wapper" ng-if="item !== '包子'">
+            <a class="btn-sub" ng-show="item.amount" ng-click='vm.changeArticleCount("sub", item)'><i class="qd-subtract"></i></a>
+            <div class="cm-number"><span>{{item.amount}}</span></div>
+            <a class="btn-add" ng-click='vm.changeArticleCount("add", item)'><i class="qd-plus"></i></a>
+          </div>
+          <div class="cm-empty" ng-if="item === '包子'">
+            <span>补货中</span>
+          </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </div>
+</div>

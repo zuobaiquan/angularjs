@@ -1,0 +1,14 @@
+{
+  "constants": {
+    "APP": {
+      "devMode": false
+    },
+    "ServerConfiguration": {
+        "webRoot": "/cak",
+        "baseApiUrl": "http://121.41.90.22:15020/api/",
+        "domain": "http://test.shixing.me/qdyq?v=1"
+    },
+    "QINIU_LINK": "http://ooadwu9pq.bkt.clouddn.com/",
+    "GDAPI_TOKEN": "5cb367a38b0beb883c9721aec51020f3"
+  }
+}

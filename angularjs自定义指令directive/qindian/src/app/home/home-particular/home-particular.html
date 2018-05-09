@@ -1,0 +1,33 @@
+<ion-modal-view>
+<div class="particular-con">
+  <div class="particular--cancle">
+    <i class="ion-ios-close-outline icon-canel" ng-click="closeParticular()"></i><div class="line"></div>  
+  </div>  
+  
+  <div class="cover-con">
+    <img ng-src="{{vm.QINIU_LINK+activeFood.picture}}" alt=""
+      class="cover">
+    <div class="particular--mask"></div>
+    <span>有效期至{{activeFood.endDate}}</span>
+  </div>
+  <div class="desc-con">
+    <div class="par-name"><span class="title">{{activeFood.name}}</span><span class="count">月售{{activeFood.sales}}份</span></div>
+    <div class="par-desc"><span class="detail-desc">{{activeFood.description}}</span></div>
+
+    <div class="price-con">
+      <div class="par-price">¥<span class="single-price">{{activeFood.price}}</span></div>
+      <div class="cm-count" ng-if="!noBtn">
+        <div class="count-wapper" ng-if="item !== '包子'">
+          <a class="btn-sub" ng-show="vm.count[activeFood.id]" ng-click='vm.changeArticleCount("sub", activeFood)'><i class="qd-subtract"></i></a>
+          <div class="cm-number"><span>{{vm.count[activeFood.id] || 0}}</span></div>
+          <a class="btn-add" ng-click='vm.changeArticleCount("add", activeFood)'><i class="qd-plus"></i></a>
+        </div>
+        <div class="cm-empty" ng-if="item === '包子'">
+          <span>补货中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-modal-view>
+

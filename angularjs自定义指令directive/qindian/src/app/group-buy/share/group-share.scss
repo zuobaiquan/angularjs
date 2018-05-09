@@ -1,0 +1,100 @@
+.group-share {
+  .group--state {
+    height: 31px;
+    line-height: 31px;
+    background-color: #FEF4BF;
+    color: #FF3E3E;
+    margin-top: 44px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .group-content {
+    background-color: #F5F5F5;
+    margin-top: 31px;
+  }
+  .order-time {
+    height: 90px;
+    background-color: #fff;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .time--desc {
+    color: $font-black-3;
+    font-size: 12px;
+    text-align: center;
+    line-height: 36px;
+  }
+  .time--close {
+    color: $font-black-1;
+    font-size: 18px;
+    text-align: center;
+    line-height: 36px;
+  }
+  .group-item {
+    background-color: #fff;
+    margin-top: 11px;
+    .title {
+      height: 50px;
+      line-height: 50px;
+      box-shadow: inset 3px 0 0 $qd-main-color;
+      font-size: 14px;
+      color: $font-black-1;
+      border-bottom: 1px solid $border-color-e5;
+    }
+    .icon {
+      margin: 0 12px 14px;
+      color: #FC7E7E;
+    }
+  }
+  .icon.member--icon {
+    color: #F7C736;
+    font-size: 1.5rem;
+    &+span {
+      color: #F7C736;
+    }
+  }
+  .goods--dishes {
+    padding: 25px 11px;
+    margin-top: 0;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .group-member {
+    overflow: hidden;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .member--header {
+    padding: 25px 0;
+    padding-left: 11px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .member--header__more {
+    justify-content: space-around;
+  }
+  .header--item {
+    width: 35px;
+    height: 35px;
+    margin-right: 11px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  .header--item__more {
+    line-height: 35px;
+    text-align: center;
+  }
+  .group--btn {
+    border-top: none;
+    font-size: 1.3rem;
+  }
+  .discount {
+    color: #FA4343;
+  }
+  .group--join {
+    margin-top: 71px;
+    padding: 0 13px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+}

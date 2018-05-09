@@ -1,0 +1,36 @@
+<ion-view class="edit-name-content" view-title="绑定手机号码">
+  <ion-content scroll="false">
+    <div class="qindian-account-info">
+      <div class="info-container">
+        <div class="user-infos">
+          <ion-list>
+            <ion-item class="info-title">
+              <a ng-click="vm.back()"><i class="ion-chevron-left icon-left"></i></a>
+              <span>绑定手机号码</span>
+            </ion-item>
+          </ion-list>
+        </div>
+        <form novalidate>
+          <div class="tel-input-container">
+            <div class="input-container">
+              <i class="ion-ipad input-icon"></i>
+              <input class="tel-input input" type="tel" placeholder="请填写手机号" ng-model="vm.params.phone" maxlength="11">
+            </div>
+            <div class="input-container">
+              <i class="ion-lock-combination input-icon"></i>
+              <input class="security-input input" type="text"  placeholder="请填写验证码" ng-model="vm.params.code">
+              <div class="reget-con">
+                <a ng-click="vm.getSecurity()" ng-show="!vm.reGetTime">获取验证码</a>
+                <span ng-if="vm.reGetTime">{{vm.reGetTime}}s 后重获</span>
+              </div>
+            </div>
+          </div>
+          <div class="btn-sure">
+            <button class="button name" ng-click="vm.bindPhone()">确定更换绑定</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

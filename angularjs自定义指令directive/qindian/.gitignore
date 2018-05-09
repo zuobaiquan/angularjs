@@ -1,0 +1,43 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+/www
+/src/css/ionic.app.css
+/src/lib
+/src/app/config/config.js
+ionic.project
+
+####################################
+#########  Editer Settings #########
+####################################
+/.idea
+/.vscode
+/jsconfig.json
+
+####################################
+######## OS generated files ########
+####################################
+.DS_Store
+.DS_Store?
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+####################################
+############# Packages #############
+####################################
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.log

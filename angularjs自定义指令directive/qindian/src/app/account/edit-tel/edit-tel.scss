@@ -1,0 +1,44 @@
+.tel-input-container {
+  
+  .input {
+    margin: 0;    
+    display: block;
+    width: 100%;
+    height: 56px;
+    border: none;
+    line-height: 56px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-left: 41px;
+    -webkit-appearance:none
+    
+  }
+  .tel-input {
+    border-bottom: none;
+  }
+  .input-container {
+    position: relative;
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      transform: translate(11px,-50%);
+      color: #ccc;
+      font-size: 1.6rem;
+    }
+    .reget-con {
+      position: absolute;
+      // width: 100px;
+      right: 19px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      padding: 3px 0;
+      padding-left: 18px;
+      border-left: 1px solid #e5e5e5;
+      color: #bbb;
+      a {
+        color: #F7C736;
+      }
+    }
+  }
+}

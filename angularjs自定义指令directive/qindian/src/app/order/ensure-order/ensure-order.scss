@@ -1,0 +1,133 @@
+.ensure-order-body,.order-detail-body {
+  .order-item,.sub-item-title {
+    margin-bottom: 10px !important;
+    border-top: none;
+    padding-right: 0;
+    .qd-time {
+      color: $qd-main-color;
+    }
+    &.sub-item-title{
+      padding-right: 0;
+      border: none;
+      box-shadow: inset 3px 0 0 $qd-main-color;
+      margin-left: -16px;
+      margin-top: -16px;
+      border-bottom: 1px solid $con-border-color-1;
+      .title{
+        color: $font-black-1;
+        font-size: 1.4rem;
+      }
+      .time {
+        color: $font-black-4;
+        font-size: 1.3rem;
+      }
+      .time-picker{
+        height: calc(100% - 16px);
+      }
+      .ion-clock {
+        margin-right: 16px;
+      }
+      .select-time {
+        color: $font-black-4;
+        font-size: 1.3rem;
+      }
+    }
+    &.coupon {
+      padding: 0;
+      .coupon-item {
+        margin: 0 !important;
+        border: none;
+        border-bottom: 1px solid #eee;
+        font-size: 1.4rem;
+        padding-right: 0px;
+        &:last-child {
+          border: none;
+        }
+        .coupon-right {
+
+          color: $font-black-4;
+          font-size: 1.3rem;
+        }
+        .coupon-price {
+          color: $font-red-1;
+        }
+      }
+    }
+    .order-item-right {
+        margin-right: 16px;
+        float: right;      
+    }
+  }
+  .top-location-con {
+    position: relative;
+    overflow: hidden;
+    .qd-location {
+      float: left;
+      padding: 16px;
+      padding-left: 0;
+      color: #44BAFE;
+    }
+    .location-info {
+      float: left;
+      font-size: 1.4rem;
+      .location-name,.kdg-name {
+        display: block;
+      }
+      .location-name {
+        color: $font-black-1;
+        margin-bottom: 10px;
+      }
+      .kdg-name {
+        color: $font-black-4;
+      }
+    }
+  }
+  .food-con{
+    .food-item {
+      margin-bottom: 8px;
+      color: $font-black-1;
+      font-size: 1.3rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .food-name {
+        width: 59.2%;
+        display: inline-block;
+        
+      }
+      .food-count {
+        width: 04.2666667%;
+        display: inline-block;
+        color: $font-black-3;
+      }
+      .origin {
+        color: $font-black-3;
+        text-decoration: line-through;
+      }
+      .agio {
+        color: $font-black-3 ;
+      }
+      .food-price {
+        display: inline-block;
+        text-align: right;
+        width: 16.9333335%;
+        padding-right: 16px;
+      }
+      .exprice {
+        width: 33.7333335%;
+      }
+    }
+  }
+}
+
+.home-order-footer {
+  h1.title.show-price.title-left {
+    margin-left: 14px;
+    line-height: 51px;
+    .footer-coupon-price {
+      color: $font-black-4;
+      font-size: 1.2rem;
+      margin-left: 19px;
+    }
+  }
+}

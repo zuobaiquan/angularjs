@@ -1,0 +1,26 @@
+<ion-view class="edit-name-content" view-title="修改昵称">
+    <ion-content scroll="false">
+        <div class="qindian-account-info">
+            <div class="info-container">
+                <div class="user-infos">
+                    <ion-list>
+                        <ion-item class="info-title">
+                            <a ui-sref="info"><i class="ion-chevron-left icon-left"></i></a>
+                            <span>修改昵称</span>
+                        </ion-item>
+                    </ion-list>
+                </div>
+                <form novalidate>
+                <div class="name-input-container">
+                    <i class="ion-close-circled icon-right" ng-show="vm.user.nickname" ng-click="vm.reset($event)"></i>
+                  <input class="name-input" type="text" name="uservalue" placeholder="请输入新的昵称" ng-model="vm.user.nickname">
+                  
+                </div>
+                <div class="btn-sure">
+                  <button class="button name" ng-click="vm.editName()">确定</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

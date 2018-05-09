@@ -1,0 +1,95 @@
+// home顶部的高度
+
+.btn-size {
+	width: 36px;
+	height: 36px;
+}
+
+.top-container {
+		position: relative;
+		width: 100%;
+		background-color: #F7C734;
+		flex-grow: 0;
+		.top-btns {
+			position: absolute;
+			width: 100%;
+			z-index: 99;
+			margin: 16px 0;
+			height: 28px;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			&>div {
+				display: inline-block;
+			}
+			.btn {
+				@extend .btn-size;
+				display: block;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 50%;
+				display: block;
+				i {
+					display: block;
+					@extend .btn-size;
+					text-align: center;
+					line-height: 36px;
+					font-size: 1.5rem;	
+				}
+			}
+			.btn-search {
+				// visibility: hidden;
+			}
+			.btn-search > .btn {
+				margin-left: 11px;
+			}
+			.btn-account > .btn {
+				margin-right: 11px;
+			}
+			.btn-location {
+				width: 64.2666667%;
+				& > .btn {
+					width: 100%;
+					border-radius: 18px;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					.icon-left {
+						float: left;
+					}
+					.qd-location-name {
+						font-size: 1.3rem;
+						line-height: 36px;
+						width: 74.4315353%;
+						display: inline-block;
+						text-align: center;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					.icon-right {
+						float: right;
+						width: 10px;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+		.top-btns.no-banner {
+			position: static;
+		}
+		.banners-container {
+			position: relative;
+			top: 0;
+			width: 100%;
+			.swiper-slide {
+				height: 100%;
+				position: relative;
+				flex-shrink: 0;
+				overflow: hidden;
+				display: block;
+			}
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 100%;
+		}
+	}

@@ -1,0 +1,15 @@
+.qindian-coupon-content.invalid {
+  .coupon-body {
+    background-image: url('../img/coupon-invalid.png');
+    .left-price,.right-desc,.desc-title {
+      color: $font-black-3;
+    }
+    .invalid-type{
+      position: absolute;
+      top: 8px;
+      right: 4px;
+      font-size: 6rem;
+      color: #bbb;
+    }
+  }
+}

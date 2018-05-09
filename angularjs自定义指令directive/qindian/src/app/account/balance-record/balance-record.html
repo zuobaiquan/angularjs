@@ -1,0 +1,53 @@
+<ion-view class="account-content" view-title="明细">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="account">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="balance"></button>
+    </div>
+    <h1 class="title">明细</h1>
+  </ion-header-bar>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="qindian-account-info pay-record">
+      <div class="balance-record-con" ng-if="vm.getRecord.length !== 0">
+        <ion-list>
+          <ion-item class="cm-item" ng-repeat="item in vm.getRecord">
+            <div class="record-item-con">
+              <div class="pay-time-con">
+                <span class="date">{{item.createTime[0]}}/{{item.createTime[1]}}/{{item.createTime[2]}}</span>
+                <span class="time">{{item.createTime[3]}}:{{item.createTime[4]}}</span></div>
+              <div class="pay-func-con">
+                <div class="pay-civer wx" ng-if="item.type === 2">
+                  <i class="qd-pay-wx"></i>
+                  <i>微信支付</i>
+                </div>
+                <div class="pay-civer ye" ng-if="item.type === 1">
+                  <i class="qd-pay-ye"></i> 余额支付
+                </div>
+                 <div class="pay-civer ye" ng-if="item.type === 5">
+                  <i class="qd-pay-ye"></i> 订单退款
+                </div>
+                <div class="pay-civer ye" ng-if="item.type === 0">
+                  <i class="qd-pay-ye"></i> 余额充值
+                </div>
+              </div>
+              <div class="pay-money-con">
+                <span>{{((item.type == 5 || item.type == 0) ? '+' : '-') + item.money}}</span>
+              </div>
+            </div>
+
+          </ion-item>
+        </ion-list>
+        <div class="result-nomore">
+          <span>没有更多了</span>
+        </div>
+      </div>
+    </div>
+    <div class="order-empty" ng-if="vm.getRecord.length === 0">
+      <div class="empty-con">
+        <i class="qd-balance-empty sorry-icon"></i>
+        <span class="desc">您当前还没有消费</span>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="vm.loadMore()" distance="1%" ng-if="vm.noMore">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

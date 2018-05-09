@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <div class="obtain--wapper location" ng-class="{merchant: type === 'merchant'}">
+    <div class="particular--cancle">
+      <i class="ion-ios-close-outline icon-canel" ng-click="closeLocationModal()"></i>
+      <div class="line"></div>
+    </div>
+    <div class="coupons qindian-coupon-content">
+      <div class="desc">地址选择</div>
+      <!--<div class="coupon-body" >-->
+        <ion-item class="modal location-item now" ng-repeat="poi in nearbys" ng-click="choosePoi(poi)">
+          <div class="top-location-con">
+            <div class="location-info">
+              <div class="location-name">{{poi.name}}</div>
+              <div class="kdg-name">{{poi.address}}</div>
+            </div>
+          </div>
+        </ion-item>
+      <!--</div>-->
+      <label for="C_remember">记住此地址</label>
+      <input type="checkbox" id="C_remember" ng-model="vm.isRemember" />
+    </div>
+    <div class="coupon--line"></div>
+  </div>
+
+</ion-modal-view>

@@ -1,0 +1,24 @@
+<div class="top-container">
+  <div class="top-btns" ng-class="{'no-banner': !vm.banners.length}">
+    <div class="btn-search"><a class="btn" ui-sref="search"><i class="qd-search"></i></a></div>
+    <div class="btn-location">
+      <a href="" class="btn" ui-sref="location">
+        <i class="qd-location icon-left"></i>
+        <div class="qd-location-name">{{vm.activePoi.name}}</div>
+        <i class="ion-chevron-right icon-right"></i>
+      </a>
+    </div>
+    <div class="btn-account"><a ui-sref="account" class="btn"><i class="qd-account"></i></a></div>
+  </div>
+  <div class="banners-container" ng-show="vm.banners.length">
+    <ion-slide-box does-continue="false" auto-play="true">
+        <ion-slide  ng-repeat="(index, slideItem) in vm.banners" ng-click="positionToFood(slideItem)">
+          <a href="" class="swiper-slide">
+            <img ng-src="{{vm.QINIU_LINK+slideItem.image}}" alt="" class="j_SliderBanner" height="100%">
+          </a>
+        </ion-slide>
+    </ion-slide-box>
+
+  </div>
+  <div class="banner-nva"></div>
+</div>

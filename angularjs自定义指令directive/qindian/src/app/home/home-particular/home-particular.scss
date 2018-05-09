@@ -1,0 +1,121 @@
+.modal {
+  background-color: transparent;
+}
+.modal-backdrop.active {
+  background-color: rgba(0, 0, 0, .5019607843137255) !important;
+}
+
+.particular--cancle {
+  margin-top: -38px;
+  .icon-canel {
+    color: #fff;
+    font-size: 3rem;
+    display: block;
+    margin-left: 90%;
+    transform: translateX(-45%);
+
+  }
+  .line {
+    height: 10px;
+    background-color: #fff;
+    width: 1px;
+    margin-left: 90%;
+    margin-top: -3px;
+
+  }
+}
+
+.particular-con {
+  width: 301px;
+  height: 401px;
+  background: #fff;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  .cover-con {
+    height: 291px;
+    position: relative;
+    .particular--mask {
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background-image: -moz-linear-gradient( 90deg, rgba(3,0,0,0.50196) 0%, rgba(0,0,0,0) 100%);
+      background-image: -webkit-linear-gradient( 90deg, rgba(3,0,0,0.50196) 0%, rgba(0,0,0,0) 100%);
+      background-image: -ms-linear-gradient( 90deg, rgba(3,0,0,0.50196) 0%, rgba(0,0,0,0) 100%);
+    }
+    .cover {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+      margin-top: -3px;
+    }
+    span {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+  }
+  .desc-con {
+    overflow: hidden;
+    margin-top: 16px;
+    padding-left: 16px;
+    padding-right: 15px;
+    position: relative;
+    .par-name {
+      margin-bottom: 12px;
+      .title {
+        font-size: 1.5rem;
+        color: #000; // margin-left: 16px;
+      }
+      .count {
+        font-size: 1.1rem;
+        color: $font-black-2;
+        float: right; // margin-right: 15px;
+      }
+    }
+    .detail-desc {
+      font-size: 1.1rem;
+      color: $font-black-4;
+    }
+    .price-con {
+      margin-top: 10px;
+      .par-price {
+        color: $font-red-1;
+        font-size: 1.1rem;
+      }
+      .single-price {
+        font-size: 1.5rem;
+      }
+      .cm-count {
+        position: absolute;
+        right: 11px;
+        bottom: 0;
+        font-size: 1.6rem;
+        .btn-sub {
+          color: $qd-main-color;
+          margin-right: 10px;
+        }
+        .btn-add {
+          color: $qd-main-color;
+          margin-left: 10px;
+        }
+        .cm-number {
+          display: inline-block;
+          text-align: center;
+        }
+        .cm-empty {
+          span {
+            color: $font-black-3;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+
+button.button.button-clear.icon-right.detail {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.balance-con {
+  .cover {
+    width: 50%;
+    margin: 30px auto;
+    img {
+      width: 100%;
+    }
+  }
+  .price-con {
+    .price-my {
+      text-align: center;
+      font-size: 1.2rem;
+      color: $font-black-1;
+      margin-bottom: 26px;
+    }
+    .price-number {
+      text-align: center;
+      font-size: 3.6rem;
+      color: $font-red-1;
+    }
+  }
+}

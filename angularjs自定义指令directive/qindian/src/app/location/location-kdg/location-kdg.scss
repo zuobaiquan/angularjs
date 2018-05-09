@@ -1,0 +1,20 @@
+.kdgs-con,.kdg-content {
+  background-color: #f5f5f5;
+}
+
+.kdgs-con {
+  .locations.kdg {
+    display: block;
+    .kdg {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid $con-border-color-1;
+      .con-right {
+        color: $font-black-4;
+        padding: 5px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

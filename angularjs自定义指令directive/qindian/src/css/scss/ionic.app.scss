@@ -1,0 +1,69 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+$calm: #F7C736;
+$qd-main-color: #F7C736;
+$positive: #F7C736;
+$font-black-1: #333;
+$font-black-2: #666;
+$font-black-3: #999;
+$font-black-4: #BBB;
+
+$font-red-1: #FA4343;
+
+$con-border-color-1: #eee;
+$border-color-e5: #e5e5e5;
+/* // The path for our ionicons font files, relative to the built CSS in www/css */
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+/* // Include all of Ionic */
+@import "src/lib/ionic/scss/ionic";
+@import 'src/css/style';
+/* // Include all custom style */
+@import 'src/css/scss/global';
+/* Include menu style */
+// @import 'src/app/menu/menu';
+/* Include home style */
+@import 'src/app/home/home';
+@import 'src/app/home/homeTop/homeTop';
+@import 'src/app/home/homeCon/homeCon';
+@import 'src/app/home/homeFooter/homeFooter';
+@import 'src/app/home/homeCart/homeCart';
+@import 'src/app/account/account';
+@import 'src/app/account/account-info/account-info';
+@import 'src/app/account/edit-username/edit-username';
+@import 'src/app/account/edit-tel/edit-tel';
+@import 'src/app/search/search';
+// @import 'src/app/search-result/search-result';
+@import 'src/app/account/balance/balance';
+@import 'src/app/account/balance-record/balance-record';
+@import 'src/app/account/balance/recharge/recharge';
+@import 'src/app/home/home-particular/home-particular';
+@import 'src/app/location/location';
+@import 'src/app/location/location-search/location-search';
+@import 'src/app/location/location-kdg/location-kdg';
+@import 'src/app/account/coupon/coupon';
+@import 'src/app/account/coupon-invalid/coupon-invalid';
+@import 'src/app/order/ensure-order/ensure-order';
+@import 'src/app/order/order-pay/order-pay';
+@import 'src/app/order/order-myself/order-myself';
+@import 'src/app/order/order-detail/order-detail';
+@import 'src/app/account/customer/customer';
+@import 'src/app/group-buy/group-buy';
+@import 'src/app/group-buy/share/group-share';
+@import 'src/app/group-buy/rule/group-rule';
+@import 'src/app/coupons/coupon-share/coupon-share';
+@import 'src/app/coupons/coupon-obtain/coupon-obtain';
+@import 'src/app/home/locationModal/locationModal';

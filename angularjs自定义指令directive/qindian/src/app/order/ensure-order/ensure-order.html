@@ -1,0 +1,82 @@
+<ion-view class="ensure-order-content" view-title="结算">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="home"></button>
+    </div>
+    <h1 class="title">结算</h1>
+  </ion-header-bar>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="ensure-order-body">
+      <ion-list>
+        <ion-item class="ensure-location order-item">
+          <div class="top-location-con">
+            <i class="qd-location"></i>
+            <div class="location-info">
+              <span class="location-name">{{purpose.address}}</span>
+              <span class="kdg-name">{{purpose.name}}</span>
+            </div>
+          </div>
+        </ion-item>
+
+        <!-- content -->
+        <div class=""  ng-repeat="(key, type) in details">
+          <ion-item class="breakfast order-item">
+            <div class="food-con">
+              <ion-item class="sub-item-title item-icon-right">
+                <i class="qd-time"></i>
+                <span class="title">{{typeObj[key].name}}</span>
+                <span class="time">(预计{{typeObj[key].startTime}}-{{typeObj[key].endTime}})</span>
+                <a ng-click="openPicker(key)" class="time-picker icon">
+                  <div class="select-time col-bottom">
+                    {{sendTime[key] || '请选择配送时间'}}
+                    <i class="ion-ios-arrow-right"></i>
+                  </div>
+                </a>
+              </ion-item>
+              <div class="foods">
+                <ul>
+                  <li class="food-item" ng-repeat="item in type">
+                    <span class="food-name">{{item.name}}</span>
+                    <span class="food-count">×{{item.amount}}</span>
+                    <span class="food-price origin" ng-if="!!item.singlePrice">{{item.singlePrice !== item.original ? ((item.original * item.amount)|currency:'¥':'2') : ''}}</span>
+                    <span class="food-price" ng-class="{exprice:!item.singlePrice}">{{item.singlePrice ? ((item.singlePrice * item.amount)|currency:'¥':'2') : '不在配送期内'}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="coupon order-item" ng-if="!isGroupBuy.check && details[key].length">
+            <ion-item class="coupon-item">
+              优惠券
+              <!--  ui-sref="coupon({type: key,status: 0})" -->
+              <div class="coupon-right order-item-right" ng-click="chooseCoupon(key)">
+                <span ng>{{(activeCoupon[key].amount| currency:'-¥':'2') || '选择优惠券'}}</span>
+                <i class="ion-ios-arrow-right"></i>
+              </div>
+            </ion-item>
+          </ion-item>
+        </div>
+        <!------  end -->
+        <ion-item class="coupon order-item" ng-if="!isGroupBuy.check">
+          <ion-item class="coupon-item ">
+            折扣价格
+            <span class="coupon-right order-item-right agio">
+              {{agio | currency:'¥':'2' || '暂无折扣价格'}}
+            </span>
+          </ion-item>
+        </ion-item>
+        <ion-toggle class="order-item" ng-model="isGroupBuy.check" toggle-class="toggle-calm" ng-disabled="groupRole === '1'">{{isGroupBuy.text}}</ion-toggle>
+      </ion-list>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="home-order-footer">
+      <h1 class="title show-price">待支付 {{amount - expirePrice - discountAmount | currency:'¥':'2'}}
+        <span class="footer-coupon-price">优惠 {{discountAmount + agio | currency:'¥':'2'}}</span>
+      </h1>
+      <div class="buttons" ng-click="makeOrder()">
+        <button class="btn-clear">{{isGroupBuy.check ? '团购付款': '付款'}}</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

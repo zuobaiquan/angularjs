@@ -1,0 +1,72 @@
+.bar.bar-assertive {
+    border-color: #FE7F26;
+    background-color: #FE7F26;
+    background-image: linear-gradient(0deg, $qd-main-color, $qd-main-color 50%, transparent 50%) !important;
+    color: #373737;
+    height: 51px;
+    .buttons {
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .amount {
+      min-width: 19px;
+      height: 14px;
+      background-color: #FA4245;
+      border-radius: 7px;
+      position: absolute;
+      top: -8px;
+      left: 58px;
+      z-index: 99;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 14px;
+      padding: 0 3px;
+      color: #fff;
+    }
+    .button {
+      background-color: #FE7F26;
+      width: 63px;
+      height: 63px;
+      border-color: #FE7F26;
+      position: absolute;
+      top: -15px;
+      left: 11px;
+      border-radius: 50%;
+      i.qd-basket {
+        color: #373737;
+        font-size: 3rem;
+        text-align: center;
+        line-height: 68px;
+      }
+    }
+    .title {
+      margin-left: 90px;
+      line-height: 25px;
+      color: #373737;
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      .sum-price {
+        font-size: 1.8rem;
+        // 没有优惠描述信息的时候的样式
+        line-height: 43px;
+      }
+      .sub-desc {
+        font-size: 1rem;
+      }
+    }
+    .btn-clear {
+      background-color: #FFFF00;
+      border: none;
+      width: 96px;
+      font-size: 1.5rem;
+      color: #373737;
+      height: 100%;
+      &.disable {
+        background-color: #ccc;
+      }
+    }
+}

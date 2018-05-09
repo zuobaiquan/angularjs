@@ -1,0 +1,44 @@
+<ion-view class="account-content" view-title="搜索">
+  <ion-content scroll="false">
+    <div class="qindian-search">
+      <div class="search-con">
+        <div class="search-title">
+          <input type="text" class="search-key" placeholder="&#xe903 请输入地址" ng-model="vm.searchData.key" ng-keyup="vm.searchLocation($event)">
+          <a href="" class="calel" ui-sref="location"><span>取消</span></a>
+        </div>
+        <!-- 地址建议列表 -->
+        <div class="location-con location-advice" ng-show="vm.isAdvice">
+          <div class="locations hostories">
+            <div class="con-left" ng-repeat="item in vm.adviceLocation" ng-click="vm.showBoardOfLocation(item)">
+              <div class="info">
+                <span class="location-name">{{item.name}}</span>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="location-con search" ng-if="vm.isBoards">
+          <span class="part-title">请选择{{vm.searchData.key}}附近的柜子</span>
+          <div class="locations hostories">
+            <div class="con-left" ng-repeat="item in vm.resultLocation" ng-click="vm.setCurrentBoard(item)">
+              <div class="info ">
+                <span class="location-name">{{item.address}}</span><span class="kdg-name">{{item.name}}</span>
+              </div>
+              <div class="con-right">
+              <i class="qd-location"></i>
+              <span>{{(item.distance).toString().slice(0,5)}}km</span>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="order-empty" ng-if="vm.resultLocation.length === 0">
+          <div class="empty-con">
+            <i class="qd-search-empty sorry-icon"></i>
+            <span class="desc">搜索无结果</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

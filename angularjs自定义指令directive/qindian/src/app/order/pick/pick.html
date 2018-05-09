@@ -1,0 +1,14 @@
+<ion-view class="account-content" view-title="取货二维码">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">取货二维码</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+      <div class="code-wapper" style="
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;">
+        <img src="http://qr.liantu.com/api.php?text={{vm.code}}" alt="">
+      </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view class="account-content" view-title="搜索">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="location"></button>
+    </div>
+    <h1 class="title">更多附近地址</h1>
+  </ion-header-bar>
+  <ion-content scroll="true">
+    <div class="qindian-search">
+      <div class="search-con">
+        <div class="location-con search">
+          <div class="locations hostories">
+            <div class="con-left" ng-repeat="item in vm.nearbyCupboards" ng-click="vm.setCurrentBoard(item)">
+              <div class="info ">
+                <span class="location-name">{{item.address}}</span><span class="kdg-name">{{item.name}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

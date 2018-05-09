@@ -1,0 +1,56 @@
+<ion-view class="order-myself-content" view-title="我的订单">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-back" ui-sref="account"></button>
+    </div>
+    <h1 class="title">我的订单</h1>
+  </ion-header-bar>
+  <div class="order--state">
+    <div class="state--item  state-item-6 state__active" ng-click="changeState($event, 0)">
+      待支付
+      <div class="state--line"></div>
+    </div>
+    <div class="state--item state-item-6" ng-click="changeState($event, index+1)" ng-repeat="(index, item) in ['待配送','已配送','已收货','已过期','已取消'] track by $index">
+      {{item}}
+      <div class="state--line"></div>
+    </div>
+  </div>
+  <ion-content scroll="true" class="grey-bg">
+    <div class="order-myself-body" ng-init="types = ['待支付','已支付, 等待配送','已配送','已取货','已过期','已取消']" ng-if="orders.length">
+      <ion-list>
+        <ion-item class="order-item" ng-repeat="item in orders">
+          <a ng-click="forDetail(item)">
+            <div class="order-con">
+              <ion-item class="sub-item-title">
+                <div class="order-id">订单编号 {{item.orderNo}}</div>
+                <div class="right order-state">{{types[item.status]}}</div>
+              </ion-item>
+              <div class="order-info">
+                <ul>
+                  <li class="info-item">
+                    <span>下单时间：{{item.orderTime}}</span>
+                  </li>
+                  <li class="info-item">
+                    <span>配送时间：{{item.arrivalDate}}</span>
+                  </li>
+                  <li class="info-item">
+                    <span class="rice">支付金额：¥{{item.price}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="order-empty" ng-if="isNull">
+      <div class="empty-con">
+        <i class="qd-order-empty sorry-icon"></i>
+        <span class="desc">当前无订单记录</span>
+        <button class="make-order" ui-sref="home">去下单</button>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="noMore">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,74 @@
+.group-rule {
+  .group-content {
+    background-color: #F5F5F5;
+  }
+  .rule-chart {
+    background-color: #fff;
+    padding: 20px 0;
+    padding-left: 11px;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .chart--item {
+    margin-top: 16px;
+    font-size: 1.4rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .item--line {
+    display: inline-block;
+    border-top: 5px solid #FF993F;
+    border-radius: 3px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+    & + .discount {
+      color: #FA4343;
+    }
+  }
+  .line {
+    &__1 {
+      width: 30px;
+    }
+    &__5 {
+      width: 75px;
+      border-color: #76D3FF;
+    }
+    &__10 {
+      width: 150px;
+      border-color: #A296FA;
+    }
+    &__20 {
+      width: 250px;
+      border-color: #FC7E7E;
+    }
+  }
+  .group-item {
+    background-color: #fff;
+    margin-top: 11px;
+    .title {
+      height: 50px;
+      line-height: 50px;
+      box-shadow: inset 3px 0 0 $qd-main-color;
+      font-size: 14px;
+      color: $font-black-1;
+      border-bottom: 1px solid $border-color-e5;
+      padding-left: 11px;
+    }
+  }
+  .rule {
+    background-color: #fff;
+    border-bottom: 1px solid $border-color-e5;
+  }
+  .rule--desc {
+    padding: 24px 12px 17px 12px;
+    font-size: 1.3rem;
+    color: $font-black-1;
+  }
+  .desc--item {
+    line-height: 25px;
+    margin-bottom: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

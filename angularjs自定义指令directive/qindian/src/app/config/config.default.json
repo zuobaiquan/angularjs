@@ -1,0 +1,10 @@
+{
+  "name": "starter.configs",
+  "constants": {
+    "BaseConfiguration": {
+      "url": "https://www.example.com",
+      "debug": false
+    },
+    "QINIU_LINK": "http://ooadwu9pq.bkt.clouddn.com/"
+  }
+}

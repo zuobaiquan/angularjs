@@ -1,0 +1,94 @@
+.order-myself-body{
+  .order-item {
+    padding-bottom: 0;
+    margin-top: 10px;
+    border-top: none;
+  }
+  .sub-item-title {
+    margin-top: -16px;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 1.3rem;
+    color: $font-black-1;
+    .order-id {
+      float: left;
+      width: 65%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .order-state {
+      float: right;
+    }
+  }
+  .order-info {
+    color: $font-black-4;
+    font-size: 1.3rem;
+    margin: 18px 0;
+    .rice {
+      color: $font-red-1;
+    }
+  }
+}
+
+.order-empty {
+    width: 100%;
+    position: absolute;
+    margin-top: 50%;
+  .empty-con {
+    margin: 0 auto;
+    text-align: center;
+    .sorry-icon {
+      font-size: 6rem;
+      color: #D8D8D8;
+    }
+    .desc {
+      color: $font-black-4;
+      font-size: 1.3rem;
+      display: block;
+      margin-top: 27px;
+      margin-bottom: 34px;
+    }
+    .make-order {
+      color: $qd-main-color;
+      padding: 6px 17px;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 1px solid $qd-main-color;
+      background-color: transparent;
+    }
+  }
+}
+.order-myself-content .grey-bg {
+  top: 85px;
+}
+.order--state {
+  margin-top: 43px;
+  height: 41px;
+  border-bottom: 1px solid $border-color-e5;
+}
+  .state--item {
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 41px;
+    font-size: 1.3rem;
+    color: $font-black-1;
+    position: relative;
+    &.state__active .state--line {
+      display: block;
+    }
+  }
+  .state-item-6{
+      width: 16.6% !important;
+  }
+  .state--line {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 4px solid $qd-main-color;
+    display: none;
+  }
