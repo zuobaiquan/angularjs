@@ -1,7 +1,9 @@
 #ignore these files 
 
 /**/node_modules/**
+dist/
 node_modules/**
 /**/bower_components/**
 bower_components/**
 .idea/
+.DS_Store/**
